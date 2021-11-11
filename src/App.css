@@ -1,0 +1,237 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab';
+  }
+  
+  form{
+    padding: 0px;
+    margin: auto;
+    align-items: center;
+    margin-top: 0px;
+  }
+
+  .titulo {
+    font-size: 14px;
+    margin-bottom: 15px;
+    align-self:center;
+  }
+
+  .campounico {
+    flex-direction: column;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    font-size: 15px;
+    margin-top: 0px;
+  }
+
+  .campounico label {
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    color:#555555;
+  }
+
+  .campounico input{
+    border: 2px solid #AAAAAA;
+    border-radius: 4px;
+    background: #fff;
+    height: 36px;
+    padding: 0 10px;
+    width: 250px;
+    margin-right: 250px;
+    margin-bottom: 5px;
+  }
+
+  .campolongo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    font-size: 15px;
+    margin-top: 0px;
+  }
+
+  .campolongo label {
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    color:#555555;
+  }
+
+  .campolongo input, select {
+    border: 2px solid #AAAAAA;
+    border-radius: 4px;
+    background: #fff;
+    height: 36px;
+    padding: 0 10px;
+    width: 500px;
+    align-self: center;
+    margin-bottom: 10px;
+  }
+
+  .campolongo textarea {
+    resize: none;
+    height: 60px;
+    border: 2px solid #AAAAAA;
+    border-radius: 4px;
+    background: #fff;
+    padding: 0 10px;
+    width: 500px;
+    align-self: center;
+    margin-bottom: 10px;
+  }
+
+  .campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    font-size: 15px;
+  }
+
+  .campo label {
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    color:#555555;
+  }
+
+  .campo input, select {
+    border: 2px solid #AAAAAA;
+    border-radius: 4px;
+    background: #fff;
+    height: 36px;
+    padding: 0 10px;
+    width: 250px;
+    align-self: center;
+    margin-bottom: 10px;
+  }
+
+  .campo2 {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+
+  .campo2 label {
+    margin-bottom: 5px;
+    margin-left: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    color:#555555;
+  }
+
+  .campo2 input, select {
+    border: 2px solid #AAAAAA;
+    border-radius: 4px;
+    background: #fff;
+    height: 36px;
+    padding: 0 10px;
+    width: 250px;
+    align-self: center;
+    margin-bottom: 10px;
+  }
+
+  .fundo_pagina {
+    background-image: url('./images/fundo.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .fundo_formulario1{
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: rgb(172, 172, 172);
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 400px;
+    padding: 30px;
+    border-top: 5px solid cornflowerblue;
+    }
+
+  .fundo_formulario2{
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: rgb(172, 172, 172);
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 400px;
+    padding: 30px;
+    border-top: 5px solid cornflowerblue;
+    }
+
+  .fundo_formulario3{
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: rgb(172, 172, 172);
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 600px;
+    padding: 30px;
+    border-top: 5px solid cornflowerblue;
+    }
+
+  .fundo_formulario4{
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: rgb(172, 172, 172);
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 600px;
+    padding: 30px;
+    border-top: 5px solid cornflowerblue;
+    }
+    
+  .formulario2 {
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+  }
+  
+  .formulario3 input{
+    border: 2px solid #AAAAAA;
+    scroll-margin-right: 1px;
+    padding: 0px;
+    border-radius: 4px;
+    background: #fff;
+    height: 10px;
+    width: 40px;
+  }
+  
+  form button{
+    background-color: #125ec0; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 250px;
+    margin-right: 20px;
+  }
+  
+  form button:hover{
+    background-color: #176fe2;
+    cursor: pointer;
+  }
+
+  ErrorMessage{
+    color: red;
+  }
+
+
+

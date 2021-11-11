@@ -1,0 +1,183 @@
+* {
+    font-family: 'Roboto Slab';
+  }
+  
+  .fundo_pagina {
+    background-image: url('../../images/fundo.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat:repeat-y;
+    background-attachment:scroll;
+    display: flex;
+    height: 90vh;
+  
+    }
+  
+  .compra_form{
+    height: 600px;
+    width: 700px;
+    border-top: 5px solid cornflowerblue;
+    border-radius: 0px;
+    margin-top: 50px;
+  }
+  
+  .compra_titulo{
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .compra_linha{
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .compra_linha3{
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-right: 260px;
+  }
+    
+  .compra_campo{
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    margin-inline: 10px;
+  }
+    
+  .compra_campo label {
+    margin-bottom: 5px;
+    font-size: 15px;
+    color:#555555;
+  }
+    
+  .compra_campo input {
+    border: 2px solid #AAAAAA;
+    border-radius: 4px;
+    background: #fff;
+    padding: 0 10px;
+    height: 36px;
+    width: 500px;
+  }
+
+
+
+
+
+
+
+  .compra_campo2{
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+  }
+    
+  .compra_campo2 label {
+    margin-bottom: 5px;
+    font-size: 15px;
+    color:#555555;
+  }
+    
+  .compra_campo2 select {
+    border: 2px solid #AAAAAA;
+    border-radius: 4px;
+    background: #fff;
+    padding: 0 10px;
+    height: 36px;
+    width: 240px;
+    margin-right: 260px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  .anexarimagem {
+    background-color: #125ec0; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 250px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  
+  .compra_campo select {
+    border: 2px solid #AAAAAA;
+    border-radius: 4px;
+    background: #fff;
+    padding: 0 10px;
+    height: 36px;
+    width: 240px;
+  }
+
+  .compra_campo2{
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    margin-inline: 10px;
+  }
+    
+  .compra_campo2 label {
+    margin-bottom: 5px;
+    font-size: 15px;
+    color:#555555;
+  }
+  
+  .compra_campo2 input {
+    border: 2px solid #AAAAAA;
+    border-radius: 4px;
+    background: #fff;
+    padding: 0 10px;
+    height: 36px;
+    width: 240px;
+  }
+  
+  form button{
+    background-color: #125ec0; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 250px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  
+  form button:hover{
+    background-color: #176fe2;
+    cursor: pointer;
+  }

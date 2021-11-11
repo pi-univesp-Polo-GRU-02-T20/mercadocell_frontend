@@ -1,0 +1,94 @@
+* {
+    font-family: 'Roboto Slab';
+  }
+  
+  .fundo_pagina {
+    background-image: url('../../images/fundo.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat:repeat-y;
+    background-attachment:scroll;
+    display: flex;
+  
+    }
+  
+  .categoria_form{
+    margin-top: 200px;
+    height: 300px;
+    width: 400px;
+    border-top: 5px solid cornflowerblue;
+    border-radius: 0px;
+    margin-top: 75px;
+  }
+  
+  .categoria_titulo{
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .categoria_linha{
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+    
+  .categoria_campo{
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+  }
+    
+  .categoria_campo label {
+    margin-bottom: 5px;
+    font-size: 15px;
+    color:#555555;
+  }
+    
+  .categoria_campo input {
+    border: 2px solid #AAAAAA;
+    border-radius: 4px;
+    background: #fff;
+    padding: 0 10px;
+    height: 36px;
+    width: 250px;
+  }
+  
+  .categoria_campo select {
+    border: 2px solid #AAAAAA;
+    border-radius: 4px;
+    background: #fff;
+    padding: 0 10px;
+    height: 36px;
+    width: 240px;
+  }
+  
+  .categoria_campo textarea {
+    border: 2px solid #AAAAAA;
+    border-radius: 4px;
+    background: #fff;
+    padding: 0 10px;
+    resize: none;
+    height: 72px;
+    width: 500px;
+  }
+  
+  form button{
+    background-color: #125ec0; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 250px;
+    margin-bottom: 0px;
+    margin-left: 17px;
+  }
+  
+  form button:hover{
+    background-color: #176fe2;
+    cursor: pointer;
+  }
