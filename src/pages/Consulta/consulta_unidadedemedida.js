@@ -51,7 +51,7 @@ export default function Consulta_unidadedemedida() {
       <>
       <Navbar />
         <MaterialTable
-    title="Consulta de Produto"
+    title="Consulta de Unidade de Medida"
     data={entries.data}
     columns={state.columns}
     editable={{
