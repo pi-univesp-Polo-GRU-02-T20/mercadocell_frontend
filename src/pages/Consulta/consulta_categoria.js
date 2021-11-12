@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import './consulta.css';
 import  api  from '../../components/Services/api';
 
-export default function ReportTable() {
+export default function Consulta_categoria() {
 
     var url = "/categoria"
 
