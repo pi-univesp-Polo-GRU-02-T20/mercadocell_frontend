@@ -5,7 +5,7 @@ import { ErrorMessage } from '@hookform/error-message';
 import './cadastro_unidadedemedida.css';
 import  api  from '../../components/Services/api';
 
-export default function Cadastro_unidadedemedida() {
+export default function Consulta_unidadedemedida() {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = (data) => {
