@@ -4,16 +4,13 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
 import './movimentacao_pagamento.css';
 import  api  from '../../components/Services/api';
-import Listar_categoria from '../../components/Listas/listar_categoria';
-import Listar_subcategoria from '../../components/Listas/listar_subcategoria';
-import Listar_unidadedemedida from '../../components/Listas/listar_unidadedemedida';
 
 export default function Movimentacao_pagamento() {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = (data) => { 
     console.log(data);
-    api.post("/produto", data);
+    api.post("/pagamentoOperacao", data);
   }
 
   return (

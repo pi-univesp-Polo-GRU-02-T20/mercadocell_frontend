@@ -2,11 +2,11 @@ import Navbar from '../../components/Menu/Navbar';
 import MaterialTable from "material-table";
 import React, { useEffect, useState } from "react";
 import './consulta.css';
-import axios from "axios";
+import  api  from '../../components/Services/api';
 
 export default function Consulta_UnidadeMedida() {
 
-    var url = "http://localhost:8080/produto/"
+    var url = "/produto"
 
     const [entries, setEntries] = useState({
         data: [
@@ -27,8 +27,8 @@ export default function Consulta_UnidadeMedida() {
     });
 
     useEffect(() => {
-        axios
-        .get("http://localhost:8080/produto")
+        api
+        .get(url)
         .then(response => {
         let data = [];
     response.data.forEach(el => {
@@ -61,8 +61,8 @@ export default function Consulta_UnidadeMedida() {
             resolve();
             const data = [...entries.data];
             data[data.indexOf(oldData)] = newData;
-            axios
-                .put("http://localhost:8080/produto", newData, {
+            api
+                .put(url, newData, {
                     params: {
                       codProduto: entries.data[0].codProduto
                     }
@@ -77,8 +77,8 @@ export default function Consulta_UnidadeMedida() {
             resolve();
             const data = [...entries.data];
             data.splice(data.indexOf(oldData), 1);
-            axios
-            .delete(url + oldData.codProduto)
+            api
+            .delete(url + "/" + oldData.codProduto)
                 .then(res => console.log(res.data));
             setEntries({ ...entries, data });
         }, 600);

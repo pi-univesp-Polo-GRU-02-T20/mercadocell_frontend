@@ -1,118 +1,89 @@
+import React from 'react';
 import Navbar from '../../components/Menu/Navbar';
-import MaterialTable from "material-table";
-import React, { useEffect, useState } from "react";
-import './consulta.css';
-import axios from "axios";
+import { useForm } from "react-hook-form";
+import { ErrorMessage } from '@hookform/error-message';
+import './cadastro_unidadedemedida.css';
+import  api  from '../../components/Services/api';
 
-export default function Consulta_UnidadeMedida() {
+export default function Cadastro_categoria() {
 
-    var url = "http://localhost:8080/unidadeMedida/"
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+    api.post("/UnidadeMedida");
+  }
 
-    const [entries, setEntries] = useState({
-        data: [
-            {
-                codUnidadeMedida: "",
-                nomeUnidadeMedida: "",
-                siglaUnidadeMedida: ""
-            }
-        ]
-    });
+  return (
+  <>
+  <Navbar />
+  
+  <div className="fundo_pagina">
 
-    const [state] = React.useState({
-        columns: [
-            { title: "Código da Unidade de Medida", field: "codUnidadeMedida", editable:false},
-            { title: "Nome da Unidade de Medida", field: "nomeUnidadeMedida" },
-            { title: "Sigla da Unidade de Medida", field: "siglaUnidadeMedida" }
-        ]
-    });
+    <form className="udmedida_form" onSubmit = { handleSubmit(onSubmit) } >
 
-    useEffect(() => {
-        axios
-        .get("http://localhost:8080/unidadeMedida")
-        .then(response => {
-        let data = [];
-    response.data.forEach(el => {
-      data.push(
-        {
-        codUnidadeMedida: el.codUnidadeMedida,
-        nomeUnidadeMedida: el.nomeUnidadeMedida, 
-        siglaUnidadeMedida: el.siglaUnidadeMedida
-        }
-    );
-});
-    setEntries({ data: data });
-})
-.catch(function(error) {
-        console.log(error);
-    });
-}, []);
+      <div className="udmedida_titulo">
+        <h1>Cadastrar</h1>
+        <h1>Unidade de Medida</h1>
+      </div>
 
-    return (
-      <>
-      <Navbar />
-        <MaterialTable
-    title="Consulta de Unidade de Medida"
-    data={entries.data}
-    columns={state.columns}
-    editable={{
-        onRowUpdate: (newData, oldData) =>
-        new Promise(resolve => {
-            setTimeout(() => {
-            resolve();
-            const data = [...entries.data];
-            data[data.indexOf(oldData)] = newData;
-            axios
-                .put("http://localhost:8080/unidadeMedida", newData, {
-                    params: {
-                        codUnidadeMedida: entries.data[0].codUnidadeMedida
-                    }
-                })
-                .then(res => console.log(res.data));
-            setEntries({ ...entries, data });
-        }, 600);
-    }),
-        onRowDelete: oldData =>
-        new Promise(resolve => {
-            setTimeout(() => {
-            resolve();
-            const data = [...entries.data];
-            data.splice(data.indexOf(oldData), 1);
-            axios
-            .delete(url + oldData.codUnidadeMedida)
-                .then(res => console.log(res.data));
-            setEntries({ ...entries, data });
-        }, 600);
-    })
-    }}
-    localization={{
-      body: {
-        emptyDataSourceMessage: 'Nenhum registro para exibir',
-        addTooltip: "Adicionar",
-        deleteTooltip: "Deletar",
-        editTooltip: "Editar",
-        editRow: {
-          saveTooltip: "Salvar",
-          cancelTooltip: "Cancelar",
-          deleteText: "Tem certeza que deseja deletar este registro?"
-        },
-      },
-      header: {
-        actions: 'Ações'
-      },
-      toolbar: {
-        searchTooltip: 'Pesquisar',
-        searchPlaceholder: 'Pesquisar'
-      },
-      pagination: {
-        labelRowsSelect: 'linhas',
-        labelDisplayedRows: '{count} de {from}-{to}',
-        firstTooltip: 'Primeira página',
-        previousTooltip: 'Página anterior',
-        nextTooltip: 'Próxima página',
-        lastTooltip: 'Última página'
-      }
-    }}
-    />
-    </>
-);
+      <div className="udmedida_linha">
+
+        <div className="udmedida_campo">
+
+          <label htmlFor="nomeUnidadeMedida"> Nome da Unidade de Medida</label>
+          <input 
+                 type="text" 
+                 id="nomeUnidadeMedida" 
+                 name="nomeUnidadeMedida"
+                 {...register("nomeUnidadeMedida", {
+                  required: 'Preenchimento Obrigatório',
+                  minLength: {
+                    value: 2,
+                    message: 'No minimo dois caracteres' 
+                  }
+                })}
+           />
+        
+        <ErrorMessage errors={errors} name="nomeUnidadeMedida">
+        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
+        </ErrorMessage>
+
+        </div>
+
+      </div>
+
+      <div className="udmedida_linha">
+
+        <div className="udmedida_campo">
+
+          <label htmlFor="siglaUnidadeMedida"> Sigla da Unidade de Medida</label>
+          <input 
+                 type="text" 
+                 id="siglaUnidadeMedida" 
+                 name="siglaUnidadeMedida"
+                 {...register("siglaUnidadeMedida", {
+                  required: 'Preenchimento Obrigatório',
+                  minLength: {
+                    value: 2,
+                    message: 'No minimo dois caracteres' 
+                  }
+                })}
+           />
+        
+        <ErrorMessage errors={errors} name="siglaUnidadeMedida">
+        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
+        </ErrorMessage>
+
+        </div>
+
+      </div>
+
+          <button type="submit">Cadastrar</button>
+
+         
+    </form>
+
+  </div>
+  </>
+  );
 }
