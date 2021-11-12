@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../../components/Menu/Navbar';
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
-import './cadastro_unidadedemedida.css';
+import './consulta.css';
 import  api  from '../../components/Services/api';
 
 export default function Consulta_unidadedemedida() {
