@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import './consulta.css';
 import  api  from '../../components/Services/api';
 
-export default function Consulta_UnidadeMedida() {
+export default function Consulta_produto() {
 
     var url = "/produto"
 
