@@ -28,7 +28,6 @@ import Consulta_usuario from './Consulta/consulta_usuario';
 
 import Movimentacao_compra from './Movimentacao/movimentacao_compra';
 import Movimentacao_venda from './Movimentacao/movimentacao_venda';
-import Movimentacao_recebimento from './Movimentacao/movimentacao_recebimento';
 import Movimentacao_pagamento from './Movimentacao/movimentacao_pagamento';
 import Consulta_operacao from './Consulta/consulta_operacao';
 
@@ -59,7 +58,6 @@ const PagesRoot = () => (
           
           <RoutesPrivate path='/movimentacao-compra' component={Movimentacao_compra} />
           <RoutesPrivate path='/movimentacao-venda' component={Movimentacao_venda} />
-          <RoutesPrivate path='/movimentacao-recebimento' component={Movimentacao_recebimento} />
           <RoutesPrivate path='/movimentacao-pagamento' component={Movimentacao_pagamento} />
           <RoutesPrivate path='/sign-up' component={Home} />
         </Switch>
