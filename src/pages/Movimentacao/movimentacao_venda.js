@@ -4,13 +4,18 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
 import './movimentacao_compra.css';
 import  api  from '../../components/Services/api';
-import Listar_pagamento from '../../components/Listas/listar_unidadedemedida';
+import Listar_pagamento from '../../components/Listas/listar_pagamento';
+import Listar_pessoa from '../../components/Listas/listar_pessoa';
 
 export default function Movimentacao_compra() {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = (data) => { 
-    data.tipoOperacao = "Venda";
+  const onSubmit = (data) => {
+    data.codOperacao = 0; 
+    data.tipoOperacao = "V";
+    data.pago = false;
+    data.dataOperacao = "2021-05-02 19:52:17";
+    
     console.log(data);
     api.post("/operacao", data);
   }
@@ -66,8 +71,8 @@ export default function Movimentacao_compra() {
                   required: 'Preenchimento Obrigatório',
                 })}
            >
-             <option value="Pedido" key="pedido">Pedido</option>
-             <option value="Orçamento" key="orcamento">Orçamento</option>
+             <option value="P" key="pedido">Pedido</option>
+             <option value="O" key="orcamento">Orçamento</option>
           </select>
                              
         <ErrorMessage errors={errors} name="tipoStatusOperacao">
@@ -83,13 +88,9 @@ export default function Movimentacao_compra() {
        type="datetime-local" 
        id="dataOperacao" 
        name="dataOperacao"
+       step="1"
        {...register("dataOperacao", {
-        required: 'Preenchimento Obrigatório',
-        minLength: {
-          value: 2,
-          message: 'No minimo dois caracteres' 
-        }
-      })}
+        required: 'Preenchimento Obrigatório'})}
  />
 
 <ErrorMessage errors={errors} name="nomeSubCategoria">
@@ -104,7 +105,24 @@ export default function Movimentacao_compra() {
 
 
 
+    <div className="compra_linha">  
+    <div className="compra_campo2"> 
 
+    <label htmlFor="pessoa.codPessoa">Código de Pessoa</label>
+
+    <select 
+           type="text" 
+           id="pessoa.codPessoa" 
+           name="pessoa.codPessoa"
+           {...register("pessoa.codPessoa")}
+     >
+
+      <Listar_pessoa />
+
+    </select>
+
+    </div>
+    </div>
 
 
 
@@ -115,25 +133,20 @@ export default function Movimentacao_compra() {
 
     <div className="compra_campo2"> 
 
-    <label htmlFor="codTipoPagamento">Tipo de pagamento</label>
+    <label htmlFor="tipoPagamento.codTipoPagamento">Tipo de pagamento</label>
     <select 
            type="text" 
-           id="codTipoPagamento" 
-           name="codTipoPagamento"
-           {...register("codTipoPagamento")}
+           id="tipoPagamento.codTipoPagamento" 
+           name="tipoPagamento.codTipoPagamento"
+           {...register("tipoPagamento.codTipoPagamento")}
      >
- 
 
-    <option value="Crédito" key="credito"> Crédito </option>
+     
     <Listar_pagamento />
-
-
-
-
 
     </select>
                        
-  <ErrorMessage errors={errors} name="codTipoPagamento">
+  <ErrorMessage errors={errors} name="tipoPagamento.codTipoPagamento">
   {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
   </ErrorMessage> 
     
@@ -195,18 +208,14 @@ export default function Movimentacao_compra() {
  type="number"
  min="1" 
  step="any" 
- id="nomeSubCategoria" 
- name="nomeSubCategoria"
- {...register("nomeSubCategoria", {
+ id="valorTotal" 
+ name="valorTotal"
+ {...register("valorTotal", {
   required: 'Preenchimento Obrigatório',
-  minLength: {
-    value: 2,
-    message: 'No minimo dois caracteres' 
-  }
 })}
 />
 
-<ErrorMessage errors={errors} name="nomeSubCategoria">
+<ErrorMessage errors={errors} name="valorTotal">
 {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
 </ErrorMessage>
 

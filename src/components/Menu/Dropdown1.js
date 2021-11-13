@@ -34,6 +34,11 @@ const MenuItems1 = [
     cName: 'dropdown-link'
   },
   {
+    title: 'Tipo de Pagamento',
+    path: '/cadastro-tipopagamento',
+    cName: 'dropdown-link'
+  },
+  {
     title: 'Usuário',
     path: '/cadastro-usuario',
     cName: 'dropdown-link'

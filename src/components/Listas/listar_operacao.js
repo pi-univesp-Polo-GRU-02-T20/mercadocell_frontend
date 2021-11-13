@@ -21,7 +21,7 @@ import api from '../Services/api'
       <>
               {operacoes.map(filme => (
               <option id="codOperacao" name="codOperacao" value={filme.codOperacao} key={filme.codOperacao}>
-                {filme.codOperacao} + "-" + {filme.codNotaFiscal}
+                Nº{filme.codOperacao}_______NF:{filme.codNotaFiscal}
               </option>
               ))}
       </>

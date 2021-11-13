@@ -8,7 +8,7 @@ import api from '../Services/api'
     }
   
     async componentDidMount() {
-      const response = await api.get('/categoria');
+      const response = await api.get('/tipoPagamento');
   
       this.setState({ pagamentos: response.data });
     }

@@ -35,11 +35,7 @@ export default function Cadastro_usuario() {
                  id="nomePessoa" 
                  name="nomePessoa"
                  {...register("nomePessoa", {
-                  required: 'Preenchimento Obrigatório',
-                  minLength: {
-                    value: 2,
-                    message: 'No minimo dois caracteres' 
-                  }
+                  required: 'Preenchimento Obrigatório'
                 })}
            />
         
@@ -55,19 +51,8 @@ export default function Cadastro_usuario() {
                  type="text" 
                  id="codPessoa" 
                  name="codPessoa"
-                 {...register("codPessoa", {
-                  required: 'Preenchimento Obrigatório',
-                  minLength: {
-                    value: 2,
-                    message: 'No minimo dois caracteres' 
-                  }
-                })}
            />
         
-        <ErrorMessage errors={errors} name="codPessoa">
-        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-        </ErrorMessage>
-
         </div>
 
       </div>

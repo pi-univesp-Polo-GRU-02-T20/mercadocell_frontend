@@ -10,7 +10,7 @@ export default function Cadastro_unidadedemedida() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    api.post("/UnidadeMedida");
+    api.post("/unidadeMedida");
   }
 
   return (

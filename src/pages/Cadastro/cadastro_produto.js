@@ -11,7 +11,7 @@ import Listar_unidadedemedida from '../../components/Listas/listar_unidadedemedi
 export default function Cadastro_produto() {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = (data) => { 
+  const onSubmit = (data) => {
     console.log(data);
     api.post("/produto", data);
   }
@@ -39,10 +39,6 @@ export default function Cadastro_produto() {
                  name="nomeProduto"
                  {...register("nomeProduto", {
                   required: 'Preenchimento Obrigatório',
-                  minLength: {
-                    value: 2,
-                    message: 'No minimo dois caracteres' 
-                  }
                 })}
            />
         
@@ -65,10 +61,6 @@ export default function Cadastro_produto() {
                  name="subCategoria.categoria.codCategoria"
                  {...register("subCategoria.categoria.codCategoria", {
                   required: 'Preenchimento Obrigatório',
-                  minLength: {
-                    value: 2,
-                    message: 'No minimo dois caracteres'
-                  }
                 })}
            >
              <Listar_categoria />
@@ -88,11 +80,7 @@ export default function Cadastro_produto() {
        id="subCategoria.codSubCategoria" 
        name="subCategoria.codSubCategoria"
        {...register("subCategoria.codSubCategoria", {
-        required: 'Preenchimento Obrigatório',
-        minLength: {
-          value: 2,
-          message: 'No minimo dois caracteres' 
-        }
+        required: 'Preenchimento Obrigatório'
       })}
  >
    <Listar_subcategoria />
@@ -111,23 +99,19 @@ export default function Cadastro_produto() {
 
       <div className="produto_campo">
 
-          <label htmlFor="codUnidadeMedida">Unidade de Medida</label>
+          <label htmlFor="unidadeMedida.codUnidadeMedida">Unidade de Medida</label>
           <select 
                  type="text" 
-                 id="codUnidadeMedida" 
-                 name="codUnidadeMedida"
-                 {...register("codUnidadeMedida", {
+                 id="unidadeMedida.codUnidadeMedida" 
+                 name="unidadeMedida.codUnidadeMedida"
+                 {...register("unidadeMedida.codUnidadeMedida", {
                   required: 'Preenchimento Obrigatório',
-                  minLength: {
-                    value: 2,
-                    message: 'No minimo dois caracteres'
-                  }
                 })}
            >
              <Listar_unidadedemedida />
           </select>
                              
-        <ErrorMessage errors={errors} name="codUnidadeMedida">
+        <ErrorMessage errors={errors} name="unidadeMedida.codUnidadeMedida">
         {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
         </ErrorMessage>
 
@@ -144,16 +128,10 @@ export default function Cadastro_produto() {
                  type="text" 
                  id="descricaoProduto" 
                  name="descricaoProduto"
-                 {...register("subcategoriaProduto", {
-                  required: 'Preenchimento Obrigatório',
-                  minLength: {
-                    value: 2,
-                    message: 'No minimo dois caracteres' 
-                  }
-                })}
+                 {...register("descricaoProduto")}
            />
-        
-        <ErrorMessage errors={errors} name="subcategoriaProduto">
+
+        <ErrorMessage errors={errors} name="descricaoProduto">
         {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
         </ErrorMessage>
 

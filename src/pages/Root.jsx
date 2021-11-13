@@ -14,8 +14,9 @@ import Cadastro_unidadedemedida from './Cadastro/cadastro_unidadedemedida';
 import Cadastro_produto from './Cadastro/cadastro_produto';
 import Cadastro_pessoafisica from './Cadastro/cadastro_pessoafisica';
 import Cadastro_pessoajuridica from './Cadastro/cadastro_pessoajuridica';
-import Cadastro_usuario from './Cadastro/cadastro_usuario';
 import Cadastro_tipopagamento from './Cadastro/cadastro_tipopagamento';
+import Cadastro_usuario from './Cadastro/cadastro_usuario';
+
 
 import Consulta_categoria from './Consulta/consulta_categoria';
 import Consulta_subcategoria from './Consulta/consulta_subcategoria';
@@ -23,8 +24,9 @@ import Consulta_unidadedemedida from './Consulta/consulta_unidadedemedida';
 import Consulta_produto from './Consulta/consulta_produto';
 import Consulta_pessoafisica from './Consulta/consulta_pessoafisica';
 import Consulta_pessoajuridica from './Consulta/consulta_pessoajuridica';
+import Consulta_tipopagamento from './Consulta/consulta_tipopagamento.js';
 import Consulta_usuario from './Consulta/consulta_usuario';
-//import Consulta_tipopagamento from './Consulta/consulta_tipopagamento.js';
+
 
 import Movimentacao_compra from './Movimentacao/movimentacao_compra';
 import Movimentacao_venda from './Movimentacao/movimentacao_venda';
@@ -44,8 +46,9 @@ const PagesRoot = () => (
           <RoutesPrivate path='/cadastro-produto' component={Cadastro_produto} />
           <RoutesPrivate path='/cadastro-pessoafisica' component={Cadastro_pessoafisica} />
           <RoutesPrivate path='/cadastro-pessoajuridica' component={Cadastro_pessoajuridica} />
-          <RoutesPrivate path='/cadastro-usuario' component={Cadastro_usuario} />
           <RoutesPrivate path='/cadastro-tipopagamento' component={Cadastro_tipopagamento} />
+          <RoutesPrivate path='/cadastro-usuario' component={Cadastro_usuario} />
+          
           
           <RoutesPrivate path='/consulta-categoria' component={Consulta_categoria} />
           <RoutesPrivate path='/consulta-subcategoria' component={Consulta_subcategoria} />
@@ -53,6 +56,7 @@ const PagesRoot = () => (
           <RoutesPrivate path='/consulta-produto' component={Consulta_produto} />
           <RoutesPrivate path='/consulta-pessoafisica' component={Consulta_pessoafisica} />
           <RoutesPrivate path='/consulta-pessoajuridica' component={Consulta_pessoajuridica} />
+          <RoutesPrivate path='/consulta-tipopagamento' component={Consulta_tipopagamento} />
           <RoutesPrivate path='/consulta-usuario' component={Consulta_usuario} />
           <RoutesPrivate path='/consulta-operacao' component={Consulta_operacao} />
           

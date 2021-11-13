@@ -62,6 +62,7 @@ export default function Cadastro_pessoafisica() {
                  type="date" 
                  id="dataNascimento" 
                  name="dataNascimento"
+                 step="1"
                  {...register("dataNascimento", {
                   required: 'Preenchimento Obrigatório',
                   minLength: {
@@ -79,17 +80,14 @@ export default function Cadastro_pessoafisica() {
 
         <div className="pessoafisica_campo2">
 
-        <label htmlFor="estadoNaturalidade"> Naturalidade </label>
+        <label htmlFor="estadoNaturalidade"> Naturalidade (UF) </label>
           <input 
                  type="text" 
                  id="estadoNaturalidade" 
                  name="estadoNaturalidade"
+                 maxlength="2"
                  {...register("estadoNaturalidade", {
                   required: 'Preenchimento Obrigatório',
-                  minLength: {
-                    value: 2,
-                    message: 'No minimo dois caracteres' 
-                  }
                 })}
            />
         

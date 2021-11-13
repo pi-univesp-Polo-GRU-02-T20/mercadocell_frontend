@@ -4,25 +4,23 @@ import React, { useEffect, useState } from "react";
 import './consulta.css';
 import  api  from '../../components/Services/api';
 
-export default function Consulta_unidadedemedida() {
+export default function Consulta_categoria() {
 
-    var url = "/unidadeMedida"
+    var url = "/tipoPagamento"
 
     const [entries, setEntries] = useState({
         data: [
             {
-                codUnidadeMedida: "",
-                nomeUnidadeMedida: "",
-                siglaUnidadeMedida: ""
+                codTipoPagamento: "",
+                nomeCategoria: ""
             }
         ]
     });
 
     const [state] = React.useState({
         columns: [
-            { title: "Código da Unidade de Medida", field: "codUnidadeMedida", editable:false},
-            { title: "Nome da Unidade de Medida", field: "nomeUnidadeMedida" },
-            { title: "Sigla da Unidade de Medida", field: "siglaUnidadeMedida" }
+            { title: "Código do Tipo de Pagamento", field: "codTipoPagamento", editable:false},
+            { title: "Nome do Tipo de Pagamento", field: "nomeTipoPagamento" },
         ]
     });
 
@@ -32,11 +30,10 @@ export default function Consulta_unidadedemedida() {
         .then(response => {
         let data = [];
     response.data.forEach(el => {
-      data.push(
+        data.push(
         {
-        codUnidadeMedida: el.codUnidadeMedida,
-        nomeUnidadeMedida: el.nomeUnidadeMedida, 
-        siglaUnidadeMedida: el.siglaUnidadeMedida
+            codTipoPagamento: el.codTipoPagamento,
+            nomeTipoPagamento: el.nomeTipoPagamento
         }
     );
 });
@@ -51,7 +48,7 @@ export default function Consulta_unidadedemedida() {
       <>
       <Navbar />
         <MaterialTable
-    title="Consulta de Unidade de Medida"
+    title="Consulta de Tipo de Pagamento"
     data={entries.data}
     columns={state.columns}
     editable={{
@@ -64,7 +61,7 @@ export default function Consulta_unidadedemedida() {
             api
                 .put(url, newData, {
                     params: {
-                      codUnidadeMedida: entries.data[0].codUnidadeMedida
+                        codTipoPagamento: entries.data[0].codTipoPagamento
                     }
                 })
                 .then(res => console.log(res.data));
@@ -78,7 +75,7 @@ export default function Consulta_unidadedemedida() {
             const data = [...entries.data];
             data.splice(data.indexOf(oldData), 1);
             api
-            .delete(url + "/" + oldData.codUnidadeMedida)
+            .delete(url + "/" + oldData.codTipoPagamento)
                 .then(res => console.log(res.data));
             setEntries({ ...entries, data });
         }, 600);
