@@ -47,6 +47,16 @@ const MenuItems = [
     title: 'Op. Compra Venda',
     path: '/consulta-operacao',
     cName: 'dropdown-link'
+  },
+  {
+    title: 'Pgto. Compra',
+    path: '/consulta-pagamentocompra',
+    cName: 'dropdown-link'
+  },
+  {
+    title: 'Pgto. Venda',
+    path: '/consulta-pagamentovenda',
+    cName: 'dropdown-link'
   }
 ];
 

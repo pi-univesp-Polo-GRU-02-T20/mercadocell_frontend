@@ -27,7 +27,8 @@ import Consulta_pessoajuridica from './Consulta/consulta_pessoajuridica';
 import Consulta_tipopagamento from './Consulta/consulta_tipopagamento.js';
 import Consulta_usuario from './Consulta/consulta_usuario';
 import Consulta_operacao from './Consulta/consulta_operacao';
-import Consulta_pagamento from './Consulta/consulta_pagamento';
+import Consulta_pagamentocompra from './Consulta/consulta_pagamentocompra';
+import Consulta_pagamentovenda from './Consulta/consulta_pagamentovenda';
 
 
 import Movimentacao_compra from './Movimentacao/movimentacao_compra';
@@ -61,7 +62,8 @@ const PagesRoot = () => (
           <RoutesPrivate path='/consulta-tipopagamento' component={Consulta_tipopagamento} />
           <RoutesPrivate path='/consulta-usuario' component={Consulta_usuario} />
           <RoutesPrivate path='/consulta-operacao' component={Consulta_operacao} />
-          <RoutesPrivate path='/consulta-pagamento' component={Consulta_pagamento} />
+          <RoutesPrivate path='/consulta-pagamentocompra' component={Consulta_pagamentocompra} />
+          <RoutesPrivate path='/consulta-pagamentovenda' component={Consulta_pagamentovenda} />
           
           <RoutesPrivate path='/movimentacao-compra' component={Movimentacao_compra} />
           <RoutesPrivate path='/movimentacao-venda' component={Movimentacao_venda} />

@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react";
 import './consulta.css';
 import  api  from '../../components/Services/api';
 
-export default function Consulta_pagamento() {
+export default function Consulta_pagamentovenda() {
 
-    var url = "/pagamentoOperacao?tipoOperacao=C"
+    var url = "/pagamentoOperacao?tipoOperacao=V"
 
     const [entries, setEntries] = useState({
         data: [
@@ -60,7 +60,7 @@ export default function Consulta_pagamento() {
       <>
       <Navbar />
         <MaterialTable
-    title="Consulta de Pagamento"
+    title="Consulta de Pagamento - Venda"
     data={entries.data}
     columns={state.columns}
     editable={{

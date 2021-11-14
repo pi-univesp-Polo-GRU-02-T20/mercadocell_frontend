@@ -4,39 +4,31 @@ import React, { useEffect, useState } from "react";
 import './consulta.css';
 import  api  from '../../components/Services/api';
 
-export default function Consulta_operacao() {
+export default function Consulta_pagamentocompra() {
 
-    var url = "/operacao"
+    var url = "/pagamentoOperacao?tipoOperacao=C"
 
     const [entries, setEntries] = useState({
         data: [
             {
-                codNotaFiscal: "",
+                codPagamento: "",
                 codOperacao: "",
-                dataOperacao: "",
-                pago: "",
-                nomePessoa: "",
-                tipoOperacao: "",
-                nomeTipoPagamento: "",
-                tipoStatusOperacao: "",
-                quantidadeParcela: "",
-                valorTotal:""
+                codNotaFiscal: "",
+                dataPagamento: "",
+                dataVencimento:"",
+                valorPagamento:""
             }
         ]
     });
 
     const [state] = React.useState({
         columns: [
-
-            { title: "Código da Operacão", field: "codOperacao", editable:false },
+            { title: "Código do Pagamento", field: "codPagamento", editable:false},
+            { title: "Código da Operação", field: "codOperacao" },
             { title: "Código da NF", field: "codNotaFiscal" },
-            { title: "Data da Operação", field: "dataOperacao" },
-            { title: "Nome", field: "nomePessoa" },
-            { title: "Tipo de Operação", field: "tipoOperacao" },
-            { title: "Tipo de Pagamento", field: "nomeTipoPagamento" },
-            { title: "Status Op", field: "tipoStatusOperacao" },
-            { title: "Qtd. Parcelas", field: "quantidadeParcela" },
-            { title: "Total", field: "valorTotal" }
+            { title: "Data de Pagamento", field: "dataPagamento" },
+            { title: "Data de Vencimento", field: "dataVencimento" },
+            { title: "Valor do Pagamento", field: "valorPagamento" }
         ]
     });
 
@@ -48,20 +40,12 @@ export default function Consulta_operacao() {
     response.data.forEach(el => {
       data.push(
         {
-            
-        codNotaFiscal: el.codNotaFiscal,
-        codOperacao: el.codOperacao,
-        dataOperacao: el.dataOperacao,
-        pago: el.pago,
-        codPessoa: el.pessoa.codPessoa,
-        nomePessoa: el.pessoa.nomePessoa,
-        tipoOperacao: el.tipoOperacao,
-        codTipoPagamento: el.tipoPagamento.codTipoPagamento,
-        nomeTipoPagamento: el.tipoPagamento.nomeTipoPagamento,
-        tipoStatusOperacao: el.tipoStatusOperacao,
-        quantidadeParcela: el.quantidadeParcela,
-        valorTotal: el.valorTotal
-    
+        codPagamento: el.codPagamento,
+        codOperacao: el.operacao.codOperacao, 
+        codNotaFiscal: el.operacao.codNotaFiscal,
+        dataPagamento: el.dataPagamento,
+        dataVecimento: el.dataVencimento,
+        valorPagamento: el.valorPagamento
         }
     );
 });
@@ -76,7 +60,7 @@ export default function Consulta_operacao() {
       <>
       <Navbar />
         <MaterialTable
-    title="Consulta de Operação"
+    title="Consulta de Pagamento - Compra"
     data={entries.data}
     columns={state.columns}
     editable={{
@@ -89,7 +73,7 @@ export default function Consulta_operacao() {
             api
                 .put(url, newData, {
                     params: {
-                        codOperacao: entries.data[0].codOperacao
+                       codPagamento: entries.data[0].codPagamento
                     }
                 })
                 .then(res => console.log(res.data));
@@ -103,7 +87,7 @@ export default function Consulta_operacao() {
             const data = [...entries.data];
             data.splice(data.indexOf(oldData), 1);
             api
-            .delete(url + "/" + oldData.codOperacao)
+            .delete(url + "/" + oldData.codPagamento)
                 .then(res => console.log(res.data));
             setEntries({ ...entries, data });
         }, 600);
