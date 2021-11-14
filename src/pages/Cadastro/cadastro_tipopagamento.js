@@ -12,6 +12,8 @@ export default function Cadastro_tipopagamento() {
     data.codTipoPagamento = 0
     console.log(data);
     api.post("/tipoPagamento", data);
+    alert("Cadastro Realizado");
+    window.location.reload()
   }
 
   return (

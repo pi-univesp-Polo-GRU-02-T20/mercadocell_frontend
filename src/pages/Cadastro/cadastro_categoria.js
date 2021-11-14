@@ -11,6 +11,8 @@ export default function Cadastro_categoria() {
   const onSubmit = (data) => { 
     console.log(data);
     api.post("/categoria", data);
+    alert("Cadastro Realizado");
+    window.location.reload()
   }
 
   return (

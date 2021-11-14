@@ -11,6 +11,8 @@ export default function Cadastro_usuario() {
   const onSubmit = (data) => { 
     console.log(data);
     api.post("/usuario", data);
+    alert("Cadastro Realizado");
+    window.location.reload()
   }
 
   return (

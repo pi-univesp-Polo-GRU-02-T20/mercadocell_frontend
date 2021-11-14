@@ -19,6 +19,8 @@ export default function Movimentacao_compra() {
     
     console.log(data);
     api.post("/operacao", data);
+    alert("Cadastro Realizado");
+    window.location.reload()
   }
 
   return (
@@ -43,11 +45,7 @@ export default function Movimentacao_compra() {
                  id="codNotaFiscal" 
                  name="codNotaFiscal"
                  {...register("codNotaFiscal", {
-                  required: 'Preenchimento Obrigatório',
-                  minLength: {
-                    value: 2,
-                    message: 'No minimo dois caracteres' 
-                  }
+                  required: 'Preenchimento Obrigatório'
                 })}
            />
         
@@ -72,6 +70,7 @@ export default function Movimentacao_compra() {
                   required: 'Preenchimento Obrigatório',
                 })}
            >
+             <option hidden disabled selected value> Selecione um status </option>
              <option value="P" key="pedido">Pedido</option>
              <option value="O" key="orcamento">Orçamento</option>
           </select>
@@ -117,7 +116,7 @@ export default function Movimentacao_compra() {
            name="pessoa.codPessoa"
            {...register("pessoa.codPessoa")}
      >
-
+      <option hidden disabled selected value> Selecione um código </option>
       <Listar_pessoa />
 
     </select>
@@ -142,7 +141,7 @@ export default function Movimentacao_compra() {
            {...register("tipoPagamento.codTipoPagamento")}
      >
 
-     
+    <option hidden disabled selected value> Selecione uma opção </option>
     <Listar_pagamento />
 
     </select>

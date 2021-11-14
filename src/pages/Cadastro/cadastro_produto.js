@@ -14,6 +14,8 @@ export default function Cadastro_produto() {
   const onSubmit = (data) => {
     console.log(data);
     api.post("/produto", data);
+    alert("Cadastro Realizado");
+    window.location.reload()
   }
 
   return (
@@ -63,6 +65,7 @@ export default function Cadastro_produto() {
                   required: 'Preenchimento Obrigatório',
                 })}
            >
+             <option hidden disabled selected value> Selecione uma categoria </option>
              <Listar_categoria />
           </select>
                              
@@ -83,6 +86,7 @@ export default function Cadastro_produto() {
         required: 'Preenchimento Obrigatório'
       })}
  >
+   <option hidden disabled selected value> Selecione uma subcategoria </option>
    <Listar_subcategoria />
 </select>
 
@@ -108,6 +112,7 @@ export default function Cadastro_produto() {
                   required: 'Preenchimento Obrigatório',
                 })}
            >
+             <option hidden disabled selected value> Selecione uma unidade </option>
              <Listar_unidadedemedida />
           </select>
                              

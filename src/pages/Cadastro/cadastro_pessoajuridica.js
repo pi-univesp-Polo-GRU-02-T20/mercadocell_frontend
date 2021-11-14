@@ -11,6 +11,8 @@ export default function Cadastro_pessoajuridica() {
   const onSubmit = (data) => { 
     console.log(data);
     api.post("/pessoaJuridica", data);
+    alert("Cadastro Realizado");
+    window.location.reload()
   }
 
   return (

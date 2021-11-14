@@ -15,6 +15,8 @@ export default function Movimentacao_pagamento() {
     data.dataPagamento = moment(data.dataPagamento).format("yyyy-MM-DD HH:mm:ss");
     data.dataVencimento = moment(data.dataVencimento).format("yyyy-MM-DD HH:mm:ss");
     api.post("/pagamentoOperacao", data);
+    alert("Cadastro Realizado");
+    window.location.reload()
   }
 
   return (

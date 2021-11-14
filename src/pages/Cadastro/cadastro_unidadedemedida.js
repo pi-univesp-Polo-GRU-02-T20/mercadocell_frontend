@@ -11,6 +11,8 @@ export default function Cadastro_unidadedemedida() {
   const onSubmit = (data) => {
     console.log(data);
     api.post("/unidadeMedida");
+    alert("Cadastro Realizado");
+    window.location.reload()
   }
 
   return (

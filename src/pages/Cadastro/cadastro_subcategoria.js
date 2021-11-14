@@ -12,6 +12,8 @@ export default function Cadastro_subcategoria() {
   const onSubmit = (data) => { 
     console.log(data);
     api.post("/subCategoria", data);
+    alert("Cadastro Realizado");
+    window.location.reload()
   }
 
   return (
