@@ -16,12 +16,13 @@ import api from '../Services/api'
     render() {
   
       const { operacoes } = this.state;
+      const a = "          "
       
       return (
       <>
               {operacoes.map(filme => (
               <option id="codOperacao" name="codOperacao" value={filme.codOperacao} key={filme.codOperacao}>
-                Nº{filme.codOperacao}_______NF:{filme.codNotaFiscal}
+                Nº{filme.codOperacao} &emsp;&emsp;&emsp; NF:{filme.codNotaFiscal}
               </option>
               ))}
       </>

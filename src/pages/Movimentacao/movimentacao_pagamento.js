@@ -5,12 +5,15 @@ import { ErrorMessage } from '@hookform/error-message';
 import './movimentacao_pagamento.css';
 import  api  from '../../components/Services/api';
 import Listar_operacao from '../../components/Listas/listar_operacao';
+import moment from 'moment';
 
 export default function Movimentacao_pagamento() {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = (data) => { 
     console.log(data);
+    data.dataPagamento = moment(data.dataPagamento).format("yyyy-MM-DD HH:mm:ss");
+    data.dataVencimento = moment(data.dataVencimento).format("yyyy-MM-DD HH:mm:ss");
     api.post("/pagamentoOperacao", data);
   }
 
@@ -30,17 +33,13 @@ export default function Movimentacao_pagamento() {
 
       <div className="pagamento_campo">
 
-          <label htmlFor="codOperacao">Operação</label>
+          <label htmlFor="operacao.codOperacao">Operação</label>
           <select 
                  type="text" 
-                 id="codOperacao" 
-                 name="codOperacao"
-                 {...register("codOperacao", {
-                  required: 'Preenchimento Obrigatório',
-                  minLength: {
-                    value: 2,
-                    message: 'No minimo dois caracteres' 
-                  }
+                 id="operacao.codOperacao" 
+                 name="operacao.codOperacao"
+                 {...register("operacao.codOperacao", {
+                  required: 'Preenchimento Obrigatório'
                 })}
           >
 
@@ -67,6 +66,7 @@ export default function Movimentacao_pagamento() {
                  type="datetime-local" 
                  id="dataPagamento" 
                  name="dataPagamento"
+                 step="1"
                  {...register("dataPagamento", {
                   required: 'Preenchimento Obrigatório',
                   minLength: {
@@ -89,13 +89,9 @@ export default function Movimentacao_pagamento() {
        type="datetime-local" 
        id="dataVencimento" 
        name="dataVencimento"
+       step="1"
        {...register("dataVencimento", {
-        required: 'Preenchimento Obrigatório',
-        minLength: {
-          value: 2,
-          message: 'No minimo dois caracteres' 
-        }
-      })}
+        required: 'Preenchimento Obrigatório'})}
 />
 
 
@@ -114,15 +110,11 @@ export default function Movimentacao_pagamento() {
 
           <label htmlFor="valorPagamento">Valor do Pagamento (R$)</label>
           <input 
-                 type="text" 
+                 type="number" 
                  id="valorPagamento" 
                  name="valorPagamento"
                  {...register("valorPagamento", {
-                  required: 'Preenchimento Obrigatório',
-                  minLength: {
-                    value: 2,
-                    message: 'No minimo dois caracteres'
-                  }
+                  required: 'Preenchimento Obrigatório'
                 })}
            />
                              
@@ -142,3 +134,4 @@ export default function Movimentacao_pagamento() {
   </>
   );
 }
+

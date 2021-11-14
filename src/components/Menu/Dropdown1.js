@@ -14,7 +14,7 @@ const MenuItems1 = [
     cName: 'dropdown-link'
   },
   {
-    title: 'Unidade de Medida',
+    title: 'Unidade Medida',
     path: '/cadastro-unidadedemedida',
     cName: 'dropdown-link'
   },
@@ -34,7 +34,7 @@ const MenuItems1 = [
     cName: 'dropdown-link'
   },
   {
-    title: 'Tipo de Pagamento',
+    title: 'Tipo Pagamento',
     path: '/cadastro-tipopagamento',
     cName: 'dropdown-link'
   },
