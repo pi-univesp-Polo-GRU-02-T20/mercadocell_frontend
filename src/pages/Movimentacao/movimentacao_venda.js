@@ -6,6 +6,7 @@ import './movimentacao_compra.css';
 import  api  from '../../components/Services/api';
 import Listar_pagamento from '../../components/Listas/listar_pagamento';
 import Listar_pessoa from '../../components/Listas/listar_pessoa';
+import moment from 'moment';
 
 export default function Movimentacao_compra() {
 
@@ -14,7 +15,7 @@ export default function Movimentacao_compra() {
     data.codOperacao = 0; 
     data.tipoOperacao = "V";
     data.pago = false;
-    data.dataOperacao = "2021-05-02 19:52:17";
+    data.dataOperacao = moment(data.dataOperacao).format("yyyy-MM-DD HH:mm:ss");
     
     console.log(data);
     api.post("/operacao", data);
