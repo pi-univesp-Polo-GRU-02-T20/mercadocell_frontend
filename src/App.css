@@ -229,9 +229,30 @@
     cursor: pointer;
   }
 
-  ErrorMessage{
-    color: red;
+  .linkSobre {
+    border: 2px solid #cfcfcf;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+  
+  .linkSobre:hover {
+    background-color: #1888ff;
+    transition: all 0.2s ease-out;
+    border-radius: 4px;
   }
 
+  .bemVindo {
+    position: absolute;
+    display: flex;
+    align-self: center;
+  }
 
-
+  .btnSobre {
+    position: relative;
+    display: flex;
+    margin-top: 600px;
+    margin-left: 1300px;
+   
+  }

@@ -5,7 +5,7 @@ import Navbar from '../../components/Menu/Navbar';
 import { Link } from 'react-router-dom';
 
 
-export default function Home() {
+export default function Sobre() {
   
   const { setToken } = useContext(StoreContext);
  
@@ -14,17 +14,8 @@ export default function Home() {
   <Navbar />
   
   <div className="fundo_pagina">
-  <div className="bemVindo">
-      <h1>Bem-vindo</h1>
-  </div>
-
-  <div className="btnSobre">
-      <Link to='./sobre' className='linkSobre'>
-       Sobre
-      </Link>
-      </div>
-
-  <br/>
+      <h2>Sobre o site: <br/><br/> Este site foi desenvolvido como trabalho da disciplina Projeto Integrador I da UNIVESP. <br/> <br/>Equipe: Felipe Souza, Jucelino Silva, Leandro Bellato, Márcio De Sa e Renan Vieira.  </h2>
+      
   </div>
   </>
   );
