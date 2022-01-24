@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import api from '../Services/api'
 
-  class Listar_subcategoria extends Component {
+  class LISTAR_SUBCATEGORIA extends Component {
 
     state = {
       subcategorias: [],
@@ -27,4 +27,4 @@ import api from '../Services/api'
     };
   };
 
-export default Listar_subcategoria;
+export default LISTAR_SUBCATEGORIA;

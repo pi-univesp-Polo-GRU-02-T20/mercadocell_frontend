@@ -70,7 +70,7 @@ export default function Consulta_operacao() {
 .catch(function(error) {
         console.log(error);
     });
-}, []);
+}, [url]);
 
     return (
       <>

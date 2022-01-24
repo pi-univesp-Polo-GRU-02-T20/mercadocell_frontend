@@ -54,7 +54,7 @@ export default function Consulta_pessoajuridica() {
 .catch(function(error) {
         console.log(error);
     });
-}, []);
+}, [url]);
 
     return (
       <>

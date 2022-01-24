@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
 import './movimentacao_pagamento.css';
 import  api  from '../../components/Services/api';
-import Listar_operacao from '../../components/Listas/listar_operacao';
+import LISTAR_OPERACAO from '../../components/Listas/listar_operacao';
 import moment from 'moment';
 
 export default function Movimentacao_pagamento() {
@@ -46,7 +46,7 @@ export default function Movimentacao_pagamento() {
           >
 
 
-           <Listar_operacao/>
+           <LISTAR_OPERACAO/>
 
           
           </select>

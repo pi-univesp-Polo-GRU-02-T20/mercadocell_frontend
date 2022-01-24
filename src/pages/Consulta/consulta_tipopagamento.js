@@ -42,7 +42,7 @@ export default function Consulta_categoria() {
 .catch(function(error) {
         console.log(error);
     });
-}, []);
+}, [url]);
 
     return (
       <>

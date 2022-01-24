@@ -51,7 +51,7 @@ export default function Consulta_pessoafisica() {
 .catch(function(error) {
         console.log(error);
     });
-}, []);
+}, [url]);
 
     return (
       <>

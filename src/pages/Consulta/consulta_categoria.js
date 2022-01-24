@@ -1,4 +1,5 @@
 import Navbar from '../../components/Menu/Navbar';
+//import MaterialTable from '@material-table/core';
 import MaterialTable from "material-table";
 import React, { useEffect, useState } from "react";
 import './consulta.css';

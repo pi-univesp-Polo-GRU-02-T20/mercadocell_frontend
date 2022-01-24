@@ -11,6 +11,8 @@ export default function Cadastro_pessoafisica() {
   const onSubmit = (data) => { 
     console.log(data);
     api.post("/pessoaFisica", data);
+    alert("Cadastro Realizado");
+    window.location.reload()
   }
 
   return (

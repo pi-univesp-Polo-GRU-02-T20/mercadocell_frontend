@@ -45,7 +45,7 @@ export default function Consulta_produto() {
 .catch(function(error) {
         console.log(error);
     });
-}, []);
+}, [url]);
 
     return (
       <>

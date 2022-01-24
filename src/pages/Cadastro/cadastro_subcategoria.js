@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
 import './cadastro_subcategoria.css';
 import  api  from '../../components/Services/api';
-import Listar_categoria from '../../components/Listas/listar_categoria';
+import LISTAR_CATEGORIA from '../../components/Listas/listar_categoria';
 
 export default function Cadastro_subcategoria() {
 
@@ -42,7 +42,7 @@ export default function Cadastro_subcategoria() {
                 })}
            >
              <option hidden disabled selected value> Selecione uma categoria </option>
-             <Listar_categoria />
+             <LISTAR_CATEGORIA />
            </select>
         
            <ErrorMessage errors={errors} name="categoria.codCategoria">

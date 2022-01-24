@@ -4,8 +4,8 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
 import './movimentacao_compra.css';
 import  api  from '../../components/Services/api';
-import Listar_pagamento from '../../components/Listas/listar_pagamento';
-import Listar_pessoa from '../../components/Listas/listar_pessoa';
+import LISTAR_PAGAMENTO from '../../components/Listas/listar_pagamento';
+import LISTAR_PESSOA from '../../components/Listas/listar_pessoa';
 import moment from 'moment';
 
 export default function Movimentacao_compra() {
@@ -117,7 +117,7 @@ export default function Movimentacao_compra() {
            {...register("pessoa.codPessoa")}
      >
       <option hidden disabled selected value> Selecione um código </option>
-      <Listar_pessoa />
+      <LISTAR_PESSOA />
 
     </select>
 
@@ -142,7 +142,7 @@ export default function Movimentacao_compra() {
      >
 
     <option hidden disabled selected value> Selecione uma opção </option>
-    <Listar_pagamento />
+    <LISTAR_PAGAMENTO />
 
     </select>
                        

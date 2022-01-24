@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import api from '../Services/api'
 
-  class Listar_pagamento extends Component {
+  class LISTAR_PAGAMENTO extends Component {
 
     state = {
       pagamentos: [],
@@ -23,10 +23,23 @@ import api from '../Services/api'
               <option id="nomeTipoPagamento" name="nomeTipoPagamento" value={filme.codTipoPagamento} key={filme.codTipoPagamento}>
                 {filme.nomeTipoPagamento}
               </option>
+
+            
               ))}
+
+
+
+              {pagamentos.map(filme => (
+              <p>
+                {filme.nomeTipoPagamento}
+              </p>
+              ))}
+
+              
+
       </>
         );
     };
   };
 
-export default Listar_pagamento;
+export default LISTAR_PAGAMENTO;

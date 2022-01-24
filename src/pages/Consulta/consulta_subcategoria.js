@@ -48,7 +48,7 @@ export default function Consulta_subcategoria() {
 .catch(function(error) {
         console.log(error);
     });
-}, []);
+}, [url]);
 
     return (
       <>

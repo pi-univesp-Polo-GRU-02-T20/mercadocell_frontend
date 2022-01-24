@@ -54,7 +54,7 @@ export default function Consulta_pagamentocompra() {
 .catch(function(error) {
         console.log(error);
     });
-}, []);
+}, [url]);
 
     return (
       <>

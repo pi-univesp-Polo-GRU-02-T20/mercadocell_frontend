@@ -10,6 +10,7 @@ import moment from 'moment';
 
 export default function Movimentacao_compra() {
 
+  var codigo = 12;
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = (data) => {
     data.codOperacao = 0; 
@@ -35,71 +36,6 @@ export default function Movimentacao_compra() {
     <h1>Operação de Compra</h1>
     </div>
 
-    <div className="compra_linha">
-
-      <div className="compra_campo">
-
-          <label htmlFor="codNotaFiscal">Código da Nota Fiscal</label>
-          <input 
-                 type="text" 
-                 id="codNotaFiscal" 
-                 name="codNotaFiscal"
-                 {...register("codNotaFiscal", {
-                  required: 'Preenchimento Obrigatório'
-                })}
-           />
-        
-          <ErrorMessage errors={errors} name="codNotaFiscal">
-            {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-          </ErrorMessage>
-
-      </div>
-
-    </div>
-
-    <div className="compra_linha">
-
-      <div className="compra_campo">
-
-          <label htmlFor="tipoStatusOperacao">Status da Operação</label>
-          <select 
-                 type="text" 
-                 id="tipoStatusOperacao" 
-                 name="tipoStatusOperacao"
-                 {...register("tipoStatusOperacao", {
-                  required: 'Preenchimento Obrigatório',
-                })}
-           >
-             <option hidden disabled selected value> Selecione um status </option>
-             <option value="P" key="pedido">Pedido</option>
-             <option value="O" key="orcamento">Orçamento</option>
-          </select>
-                             
-        <ErrorMessage errors={errors} name="tipoStatusOperacao">
-        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-        </ErrorMessage>
-
-      </div>
-
-      <div className="compra_campo2">
-
-<label htmlFor="dataOperacao">Data da Operação</label>
-<input 
-       type="datetime-local" 
-       id="dataOperacao" 
-       name="dataOperacao"
-       step="1"
-       {...register("dataOperacao", {
-        required: 'Preenchimento Obrigatório'})}
- />
-
-<ErrorMessage errors={errors} name="nomeSubCategoria">
-{({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-</ErrorMessage>
-
-</div>
-
-    </div>
 
 
 
@@ -116,10 +52,16 @@ export default function Movimentacao_compra() {
            name="pessoa.codPessoa"
            {...register("pessoa.codPessoa")}
      >
+
+
+    
+    
       <option hidden disabled selected value> Selecione um código </option>
       <LISTAR_PESSOA />
 
     </select>
+    
+    
 
     </div>
     </div>
@@ -129,9 +71,7 @@ export default function Movimentacao_compra() {
 
 
 
-    <div className="compra_linha">  
-
-    <div className="compra_campo2"> 
+    
 
     <label htmlFor="tipoPagamento.codTipoPagamento">Tipo de pagamento</label>
     <select 
@@ -145,14 +85,18 @@ export default function Movimentacao_compra() {
     <LISTAR_PAGAMENTO />
 
     </select>
+
+    <LISTAR_PAGAMENTO />
                        
   <ErrorMessage errors={errors} name="tipoPagamento.codTipoPagamento">
   {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
   </ErrorMessage> 
-    
-    </div>
 
-    </div>
+    codigo
+    
+
+
+    
 
 
 
