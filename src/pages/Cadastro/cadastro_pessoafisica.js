@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
 import './cadastro_pessoafisica.css';
 import  api  from '../../components/Services/api';
+import  DarkMode  from '../../components/DarkMode';
 
 export default function Cadastro_pessoafisica() {
 
@@ -16,10 +17,18 @@ export default function Cadastro_pessoafisica() {
   }
 
   return (
-  <>
-  <Navbar />
+    <>
+
+    <div class="container grid-areas">
   
-  <div className="fundo_pagina">
+    <div className="header">
+  
+       <DarkMode />
+       <Navbar />
+  
+    </div>
+    
+    <div className="body">
 
     <form className="pessoafisica_form" onSubmit = { handleSubmit(onSubmit) } >
 
@@ -139,8 +148,12 @@ export default function Cadastro_pessoafisica() {
 
          
     </form>
+    </div>
 
-  </div>
-  </>
+<div className="footer">
+  <p>Projeto Integrador 2021 - 2022</p>
+</div>
+</div>
+</>
   );
 }

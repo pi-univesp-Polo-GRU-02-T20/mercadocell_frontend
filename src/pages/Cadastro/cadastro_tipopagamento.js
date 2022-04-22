@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
 import './cadastro_tipopagamento.css';
 import  api  from '../../components/Services/api';
+import  DarkMode  from '../../components/DarkMode';
 
 export default function Cadastro_tipopagamento() {
 

@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
 import './cadastro_unidadedemedida.css';
 import  api  from '../../components/Services/api';
+import  DarkMode  from '../../components/DarkMode';
 
 export default function Cadastro_unidadedemedida() {
 
@@ -16,10 +17,18 @@ export default function Cadastro_unidadedemedida() {
   }
 
   return (
-  <>
-  <Navbar />
+    <>
   
-  <div className="fundo_pagina">
+    <div class="container grid-areas">
+  
+    <div className="header">
+  
+       <DarkMode />
+       <Navbar />
+  
+    </div>
+    
+    <div className="body">
 
     <form className="udmedida_form" onSubmit = { handleSubmit(onSubmit) } >
 
@@ -46,9 +55,11 @@ export default function Cadastro_unidadedemedida() {
                 })}
            />
         
+        <div className="erro">
         <ErrorMessage errors={errors} name="nomeUnidadeMedida">
         {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
         </ErrorMessage>
+        </div>
 
         </div>
 
@@ -71,10 +82,12 @@ export default function Cadastro_unidadedemedida() {
                   }
                 })}
            />
-        
+
+        <div className="erro">
         <ErrorMessage errors={errors} name="siglaUnidadeMedida">
         {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
         </ErrorMessage>
+        </div>
 
         </div>
 
@@ -82,9 +95,11 @@ export default function Cadastro_unidadedemedida() {
 
           <button type="submit">Cadastrar</button>
 
-         
     </form>
-
+    </div>
+  <div className="footer">
+    <p>Projeto Integrador 2021 - 2022</p>
+  </div>
   </div>
   </>
   );

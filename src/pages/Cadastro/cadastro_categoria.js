@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
 import './cadastro_categoria.css';
 import  api  from '../../components/Services/api';
+import  DarkMode  from '../../components/DarkMode';
 
 export default function Cadastro_categoria() {
 
@@ -18,9 +19,16 @@ export default function Cadastro_categoria() {
   return (
   <>
 
-  <Navbar />
+  <div class="container grid-areas">
+
+  <div className="header">
+
+     <DarkMode />
+     <Navbar />
+
+  </div>
   
-  <div className="fundo_pagina">
+  <div className="body">
 
     <form className = "categoria_form" onSubmit = { handleSubmit(onSubmit) } >
 
@@ -45,9 +53,11 @@ export default function Cadastro_categoria() {
                 })}
            />
         
-        <ErrorMessage errors={errors} name="nomeCategoria">
+        <div className="erro">
+        <ErrorMessage  errors={errors} name="nomeCategoria">
         {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
         </ErrorMessage>
+        </div>
 
         </div>
         </div>
@@ -57,6 +67,11 @@ export default function Cadastro_categoria() {
          
     </form>
 
+  </div>
+
+  <div className="footer">
+    <p>Projeto Integrador 2021 - 2022</p>
+  </div>
   </div>
   </>
   );

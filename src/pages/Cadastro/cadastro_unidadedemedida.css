@@ -1,94 +1,160 @@
 * {
-    font-family: 'Roboto Slab';
-  }
+  font-family: 'Roboto Slab';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+margin: 0 0 100px;
+background-size: cover;
+}
+
+body.light {
+--fundo-pagina: #f7f7f7;
+--fundo-formulario: #ffffff;
+--fundo-input: #ffffff;
+--tema: #125ec0;
+--fonte: #000000;
+--label: #555555;
+}
+
+body.dark {
+--fundo-pagina:#000000;
+--fundo-formulario: #000000;
+--fundo-input: #000000;
+--tema: #000000;
+--fonte: #ffffff;
+--label: #ffffff;
+}
+
+
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 100px auto 40px;
+  grid-template-columns: 50% 50%;
+  background-color: salmon;
+}
+
+
+.header {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+  background-color: var(--tema);
+  grid-area: header;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--fundo-pagina);
+  grid-area: body;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--tema);
+  border-top: 2px solid #fff;
+  color: #fff;
+  grid-area: footer;
   
-  .fundo_pagina {
-    background-image: url('../../images/fundo.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat:repeat-y;
-    background-attachment:scroll;
-    display: flex;
-    height: 90vh;
+}
+
+.grid-areas {
+  grid-template-areas: 
+  "header header"
+  "body body"
+  "footer footer";
+}
+
+
+
+.fundo_pagina {
+  background-color: var(--cor);
+}
+
+.udmedida_form {
+  background-color: var(--fundo-formulario);
+  height: 500px;
+  width: 400px;
+  border: 0.5px solid #fff;
+  border-top: 5px solid #125ec0;
+  border-radius: 0px;
+}
+
+.udmedida_titulo {
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  color: var(--fonte);
+}
+
+.udmedida_linha {
+  margin-bottom: 20px;
+}
   
-    }
+.udmedida_campo {
+  display: flex;
+  flex-direction: column;
+}
   
-  .udmedida_form{
-    height: 400px;
-    width: 400px;
-    border-top: 5px solid cornflowerblue;
-    border-radius: 0px;
-    margin-top: 75px;
-  }
+.udmedida_campo label {
+  margin: 10px 10px 0px 10px;
+  font-size: 15px;
+  color: var(--label);
+}
   
-  .udmedida_titulo{
-    font-size: 14px;
-    margin-top: 15px;
-    margin-bottom: 30px;
-  }
-  
-  .udmedida_linha{
-    display: flex;
-    flex-direction: row;
-    font-size: 15px;
-    margin-bottom: 20px;
-  }
-    
-  .udmedida_campo{
-    display: flex;
-    flex-direction: column;
-    font-size: 15px;
-  }
-    
-  .udmedida_campo label {
-    margin-bottom: 5px;
-    font-size: 15px;
-    color:#555555;
-  }
-    
-  .udmedida_campo input {
-    border: 2px solid #AAAAAA;
-    border-radius: 4px;
-    background: #fff;
-    padding: 0 10px;
-    height: 36px;
-    width: 250px;
-  }
-  
-  .udmedida_campo select {
-    border: 2px solid #AAAAAA;
-    border-radius: 4px;
-    background: #fff;
-    padding: 0 10px;
-    height: 36px;
-    width: 240px;
-  }
-  
-  .udmedida_campo textarea {
-    border: 2px solid #AAAAAA;
-    border-radius: 4px;
-    background: #fff;
-    padding: 0 10px;
-    resize: none;
-    height: 72px;
-    width: 500px;
-  }
-  
-  form button{
-    background-color: #125ec0; 
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    width: 250px;
-    margin-bottom: 0px;
-    margin-left: 17px;
-  }
-  
-  form button:hover{
-    background-color: #176fe2;
-    cursor: pointer;
-  }
+.udmedida_campo input, select {
+  height: 36px;
+  width: 250px;
+  margin: 10px;
+  padding: 0 10px;
+  border: 2px solid #AAAAAA;
+  border-radius: 4px;
+  background: var(--fundo-input);
+  color: var(--fonte);
+}
+
+.erro {
+  color:red;
+  margin-left: 10px;
+}
+
+form button {
+  background-color: #125ec0; 
+  border: none;
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 250px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+
+form button:hover {
+  background-color: #176fe2;
+  cursor: pointer;
+}

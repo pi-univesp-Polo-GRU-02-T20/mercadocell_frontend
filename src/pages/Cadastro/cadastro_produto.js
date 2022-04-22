@@ -7,6 +7,7 @@ import  api  from '../../components/Services/api';
 import LISTAR_CATEGORIA from '../../components/Listas/listar_categoria';
 import LISTAR_SUBCATEGORIA from '../../components/Listas/listar_subcategoria';
 import LISTAR_UNIDADEDEMEDIDA from '../../components/Listas/listar_unidadedemedida';
+import  DarkMode  from '../../components/DarkMode';
 
 export default function Cadastro_produto() {
 
@@ -20,9 +21,17 @@ export default function Cadastro_produto() {
 
   return (
   <>
-  <Navbar />
+
+  <div class="container grid-areas">
+
+  <div className="header">
+
+     <DarkMode />
+     <Navbar />
+
+  </div>
   
-  <div className="fundo_pagina">
+  <div className="body">
 
     <form className="produto_form" onSubmit = { handleSubmit(onSubmit) } >
 
@@ -43,10 +52,12 @@ export default function Cadastro_produto() {
                   required: 'Preenchimento Obrigatório',
                 })}
            />
-        
+
+          <div className="erro">
           <ErrorMessage errors={errors} name="nomeProduto">
             {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
           </ErrorMessage>
+          </div>
 
       </div>
 
@@ -67,11 +78,7 @@ export default function Cadastro_produto() {
            >
              <option hidden disabled selected value> Selecione uma categoria </option>
              <LISTAR_CATEGORIA />
-          </select>
-                             
-        <ErrorMessage errors={errors} name="subCategoria.categoria.codCategoria">
-        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-        </ErrorMessage>
+          </select>                           
 
       </div>
 
@@ -90,16 +97,12 @@ export default function Cadastro_produto() {
    <LISTAR_SUBCATEGORIA />
 </select>
 
-<ErrorMessage errors={errors} name="subCategoria.codSubCategoria">
-{({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-</ErrorMessage>
-
 </div>
 
     </div>
 
 
-<div className="produto_linha3">
+<div className="produto_linha">
 
       <div className="produto_campo">
 
@@ -116,29 +119,17 @@ export default function Cadastro_produto() {
              <LISTAR_UNIDADEDEMEDIDA />
           </select>
                              
-        <ErrorMessage errors={errors} name="unidadeMedida.codUnidadeMedida">
-        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-        </ErrorMessage>
-
       </div>
-
-      </div>
-
-      <div className="produto_linha">
 
       <div className="produto_campo">
 
-          <label htmlFor="unidadeMedida.Imagem">Inserir Imagem</label>
+<label htmlFor="unidadeMedida.Imagem">Inserir Imagem</label>
 
-          <input type="file" />
+<input type="file" />
 
-        <ErrorMessage errors={errors} name="unidadeMedida.codUnidadeMedida">
-        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-        </ErrorMessage>
+</div>
 
       </div>
-
-    </div>
 
 
 
@@ -162,8 +153,12 @@ export default function Cadastro_produto() {
         <button type="submit">Cadastrar</button>
          
     </form>
+    </div>
 
-  </div>
-  </>
+<div className="footer">
+  <p>Projeto Integrador 2021 - 2022</p>
+</div>
+</div>
+</>
   );
 }

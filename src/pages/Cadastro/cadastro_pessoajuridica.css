@@ -2,16 +2,7 @@
     font-family: 'Roboto Slab';
   }
   
-  .fundo_pagina {
-    background-image: url('../../images/fundo.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat:repeat-y;
-    background-attachment:scroll;
-    display: flex;
-    height: 90vh;
-  
-    }
+
   
   .pessoajuridica_form{
     margin-top: 200px;

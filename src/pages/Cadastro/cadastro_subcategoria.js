@@ -5,6 +5,7 @@ import { ErrorMessage } from '@hookform/error-message';
 import './cadastro_subcategoria.css';
 import  api  from '../../components/Services/api';
 import LISTAR_CATEGORIA from '../../components/Listas/listar_categoria';
+import  DarkMode  from '../../components/DarkMode';
 
 export default function Cadastro_subcategoria() {
 
@@ -19,9 +20,16 @@ export default function Cadastro_subcategoria() {
   return (
   <>
   
-  <Navbar />
+  <div class="container grid-areas">
+
+  <div className="header">
+
+     <DarkMode />
+     <Navbar />
+
+  </div>
   
-  <div className="fundo_pagina">
+  <div className="body">
 
     <form className = "subCategoria_form" onSubmit = { handleSubmit(onSubmit) } >
 
@@ -44,10 +52,12 @@ export default function Cadastro_subcategoria() {
              <option hidden disabled selected value> Selecione uma categoria </option>
              <LISTAR_CATEGORIA />
            </select>
-        
+
+           <div className="erro">
            <ErrorMessage errors={errors} name="categoria.codCategoria">
-             {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
+           {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
            </ErrorMessage>
+           </div>
 
         </div>
         </div>
@@ -68,10 +78,12 @@ export default function Cadastro_subcategoria() {
                   }
                 })}
           />
-        
+
+           <div className="erro">
            <ErrorMessage errors={errors} name="nomeSubCategoria">
              {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
            </ErrorMessage>
+           </div>
 
         </div>
         </div>
@@ -80,6 +92,10 @@ export default function Cadastro_subcategoria() {
          
     </form>
 
+  </div>
+  <div className="footer">
+    <p>Projeto Integrador 2021 - 2022</p>
+  </div>
   </div>
   </>
   );
