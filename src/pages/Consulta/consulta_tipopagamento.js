@@ -3,6 +3,7 @@ import MaterialTable from "material-table";
 import React, { useEffect, useState } from "react";
 import './consulta.css';
 import  api  from '../../components/Services/api';
+import  DarkMode  from '../../components/DarkMode';
 
 export default function Consulta_categoria() {
 
@@ -46,7 +47,18 @@ export default function Consulta_categoria() {
 
     return (
       <>
-      <Navbar />
+
+<div class="container grid-areas">
+
+<div className="header">
+
+    <DarkMode />
+    <Navbar />
+
+</div>
+<div className="body">
+<div className="tabela">
+     
         <MaterialTable
     title="Consulta de Tipo de Pagamento"
     data={entries.data}
@@ -110,6 +122,14 @@ export default function Consulta_categoria() {
       }
     }}
     />
+    </div>
+    </div>
+
+    <div className="footer">
+      <p>Projeto Integrador 2021 - 2022</p>
+    </div>
+    </div>
+
     </>
 );
 }

@@ -3,6 +3,7 @@ import MaterialTable from "material-table";
 import React, { useEffect, useState } from "react";
 import './consulta.css';
 import  api  from '../../components/Services/api';
+import  DarkMode  from '../../components/DarkMode';
 
 export default function Consulta_subcategoria() {
 
@@ -51,8 +52,19 @@ export default function Consulta_subcategoria() {
 }, [url]);
 
     return (
-      <>
-      <Navbar />
+    <>
+
+
+<div class="container grid-areas">
+
+<div className="header">
+
+    <DarkMode />
+    <Navbar />
+
+</div>
+<div className="body">
+<div className="tabela">
         <MaterialTable
     title="Consulta de Subcategoria"
     data={entries.data}
@@ -116,6 +128,15 @@ export default function Consulta_subcategoria() {
       }
     }}
     />
+  
+    </div>
+    </div>
+
+    <div className="footer">
+      <p>Projeto Integrador 2021 - 2022</p>
+    </div>
+    </div>
+
     </>
 );
 }
