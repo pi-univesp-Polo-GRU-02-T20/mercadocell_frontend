@@ -63,7 +63,6 @@ export default function Consulta_pessoajuridica() {
 
 </div>
 <div className="body">
-<div className="tabela"></div>
     
         <MaterialTable
     title="Consulta de Pessoa Jurídica"
@@ -130,10 +129,10 @@ export default function Consulta_pessoajuridica() {
     />
     
     </div>
-    </div>
 
     <div className="footer">
       <p>Projeto Integrador 2021 - 2022</p>
+    </div>
     </div>   
     </>
 

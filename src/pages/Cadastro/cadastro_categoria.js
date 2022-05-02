@@ -73,6 +73,7 @@ export default function Cadastro_categoria() {
     <p>Projeto Integrador 2021 - 2022</p>
   </div>
   </div>
+
   </>
   );
 }

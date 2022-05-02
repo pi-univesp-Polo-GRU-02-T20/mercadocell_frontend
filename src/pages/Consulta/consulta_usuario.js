@@ -69,8 +69,6 @@ export default function Consulta_pessoajuridica() {
 
 </div>
 <div className="body">
-<div className="tabela">
-
    
         <MaterialTable
     title="Consulta de Usuário"
@@ -135,7 +133,6 @@ export default function Consulta_pessoajuridica() {
       }
     }}
     />
-    </div>
     </div>
 
     <div className="footer">

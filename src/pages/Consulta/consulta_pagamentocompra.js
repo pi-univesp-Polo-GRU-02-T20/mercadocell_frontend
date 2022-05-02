@@ -69,8 +69,6 @@ export default function Consulta_pagamentocompra() {
 
 </div>
 <div className="body">
-<div className="tabela">
-
 
         <MaterialTable
     title="Consulta de Pagamento - Compra"
@@ -136,8 +134,7 @@ export default function Consulta_pagamentocompra() {
     }}
     />
     </div>
-    </div>
-
+  
     <div className="footer">
       <p>Projeto Integrador 2021 - 2022</p>
     </div>

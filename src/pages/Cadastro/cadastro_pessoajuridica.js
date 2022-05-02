@@ -17,9 +17,18 @@ export default function Cadastro_pessoajuridica() {
   }
 
   return (
-  <>
-  <Navbar />
-  
+<>
+
+<div class="container grid-areas">
+
+<div className="header">
+
+   <DarkMode />
+   <Navbar />
+
+</div>
+
+<div className="body">
   <div className="fundo_pagina">
 
     <form className="pessoajuridica_form" onSubmit = { handleSubmit(onSubmit) } >
@@ -46,9 +55,11 @@ export default function Cadastro_pessoajuridica() {
                 })}
            />
         
+        <div className="erro">
         <ErrorMessage errors={errors} name="nomePessoa">
         {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
         </ErrorMessage>
+        </div>
 
         </div>
 
@@ -72,9 +83,11 @@ export default function Cadastro_pessoajuridica() {
                 })}
            />
         
+        <div className="erro">
         <ErrorMessage errors={errors} name="nomeRazaoSocial">
         {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
         </ErrorMessage>
+        </div>
 
         </div>
         </div>
@@ -96,10 +109,12 @@ export default function Cadastro_pessoajuridica() {
                   }
                 })}
            />
-        
+
+        <div className="erro">
         <ErrorMessage errors={errors} name="codCNPJ">
         {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
         </ErrorMessage>
+        </div>
 
         </div>
 
@@ -109,6 +124,11 @@ export default function Cadastro_pessoajuridica() {
 
          
     </form>
+    </div>
+    </div>
+    <div className="footer">
+      <p>Projeto Integrador 2021 - 2022</p>
+    </div>
 
   </div>
   </>

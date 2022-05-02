@@ -8,6 +8,7 @@ import RoutesPrivate from '../components/Routes/Private/Private';
 import Login from './Login/Login';
 import Home from './Home/Home';
 import Sobre from './Home/sobre';
+import Mapa from './Home/mapa';
 
 import Cadastro_categoria from './Cadastro/cadastro_categoria';
 import Cadastro_subcategoria from './Cadastro/cadastro_subcategoria';
@@ -45,6 +46,7 @@ const PagesRoot = () => (
           <Route path="/login" component={Login} />
           <RoutesPrivate path="/" exact component={Home} />
           <RoutesPrivate path="/sobre" exact component={Sobre} />
+          <RoutesPrivate path="/mapa" exact component={Mapa} />
 
           <RoutesPrivate path='/cadastro-categoria' component={Cadastro_categoria} />
           <RoutesPrivate path='/cadastro-subcategoria' component={Cadastro_subcategoria} />

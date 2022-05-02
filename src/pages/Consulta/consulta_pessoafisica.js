@@ -133,10 +133,10 @@ export default function Consulta_pessoafisica() {
     />
     
     </div>
-    </div>
 
     <div className="footer">
       <p>Projeto Integrador 2021 - 2022</p>
+    </div>
     </div>   
     </>
 

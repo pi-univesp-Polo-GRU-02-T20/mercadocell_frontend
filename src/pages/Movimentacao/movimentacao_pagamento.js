@@ -6,6 +6,7 @@ import './movimentacao_pagamento.css';
 import  api  from '../../components/Services/api';
 import LISTAR_OPERACAO from '../../components/Listas/listar_operacao';
 import moment from 'moment';
+import  DarkMode  from '../../components/DarkMode';
 
 export default function Movimentacao_pagamento() {
 
@@ -20,12 +21,19 @@ export default function Movimentacao_pagamento() {
   }
 
   return (
-  <>
-  <Navbar />
-  
-  <div className="fundo_pagina">
+<>
 
-    <form className="pagamento_form" onSubmit = { handleSubmit(onSubmit) } >
+<div class="container grid-areas">
+
+<div className="header">
+
+   <DarkMode />
+   <Navbar />
+
+</div>
+
+<div className="body">
+  <form className="pagamento_form" onSubmit = { handleSubmit(onSubmit) } >
 
     <div className="pagamento_titulo">
     <h1>Incluir Pagamento</h1>
@@ -131,9 +139,12 @@ export default function Movimentacao_pagamento() {
         <button type="submit">Cadastrar</button>
          
     </form>
+    </div>
 
-  </div>
-  </>
-  );
+<div className="footer">
+  <p>Projeto Integrador 2021 - 2022</p>
+</div>
+</div>
+</>
+);
 }
-

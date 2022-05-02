@@ -57,7 +57,6 @@ export default function Consulta_categoria() {
 
 </div>
 <div className="body">
-<div className="tabela">
      
         <MaterialTable
     title="Consulta de Tipo de Pagamento"
@@ -122,7 +121,6 @@ export default function Consulta_categoria() {
       }
     }}
     />
-    </div>
     </div>
 
     <div className="footer">

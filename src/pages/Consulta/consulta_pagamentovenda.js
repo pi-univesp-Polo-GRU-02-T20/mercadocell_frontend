@@ -69,8 +69,6 @@ export default function Consulta_pagamentovenda() {
 
 </div>
 <div className="body">
-<div className="tabela">
-
      
         <MaterialTable
     title="Consulta de Pagamento - Venda"
@@ -135,7 +133,6 @@ export default function Consulta_pagamentovenda() {
       }
     }}
     />
-    </div>
     </div>
 
     <div className="footer">

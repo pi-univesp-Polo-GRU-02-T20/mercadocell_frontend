@@ -8,6 +8,19 @@ import  DarkMode  from '../../components/DarkMode';
 export default function Consulta_categoria() {
 
     var url = "/categoria"
+    var fundo
+    var fundo2
+    const lightTheme = "light";
+    fundo = "blue"
+    fundo2 = "pink"
+
+    let theme;
+
+    if (localStorage) {
+      theme = localStorage.getItem("theme");
+    }
+  
+    
 
     const [entries, setEntries] = useState({
         data: [
@@ -18,12 +31,52 @@ export default function Consulta_categoria() {
         ]
     });
 
+
+
+
+
+
+
+
+
+
+
+
+
+    const [estilo, setEstilo] = useState({
+        data: 
+            {
+              backgroundColor: fundo,
+            }
+    });
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     const [state] = React.useState({
         columns: [
             { title: "Código da categoria", field: "codCategoria", editable:false},
             { title: "Nome da categoria", field: "nomeCategoria" },
-        ]
+        ],
     });
+
+   
+
+    
+
 
     useEffect(() => {
         api
@@ -45,6 +98,8 @@ export default function Consulta_categoria() {
     });
 }, []);
 
+
+
     return (
       <>
 
@@ -58,10 +113,11 @@ export default function Consulta_categoria() {
 </div>
 
 <div className="body">
-<div className="tabela">
-        <MaterialTable
+
+    <MaterialTable    
     title="Consulta de Categoria"
     data={entries.data}
+    style={estilo.data}
     columns={state.columns}
     editable={{
         onRowUpdate: (newData, oldData) =>
@@ -122,7 +178,6 @@ export default function Consulta_categoria() {
       }
     }}
     />
-    </div>
     </div>
 
     <div className="footer">

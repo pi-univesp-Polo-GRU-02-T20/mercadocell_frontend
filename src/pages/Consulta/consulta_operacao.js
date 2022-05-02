@@ -85,7 +85,6 @@ export default function Consulta_operacao() {
 
 </div>
 <div className="body">
-<div className="tabela">
    
         <MaterialTable
     title="Consulta de Operação"
@@ -150,7 +149,6 @@ export default function Consulta_operacao() {
       }
     }}
     />
-    </div>
     </div>
 
     <div className="footer">

@@ -64,8 +64,10 @@ export default function Consulta_subcategoria() {
 
 </div>
 <div className="body">
-<div className="tabela">
         <MaterialTable
+    style={{
+        backgroundColor: 'blue',
+    }}
     title="Consulta de Subcategoria"
     data={entries.data}
     columns={state.columns}
@@ -129,7 +131,6 @@ export default function Consulta_subcategoria() {
     }}
     />
   
-    </div>
     </div>
 
     <div className="footer">

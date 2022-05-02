@@ -19,11 +19,18 @@ export default function Cadastro_tipopagamento() {
 
   return (
   <>
-  
-  <Navbar />
-  
-  <div className="fundo_pagina">
 
+  <div class="container grid-areas">
+
+  <div className="header">
+
+   <DarkMode />
+   <Navbar />
+
+  </div>
+
+  <div className="body">
+    
     <form className = "tipopagamento_form" onSubmit = { handleSubmit(onSubmit) } >
 
     <div className="tipopagamento_titulo">
@@ -43,9 +50,11 @@ export default function Cadastro_tipopagamento() {
                 })}
            />
         
+        <div className="erro">
         <ErrorMessage errors={errors} name="nomeTipoPagamento">
         {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
         </ErrorMessage>
+        </div>
 
         </div>
         </div>
@@ -54,6 +63,10 @@ export default function Cadastro_tipopagamento() {
 
          
     </form>
+    </div>
+    <div className="footer">
+      <p>Projeto Integrador 2021 - 2022</p>
+    </div>
 
   </div>
   </>

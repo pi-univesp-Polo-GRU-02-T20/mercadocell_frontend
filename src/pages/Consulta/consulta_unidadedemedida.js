@@ -60,7 +60,6 @@ export default function Consulta_unidadedemedida() {
 
 </div>
 <div className="body">
-<div className="tabela">
     
         <MaterialTable
     title="Consulta de Unidade de Medida"
@@ -126,7 +125,6 @@ export default function Consulta_unidadedemedida() {
     }}
     />
     
-    </div>
     </div>
 
     <div className="footer">

@@ -18,8 +18,18 @@ export default function Cadastro_usuario() {
 
   return (
   <>
-  <Navbar />
-  
+
+  <div class="container grid-areas">
+
+  <div className="header">
+
+   <DarkMode />
+   <Navbar />
+
+  </div>
+
+<div className="body">
+
   <div className="fundo_pagina">
 
     <form className="usuario_form" onSubmit = { handleSubmit(onSubmit) } >
@@ -112,6 +122,11 @@ export default function Cadastro_usuario() {
 
          
     </form>
+    </div>
+    </div>
+    <div className="footer">
+      <p>Projeto Integrador 2021 - 2022</p>
+    </div>
 
   </div>
   </>

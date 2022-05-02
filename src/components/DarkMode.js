@@ -49,7 +49,7 @@ const DarkMode = () => {
         </li>
 
         <li className="acessibilidade-item">
-          <Link to='' className='acessibilidade-links'> MAPA DO SITE </Link>
+          <Link to='/mapa' className='acessibilidade-links'> MAPA DO SITE </Link>
 
         </li>
       </ul>

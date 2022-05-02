@@ -7,6 +7,7 @@ import  api  from '../../components/Services/api';
 import LISTAR_PAGAMENTO from '../../components/Listas/listar_pagamento';
 import LISTAR_PESSOA from '../../components/Listas/listar_pessoa';
 import moment from 'moment';
+import  DarkMode  from '../../components/DarkMode';
 
 export default function Movimentacao_compra() {
 
@@ -24,12 +25,19 @@ export default function Movimentacao_compra() {
   }
 
   return (
-  <>
-  <Navbar />
-  
-  <div className="fundo_pagina">
+    <>
 
-    <form className="compra_form" onSubmit = { handleSubmit(onSubmit) } >
+    <div class="container grid-areas">
+  
+    <div className="header">
+  
+       <DarkMode />
+       <Navbar />
+  
+    </div>
+    
+    <div className="body">
+      <form className="compra_form" onSubmit = { handleSubmit(onSubmit) } >
 
     <div className="compra_titulo">
     <h1>Operação de Compra</h1>
@@ -99,14 +107,9 @@ export default function Movimentacao_compra() {
 
 </div>
 
-    </div>
 
 
-
-
-
-    <div className="compra_linha">  
-    <div className="compra_campo2"> 
+    <div className="compra_campo"> 
 
     <label htmlFor="pessoa.codPessoa">Código de Pessoa</label>
 
@@ -168,9 +171,9 @@ export default function Movimentacao_compra() {
 
     
 
-    <div className="compra_linha">
+    <div className="compra_linha3">
 
-<div className="compra_campo">
+<div className="compra_campo3">
 
     <label htmlFor="quantidadeParcela">Quantidade de parcelas</label>
     <select 
@@ -201,7 +204,7 @@ export default function Movimentacao_compra() {
 
 </div>
 
-<div className="compra_campo2">
+<div className="compra_campo3">
 
 <label htmlFor="nomeSubCategoria">Valor Total (R$)</label>
 <input 
@@ -228,8 +231,12 @@ export default function Movimentacao_compra() {
         <button type="submit">Cadastrar</button>
          
     </form>
+    </div>
 
-  </div>
-  </>
-  );
+<div className="footer">
+  <p>Projeto Integrador 2021 - 2022</p>
+</div>
+</div>
+</>
+);
 }

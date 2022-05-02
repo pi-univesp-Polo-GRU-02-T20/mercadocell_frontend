@@ -120,7 +120,7 @@ body.dark {
 }
   
 .pessoafisica_campo label {
-  margin: 10px 10px 0px 10px;
+  
   font-size: 15px;
   color: var(--label);
 }
