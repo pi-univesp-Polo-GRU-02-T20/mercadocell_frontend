@@ -22,7 +22,7 @@ export default function Cadastro_categoria() {
   <div class="container grid-areas">
 
   <div className="header">
-
+    
      <DarkMode />
      <Navbar />
 
@@ -70,7 +70,7 @@ export default function Cadastro_categoria() {
   </div>
 
   <div className="footer">
-    <p>Projeto Integrador 2021 - 2022</p>
+    Projeto Integrador 2021 - 2022
   </div>
   </div>
 

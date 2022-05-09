@@ -82,12 +82,41 @@
     "footer footer";
   }
 
-  .tabela{
-    background-color: #125ec0;
-    color:pink;
+
+.MuiToolbar-root {
+  background-color: var(--fundo-formulario);
+  border: 0.5px solid white;
+  color: var(--fonte);
 }
 
-#oi{
-    background-color: #125ec0;
-    background: blue;
+.Component-horizontalScrollContainer-12 {
+  background-color: var(--fundo-formulario);
+  color: var(--fonte);
+  border: 0.5px solid white;
+}
+
+th.MuiTableCell-root {
+  background-color: var(--fundo-formulario);
+  color: var(--fonte);
+  border: 0.5px solid white;
+}
+
+input.MuiInputBase-input{
+  color: var(--fonte);
+}
+
+div.MTablePaginationInner-root-14{
+  color: var(--fonte);
+}
+
+button.MuiButtonBase-root.MuiIconButton-root.Mui-disabled.Mui-disabled{
+  color: var(--fonte);
+}
+
+button.MuiButtonBase-root.MuiIconButton-root{
+  color: var(--fonte);
+}
+
+.material-icons.MuiIcon-root.MuiIcon-fontSizeSmall{
+  color: var(--fonte);
 }

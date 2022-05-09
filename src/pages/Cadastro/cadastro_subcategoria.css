@@ -33,7 +33,13 @@ body.dark {
 --label: #ffffff;
 }
 
-
+body.normal {
+  --fonte-label: 14px;
+}
+  
+body.big {
+  --fonte-label: 18px;
+}
 
 .container {
   width: 100%;
@@ -95,8 +101,8 @@ body.dark {
 
 .subCategoria_form {
   background-color: var(--fundo-formulario);
-  height: 400px;
-  width: 400px;
+  height: 450px;
+  width: 500px;
   border: 0.5px solid #fff;
   border-top: 5px solid #125ec0;
   border-radius: 0px;
@@ -104,7 +110,7 @@ body.dark {
 }
 
 .subCategoria_titulo {
-  font-size: 14px;
+  font-size: var(--fonte-label);
   margin-top: 15px;
   margin-bottom: 30px;
   color: var(--fonte);
@@ -117,11 +123,11 @@ body.dark {
 .subCategoria_campo {
   display: flex;
   flex-direction: column;
+  font-size: var(--fonte-label);
 }
   
 .subCategoria_campo label {
   margin: 10px 10px 0px 10px;
-  font-size: 15px;
   color: var(--label);
 }
   
@@ -149,10 +155,9 @@ form button {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: var(--fonte-tamanho);
   width: 250px;
   margin-bottom: 0px;
-  margin-left: 10px;
 }
 
 form button:hover {

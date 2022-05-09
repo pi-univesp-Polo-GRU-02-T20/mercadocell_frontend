@@ -144,7 +144,8 @@ body.dark {
 .compra_campo select {
   border: 2px solid #AAAAAA;
   border-radius: 4px;
-  background: #fff;
+  background: var(--fundo-input);
+  color: var(--fonte);
   padding: 0 10px;
   height: 36px;
   width: 240px;
@@ -162,13 +163,14 @@ body.dark {
 .compra_campo2 label {
   margin-bottom: 5px;
   font-size: 15px;
-  color:#555555;
+  color: var(--fonte);
 }
 
 .compra_campo2 input {
   border: 2px solid #AAAAAA;
   border-radius: 4px;
-  background: #fff;
+  background: var(--fundo-input);
+  color: var(--fonte);
   padding: 0 10px;
   height: 36px;
   width: 240px;
@@ -177,7 +179,8 @@ body.dark {
 .compra_campo2 select {
   border: 2px solid #AAAAAA;
   border-radius: 4px;
-  background: #fff;
+  background: var(--fundo-input);
+  color: var(--fonte);
   padding: 0 10px;
   height: 36px;
   width: 240px;
@@ -200,13 +203,14 @@ body.dark {
 .compra_campo3 label {
   margin-bottom: 5px;
   font-size: 15px;
-  color:#555555;
+  color: var(--fonte);
 }
 
 .compra_campo3 input {
   border: 2px solid #AAAAAA;
   border-radius: 4px;
-  background: #fff;
+  background: var(--fundo-input);
+  color: var(--fonte);
   padding: 0 10px;
   height: 36px;
   width: 240px;
@@ -217,7 +221,8 @@ body.dark {
 .compra_campo3 select {
   border: 2px solid #AAAAAA;
   border-radius: 4px;
-  background: #fff;
+  background: var(--fundo-input);
+  color: var(--fonte);
   padding: 0 10px;
   height: 36px;
   width: 240px;
@@ -234,10 +239,9 @@ form button {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: var(--fonte-tamanho);
   width: 240px;
   margin-bottom: 0px;
-  margin-left: 10px;
 }
 
 form button:hover {

@@ -6,22 +6,10 @@ import  api  from '../../components/Services/api';
 import  DarkMode  from '../../components/DarkMode';
 
 export default function Consulta_categoria() {
-
-    var url = "/categoria"
-    var fundo
-    var fundo2
-    const lightTheme = "light";
-    fundo = "blue"
-    fundo2 = "pink"
-
-    let theme;
-
-    if (localStorage) {
-      theme = localStorage.getItem("theme");
-    }
-  
     
+    var url = "/categoria"
 
+    
     const [entries, setEntries] = useState({
         data: [
             {
@@ -30,41 +18,6 @@ export default function Consulta_categoria() {
             }
         ]
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-    const [estilo, setEstilo] = useState({
-        data: 
-            {
-              backgroundColor: fundo,
-            }
-    });
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
     
     const [state] = React.useState({
         columns: [
@@ -72,10 +25,7 @@ export default function Consulta_categoria() {
             { title: "Nome da categoria", field: "nomeCategoria" },
         ],
     });
-
-   
-
-    
+ 
 
 
     useEffect(() => {
@@ -117,7 +67,6 @@ export default function Consulta_categoria() {
     <MaterialTable    
     title="Consulta de Categoria"
     data={entries.data}
-    style={estilo.data}
     columns={state.columns}
     editable={{
         onRowUpdate: (newData, oldData) =>

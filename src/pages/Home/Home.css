@@ -99,6 +99,15 @@ body.dark {
     color: var(--fonte);
 }
 
+.sobre {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 50px;
+    font-size: 14px;
+    color: var(--fonte);
+}
+
 .btnSobre {
     display: flex;
     position:relative;

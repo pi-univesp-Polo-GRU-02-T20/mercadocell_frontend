@@ -25,7 +25,7 @@ export default function Sobre() {
   
   <div className="fundo_pagina">
       
-  <div className="bemVindo_titulo">
+  <div className="sobre">
      <h1>Sobre o site:</h1> 
      <br/>
      <p>Este site foi desenvolvido como trabalho da disciplina Projeto Integrador I da UNIVESP</p> 

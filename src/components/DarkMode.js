@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/DarkMode.css";
 import { Link } from 'react-router-dom';
+import  BigMode  from '../components/BigMode';
 
 const DarkMode = () => {
   let clickedClass = "clicked";
@@ -47,6 +48,8 @@ const DarkMode = () => {
         <li className="acessibilidade-item">
           <button className="acessibilidade-btn" onClick={(e) => switchTheme(e)}> ALTO CONTRASTE </button>
         </li>
+
+        <BigMode />
 
         <li className="acessibilidade-item">
           <Link to='/mapa' className='acessibilidade-links'> MAPA DO SITE </Link>
