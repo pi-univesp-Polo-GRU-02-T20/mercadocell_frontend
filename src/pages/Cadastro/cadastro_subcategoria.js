@@ -20,7 +20,7 @@ export default function Cadastro_subcategoria() {
   return (
   <>
   
-  <div class="container grid-areas">
+  <div className="container grid-areas">
 
   <div className="header">
 

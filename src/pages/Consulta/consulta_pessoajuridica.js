@@ -54,7 +54,7 @@ export default function Consulta_pessoajuridica() {
     return (
       <>
 
-<div class="container grid-areas">
+<div className="container grid-areas">
 
 <div className="header">
 

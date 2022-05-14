@@ -28,7 +28,7 @@ const UserLogin = () => {
 
 function login() {
   
-    if (true == true) {
+    if (1 === true) {
       return { token: '1234' };
     }
     return { error: 'Usuário ou senha inválido' };

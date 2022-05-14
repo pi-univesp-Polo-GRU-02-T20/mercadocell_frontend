@@ -110,7 +110,7 @@ body.big {
 }
 
 .subCategoria_titulo {
-  font-size: var(--fonte-label);
+  font-size: var(--fonte-titulo);
   margin-top: 15px;
   margin-bottom: 30px;
   color: var(--fonte);
@@ -123,10 +123,10 @@ body.big {
 .subCategoria_campo {
   display: flex;
   flex-direction: column;
-  font-size: var(--fonte-label);
 }
   
 .subCategoria_campo label {
+  font-size: var(--fonte-label);
   margin: 10px 10px 0px 10px;
   color: var(--label);
 }

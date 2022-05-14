@@ -27,7 +27,7 @@ export default function Movimentacao_compra() {
   return (
     <>
 
-    <div class="container grid-areas">
+    <div className="container grid-areas">
   
     <div className="header">
   

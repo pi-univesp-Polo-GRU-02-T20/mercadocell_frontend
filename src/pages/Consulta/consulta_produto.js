@@ -51,7 +51,7 @@ export default function Consulta_produto() {
     return (
       <>
 
-<div class="container grid-areas">
+<div className="container grid-areas">
 
 <div className="header">
 

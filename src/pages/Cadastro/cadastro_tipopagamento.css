@@ -94,7 +94,7 @@ body.dark {
 
 .tipopagamento_form {
   background-color: var(--fundo-formulario);
-  height: 300px;
+  height: 350px;
   width: 450px;
   border: 0.5px solid #fff;
   border-top: 5px solid #125ec0;
@@ -103,7 +103,7 @@ body.dark {
 }
 
 .tipopagamento_titulo {
-  font-size: 14px;
+  font-size: var(--fonte-titulo);
   margin-top: 15px;
   margin-bottom: 30px;
   color: var(--fonte);
@@ -120,7 +120,7 @@ body.dark {
   
 .tipopagamento_campo label {
   margin: 10px 10px 0px 10px;
-  font-size: 15px;
+  font-size: var(--fonte-label);
   color: var(--label);
 }
   

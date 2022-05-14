@@ -23,7 +23,7 @@ export default function Movimentacao_pagamento() {
   return (
 <>
 
-<div class="container grid-areas">
+<div className="container grid-areas">
 
 <div className="header">
 

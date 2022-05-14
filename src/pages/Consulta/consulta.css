@@ -32,6 +32,16 @@
   --fonte: #ffffff;
   --label: #ffffff;
   }
+
+  body.normal {
+    --fonte-label: 15px;
+    --fonte-titulo2: 18px;
+  }
+    
+  body.big {
+    --fonte-label: 18px;
+    --fonte-titulo2: 24px;
+  }
   
   .container {
     width: 100%;
@@ -97,26 +107,46 @@
 
 th.MuiTableCell-root {
   background-color: var(--fundo-formulario);
+  font-size: var(--fonte-label);
   color: var(--fonte);
   border: 0.5px solid white;
 }
 
+tr.MuiTableCell-root{
+  font-size: 200px;
+}
+
 input.MuiInputBase-input{
   color: var(--fonte);
+  font-size: var(--fonte-label);
 }
 
 div.MTablePaginationInner-root-14{
   color: var(--fonte);
+  font-size: var(--fonte-label);
 }
+
+h6.MuiTypography-h6{
+  font-size: var(--fonte-titulo2);
+}
+
+
 
 button.MuiButtonBase-root.MuiIconButton-root.Mui-disabled.Mui-disabled{
   color: var(--fonte);
+  font-size: var(--fonte-label);
 }
 
 button.MuiButtonBase-root.MuiIconButton-root{
   color: var(--fonte);
+  font-size: var(--fonte-label);
 }
 
 .material-icons.MuiIcon-root.MuiIcon-fontSizeSmall{
   color: var(--fonte);
+  font-size: var(--fonte-label);
+}
+
+.MuiToble-root{
+  font-size: 200px;
 }

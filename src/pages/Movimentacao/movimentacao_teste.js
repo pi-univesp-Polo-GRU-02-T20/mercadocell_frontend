@@ -10,7 +10,6 @@ import moment from 'moment';
 
 export default function Movimentacao_compra() {
 
-  var codigo = 12;
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = (data) => {
     data.codOperacao = 0; 
@@ -92,7 +91,6 @@ export default function Movimentacao_compra() {
   {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
   </ErrorMessage> 
 
-    codigo
     
 
 

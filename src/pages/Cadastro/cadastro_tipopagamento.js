@@ -20,7 +20,7 @@ export default function Cadastro_tipopagamento() {
   return (
   <>
 
-  <div class="container grid-areas">
+  <div className="container grid-areas">
 
   <div className="header">
 
@@ -34,7 +34,8 @@ export default function Cadastro_tipopagamento() {
     <form className = "tipopagamento_form" onSubmit = { handleSubmit(onSubmit) } >
 
     <div className="tipopagamento_titulo">
-      <h1>Cadastrar Tipo de Pagamento</h1>
+      <h1>Cadastrar</h1>
+      <h1>Tipo de Pagamento</h1>
     </div>
 
         <div className="tipopagamento_linha">

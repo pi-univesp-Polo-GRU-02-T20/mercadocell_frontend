@@ -76,7 +76,7 @@ export default function Consulta_operacao() {
     return (
       <>
 
-<div class="container grid-areas">
+<div className="container grid-areas">
 
 <div className="header">
 

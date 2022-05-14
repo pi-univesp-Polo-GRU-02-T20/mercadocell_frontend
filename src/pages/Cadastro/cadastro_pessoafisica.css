@@ -102,7 +102,7 @@ body.dark {
 }
 
 .pessoafisica_titulo {
-  font-size: 14px;
+  font-size: var(--fonte-titulo);
   margin-top: 15px;
   margin-bottom: 30px;
   color: var(--fonte);
@@ -121,7 +121,7 @@ body.dark {
   
 .pessoafisica_campo label {
   
-  font-size: 15px;
+  font-size: var(--fonte-label);
   color: var(--label);
 }
   
@@ -144,7 +144,7 @@ body.dark {
   
 .pessoafisica_campo2 label {
   margin-bottom: 5px;
-  font-size: 15px;
+  font-size: var(--fonte-label);
   color: var(--label);
 }
 

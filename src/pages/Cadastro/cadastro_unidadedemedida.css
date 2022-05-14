@@ -33,6 +33,16 @@ body.dark {
 --label: #ffffff;
 }
 
+body.normal {
+  --fonte-label: 15px;
+  --fonte-titulo: 14px;
+}
+  
+body.big {
+  --fonte-label: 18px;
+  --fonte-titulo: 18px;
+}
+
 
 
 .container {
@@ -103,7 +113,7 @@ body.dark {
 }
 
 .udmedida_titulo {
-  font-size: 14px;
+  font-size: var(--fonte-titulo);
   margin-top: 15px;
   margin-bottom: 30px;
   color: var(--fonte);
@@ -120,7 +130,7 @@ body.dark {
   
 .udmedida_campo label {
   margin: 10px 10px 0px 10px;
-  font-size: 15px;
+  font-size: var(--fonte-label);
   color: var(--label);
 }
   

@@ -22,7 +22,7 @@ export default function Cadastro_produto() {
   return (
   <>
 
-  <div class="container grid-areas">
+  <div className="container grid-areas">
 
   <div className="header">
 
@@ -60,6 +60,14 @@ export default function Cadastro_produto() {
           </div>
 
       </div>
+
+      <div className="produto_campo">
+
+<label htmlFor="unidadeMedida.Imagem">Inserir Imagem</label>
+
+<input type="file" />
+
+</div>
 
     </div>
 
@@ -99,10 +107,6 @@ export default function Cadastro_produto() {
 
 </div>
 
-    </div>
-
-
-<div className="produto_linha">
 
       <div className="produto_campo">
 
@@ -121,13 +125,7 @@ export default function Cadastro_produto() {
                              
       </div>
 
-      <div className="produto_campo">
 
-<label htmlFor="unidadeMedida.Imagem">Inserir Imagem</label>
-
-<input type="file" />
-
-</div>
 
       </div>
 
@@ -143,12 +141,103 @@ export default function Cadastro_produto() {
                  {...register("descricaoProduto")}
            />
 
+        <div className="erro">
         <ErrorMessage errors={errors} name="descricaoProduto">
         {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
         </ErrorMessage>
+        </div>
 
       </div>  
       </div>
+
+
+
+
+
+
+
+
+      <div className="produto_linha">
+
+        <div className="produto_campo2">
+
+          <label htmlFor="subCategoria.categoria.codCategoria">Qtd. de estoque mínimo</label>
+          <input 
+                 type="number" 
+                 id="valorPagamento" 
+                 name="valorPagamento"
+                 {...register("valorPagamento", {
+                  required: 'Preenchimento Obrigatório'
+                })}
+           />
+
+          <div className="erro">                   
+          <ErrorMessage errors={errors} name="valorPagamento">
+          {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
+          </ErrorMessage>
+          </div>                        
+
+        </div>
+
+        <div className="produto_campo2">
+
+          <label htmlFor="subCategoria.codSubCategoria">Qtd. de estoque máximo</label>
+          <input 
+                 type="number" 
+                 id="valorPagamento" 
+                 name="valorPagamento"
+                 {...register("valorPagamento", {
+                  required: 'Preenchimento Obrigatório'
+                })}
+           />
+
+          <div className="erro">                   
+          <ErrorMessage errors={errors} name="valorPagamento">
+          {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
+          </ErrorMessage>
+          </div>    
+
+        </div>
+
+
+      <div className="produto_campo2">
+
+          <label htmlFor="unidadeMedida.codUnidadeMedida">Qtd. de estoque atual</label>
+          <input 
+                 type="number" 
+                 id="valorPagamento" 
+                 name="valorPagamento"
+                 {...register("valorPagamento", {
+                  required: 'Preenchimento Obrigatório'
+                })}
+           />
+
+          <div className="erro">                   
+          <ErrorMessage errors={errors} name="valorPagamento">
+          {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
+          </ErrorMessage>
+          </div>    
+                             
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <button type="submit">Cadastrar</button>
          

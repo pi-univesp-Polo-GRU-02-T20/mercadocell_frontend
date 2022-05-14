@@ -16,7 +16,6 @@ import api from '../Services/api'
     render() {
   
       const { operacoes } = this.state;
-      const a = "          "
       
       return (
       <>

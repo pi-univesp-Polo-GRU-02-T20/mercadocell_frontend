@@ -7,9 +7,8 @@ import  DarkMode  from '../../components/DarkMode';
 
 export default function Consulta_categoria() {
     
-    var url = "/categoria"
+    const url = "/categoria"
 
-    
     const [entries, setEntries] = useState({
         data: [
             {
@@ -53,7 +52,7 @@ export default function Consulta_categoria() {
     return (
       <>
 
-<div class="container grid-areas">
+<div className="container grid-areas">
 
 <div className="header">
 

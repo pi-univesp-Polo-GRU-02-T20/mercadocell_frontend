@@ -60,7 +60,7 @@ export default function Consulta_pagamentocompra() {
     return (
       <>
 
-<div class="container grid-areas">
+<div className="container grid-areas">
 
 <div className="header">
 

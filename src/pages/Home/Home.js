@@ -1,5 +1,4 @@
-import React, {useContext} from 'react';
-import StoreContext from '../../components/Store/Context';
+import React from 'react';
 import Navbar from '../../components/Menu/Navbar';
 import { Link } from 'react-router-dom';
 import  DarkMode  from '../../components/DarkMode';
@@ -7,12 +6,10 @@ import './Home.css';
 
 export default function Home() {
   
-  const { setToken } = useContext(StoreContext);
- 
   return (
   <>
   
-  <div class="container grid-areas">
+  <div className="container grid-areas">
 
   <div className="header">
   

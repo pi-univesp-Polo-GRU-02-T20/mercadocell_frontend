@@ -108,7 +108,7 @@ body.big {
   }
   
   .categoria_titulo {
-    font-size: var(--fonte-tamanho);
+    font-size: var(--fonte-titulo);
     margin-top: 15px;
     margin-bottom: 30px;
     color: var(--fonte);
@@ -125,7 +125,7 @@ body.big {
     
   .categoria_campo label {
     margin: 10px 10px 0px 10px;
-    font-size: var(--fonte-tamanho);
+    font-size: var(--fonte-label);
     color: var(--label);
   }
     

@@ -55,7 +55,7 @@ export default function Consulta_subcategoria() {
     <>
 
 
-<div class="container grid-areas">
+<div className="container grid-areas">
 
 <div className="header">
 

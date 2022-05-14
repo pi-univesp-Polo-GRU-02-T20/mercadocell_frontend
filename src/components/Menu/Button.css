@@ -2,12 +2,20 @@
   --primary: #1888ff;
 }
 
+body.normal {
+  --fonte-btn: 18px;
+}
+  
+body.big {
+  --fonte-btn: 24px;
+}
+
 .btn {
   padding: 8px 20px;
   border-radius: 4px;
   outline: none;
   border: none;
-  font-size: 18px;
+  font-size: var(--fonte-btn);
   color: #fff;
   cursor: pointer;
   background-color: var(--primary);

@@ -19,7 +19,7 @@ export default function Cadastro_unidadedemedida() {
   return (
     <>
   
-    <div class="container grid-areas">
+    <div className="container grid-areas">
   
     <div className="header">
   

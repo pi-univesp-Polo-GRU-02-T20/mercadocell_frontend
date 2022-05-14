@@ -33,6 +33,15 @@ body.dark {
 --label: #ffffff;
 }
 
+body.normal {
+  --fonte-label: 15px;
+  --fonte-titulo: 14px;
+}
+  
+body.big {
+  --fonte-label: 18px;
+  --fonte-titulo: 18px;
+}
 
 
 .container {
@@ -96,14 +105,14 @@ body.dark {
 .produto_form {
   background-color: var(--fundo-formulario);
   height: 600px;
-  width: 700px;
+  width: 850px;
   border: 0.5px solid #fff;
   border-top: 5px solid #125ec0;
   border-radius: 0px;
 }
 
 .produto_titulo {
-  font-size: 14px;
+  font-size: var(--fonte-titulo);
   margin-top: 15px;
   margin-bottom: 15px;
   color: var(--fonte);
@@ -118,17 +127,41 @@ body.dark {
 .produto_campo {
   display: flex;
   flex-direction: column;
+  margin-inline: 8px;
 }
   
 .produto_campo label {
   margin-bottom: 5px;
-  font-size: 15px;
+  font-size: var(--fonte-label);
   color: var(--label);
 }
   
 .produto_campo input {
   height: 36px;
-  width: 500px;
+  width: 490px;
+  padding: 0 10px;
+  border: 2px solid #AAAAAA;
+  border-radius: 4px;
+  background: var(--fundo-input);
+  color: var(--fonte);
+}
+
+.produto_campo2 {
+  display: flex;
+  flex-direction: column;
+  margin-inline: 8px;
+
+}
+
+.produto_campo2 label {
+  margin-bottom: 5px;
+  font-size: var(--fonte-label);
+  color: var(--label);
+}
+  
+.produto_campo2 input {
+  height: 36px;
+  width: 240px;
   padding: 0 10px;
   border: 2px solid #AAAAAA;
   border-radius: 4px;
@@ -144,6 +177,7 @@ body.dark {
   border-radius: 4px;
   background: var(--fundo-input);
   color: var(--fonte);
+  margin: 0px;
 }
 
 .produto_campo textarea {
@@ -154,7 +188,7 @@ body.dark {
   padding: 0 10px;
   resize: none;
   height: 72px;
-  width: 500px;
+  width: 750px;
 }
 
 .anexarimagem {
@@ -167,14 +201,14 @@ body.dark {
   display: inline-block;
   font-size: 16px;
   width: 250px;
-  margin-right: 20px;
+  
   margin-bottom: 0px;
   margin-top: 0px;
 }
 
 .erro {
   color:red;
-  margin-left: 10px;
+  margin: 0px;
 }
 
 form button {
@@ -196,9 +230,10 @@ form button:hover {
 }
 
 input[type="file"] {
+  margin: 0px;
   border: 0px solid #AAAAAA;
   border-radius: 4px;
-  background: #fff;
+  background: var(--fundo-formulario);
   padding: 0 10px;
   height: 36px;
   width: 250px;

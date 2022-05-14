@@ -3,8 +3,9 @@ import Navbar from '../../components/Menu/Navbar';
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
 import './cadastro_usuario.css';
-import  api  from '../../components/Services/api';
-import  DarkMode  from '../../components/DarkMode';
+import api  from '../../components/Services/api';
+import DarkMode  from '../../components/DarkMode';
+import LISTAR_CODPESSOA from '../../components/Listas/listar_codpessoa';
 
 export default function Cadastro_usuario() {
 
@@ -19,7 +20,7 @@ export default function Cadastro_usuario() {
   return (
   <>
 
-  <div class="container grid-areas">
+  <div className="container grid-areas">
 
   <div className="header">
 
@@ -42,7 +43,7 @@ export default function Cadastro_usuario() {
 
         <div className="usuario_campo2">
 
-          <label htmlFor="nomePessoa"> Nome </label>
+          <label htmlFor="nomePessoa"> Nome de usuário </label>
           <input 
                  type="text" 
                  id="nomePessoa" 
@@ -57,14 +58,20 @@ export default function Cadastro_usuario() {
         </ErrorMessage>
 
         </div>
-        <div className="usuario_campo2">
+        <div className="usuario_campo">
 
           <label htmlFor="codPessoa"> Código de Pessoa </label>
-          <input 
+          <select 
                  type="text" 
-                 id="codPessoa" 
-                 name="codPessoa"
-           />
+                 id="categoria.codCategoria" 
+                 name="categoria.codCategoria"
+                 {...register("categoria.codCategoria", {
+                  required: 'Preenchimento Obrigatório',
+                })}
+           >
+             <option hidden disabled selected value> Selecione um código </option>
+             <LISTAR_CODPESSOA />
+           </select>
         
         </div>
 
@@ -72,7 +79,7 @@ export default function Cadastro_usuario() {
 
       <div className="usuario_linha">
 
-        <div className="usuario_campo2">
+        <div className="usuario_campo3">
 
           <label htmlFor="login"> Login </label>
           <input 
@@ -93,12 +100,37 @@ export default function Cadastro_usuario() {
         </ErrorMessage>
 
         </div>
+        </div>
+
+        <div className="usuario_linha">
 
         <div className="usuario_campo2">
 
         <label htmlFor="senha"> Senha </label>
           <input 
-                 type="text" 
+                 type="password" 
+                 id="senha" 
+                 name="senha"
+                 {...register("senha", {
+                  required: 'Preenchimento Obrigatório',
+                  minLength: {
+                    value: 2,
+                    message: 'No minimo dois caracteres' 
+                  }
+                })}
+           />
+        
+        <ErrorMessage errors={errors} name="senha">
+        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
+        </ErrorMessage>
+
+        </div>
+
+        <div className="usuario_campo2">
+
+        <label htmlFor="senha"> Confirmar Senha </label>
+          <input 
+                 type="password" 
                  id="senha" 
                  name="senha"
                  {...register("senha", {
