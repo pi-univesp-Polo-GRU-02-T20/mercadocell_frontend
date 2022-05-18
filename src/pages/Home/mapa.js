@@ -31,7 +31,7 @@ export default function Mapa() {
 <div className="mapa-cadastro">
 
     <div className="mapa_subtitulo">
-      <h1>Cadastro</h1>
+      <h1>CADASTRO</h1>
     </div>
 
     <Link to='/cadastro-categoria'> Cadastro de Categoria </Link>
@@ -55,7 +55,7 @@ export default function Mapa() {
 <div className="mapa-consulta">
 
     <div className="mapa_subtitulo">
-      <h1>Consulta</h1>
+      <h1>CONSULTA</h1>
     </div>
   
     <Link to='/consulta-categoria'> Consulta de Categoria </Link>
@@ -85,7 +85,7 @@ export default function Mapa() {
 <div className="mapa-operacao">
 
     <div className="mapa_subtitulo">
-      <h1>Operação</h1>
+      <h1>OPERAÇÃO</h1>
     </div>
 
     <Link to='/consulta-pessoafisica'> Operação de compra </Link>
