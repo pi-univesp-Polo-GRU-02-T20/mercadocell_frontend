@@ -146,11 +146,21 @@ body.big {
   color: var(--fonte);
 }
 
+.produto_campo select {
+  height: 36px;
+  width: 240px;
+  padding: 0 10px;
+  border: 2px solid #AAAAAA;
+  border-radius: 4px;
+  background: var(--fundo-input);
+  color: var(--fonte);
+  margin: 0px;
+}
+
 .produto_campo2 {
   display: flex;
   flex-direction: column;
   margin-inline: 8px;
-
 }
 
 .produto_campo2 label {
@@ -167,17 +177,6 @@ body.big {
   border-radius: 4px;
   background: var(--fundo-input);
   color: var(--fonte);
-}
-
-.produto_campo select {
-  height: 36px;
-  width: 240px;
-  padding: 0 10px;
-  border: 2px solid #AAAAAA;
-  border-radius: 4px;
-  background: var(--fundo-input);
-  color: var(--fonte);
-  margin: 0px;
 }
 
 .produto_campo textarea {

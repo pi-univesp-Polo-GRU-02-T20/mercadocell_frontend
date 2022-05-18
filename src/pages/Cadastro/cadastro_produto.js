@@ -161,18 +161,18 @@ export default function Cadastro_produto() {
 
         <div className="produto_campo2">
 
-          <label htmlFor="subCategoria.categoria.codCategoria">Qtd. de estoque mínimo</label>
+          <label htmlFor="qtd_estoque_minimo">Qtd. de estoque mínimo</label>
           <input 
                  type="number" 
-                 id="valorPagamento" 
-                 name="valorPagamento"
+                 id="qtd_estoque_minimo" 
+                 name="qtd_estoque_minimo"
                  {...register("valorPagamento", {
                   required: 'Preenchimento Obrigatório'
                 })}
            />
 
           <div className="erro">                   
-          <ErrorMessage errors={errors} name="valorPagamento">
+          <ErrorMessage errors={errors} name="qtd_estoque_minimo">
           {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
           </ErrorMessage>
           </div>                        
@@ -181,18 +181,18 @@ export default function Cadastro_produto() {
 
         <div className="produto_campo2">
 
-          <label htmlFor="subCategoria.codSubCategoria">Qtd. de estoque máximo</label>
+          <label htmlFor="qtd_estoque_maximo">Qtd. de estoque máximo</label>
           <input 
                  type="number" 
-                 id="valorPagamento" 
-                 name="valorPagamento"
-                 {...register("valorPagamento", {
+                 id="qtd_estoque_maximo" 
+                 name="qtd_estoque_maximo"
+                 {...register("qtd_estoque_maximo", {
                   required: 'Preenchimento Obrigatório'
                 })}
            />
 
           <div className="erro">                   
-          <ErrorMessage errors={errors} name="valorPagamento">
+          <ErrorMessage errors={errors} name="qtd_estoque_maximo">
           {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
           </ErrorMessage>
           </div>    
@@ -202,18 +202,18 @@ export default function Cadastro_produto() {
 
       <div className="produto_campo2">
 
-          <label htmlFor="unidadeMedida.codUnidadeMedida">Qtd. de estoque atual</label>
+          <label htmlFor="qtd_estoque_atual">Qtd. de estoque atual</label>
           <input 
                  type="number" 
-                 id="valorPagamento" 
-                 name="valorPagamento"
-                 {...register("valorPagamento", {
+                 id="qtd_estoque_atual" 
+                 name="qtd_estoque_atual"
+                 {...register("qtd_estoque_atual", {
                   required: 'Preenchimento Obrigatório'
                 })}
            />
 
           <div className="erro">                   
-          <ErrorMessage errors={errors} name="valorPagamento">
+          <ErrorMessage errors={errors} name="qtd_estoque_atual">
           {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
           </ErrorMessage>
           </div>    
