@@ -41,7 +41,7 @@ export default function Cadastro_pessoajuridica() {
 
         <div className="pessoajuridica_campo">
 
-          <label htmlFor="nomePessoa"> Nome </label>
+          <label htmlFor="nomePessoa"> Nome Fantasia </label>
           <input 
                  type="text" 
                  id="nomePessoa" 
