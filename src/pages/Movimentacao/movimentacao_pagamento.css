@@ -33,6 +33,17 @@ body.dark {
 --label: #ffffff;
 }
 
+body.normal {
+  --fonte-label: 15px;
+  --fonte-titulo: 14px;
+}
+  
+body.big {
+  --fonte-label: 18px;
+  --fonte-titulo: 18px;
+}
+
+
 
 
 .container {
@@ -103,7 +114,7 @@ body.dark {
 }
 
 .pagamento_titulo {
-  font-size: 14px;
+  font-size: var(--fonte-titulo);
   margin-top: 15px;
   margin-bottom: 30px;
   color: var(--fonte);
@@ -131,7 +142,7 @@ body.dark {
   
 .pagamento_campo label {
   margin-bottom: 5px;
-  font-size: 15px;
+  font-size: var(--fonte-label);
   color: var(--label);
 }
   
@@ -143,6 +154,7 @@ body.dark {
   border-radius: 4px;
   background: var(--fundo-input);
   color: var(--fonte);
+  font-size: var(--fonte-tamanho);
 }
 
 .pagamento_campo select {
@@ -153,6 +165,7 @@ body.dark {
   border-radius: 4px;
   background: var(--fundo-input);
   color: var(--fonte);
+  font-size: var(--fonte-tamanho);
 }
 
 .erro {

@@ -1,6 +1,47 @@
 * {
-    font-family: 'Roboto Slab';
-  }
+  font-family: 'Roboto Slab';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+margin: 0 0 100px;
+background-size: cover;
+}
+
+body.light {
+--fundo-pagina: #f7f7f7;
+--fundo-formulario: #ffffff;
+--fundo-input: #ffffff;
+--tema: #125ec0;
+--fonte: #000000;
+--label: #555555;
+}
+
+body.dark {
+--fundo-pagina:#000000;
+--fundo-formulario: #000000;
+--fundo-input: #000000;
+--tema: #000000;
+--fonte: #ffffff;
+--label: #ffffff;
+}
+
+body.normal {
+  --fonte-label: 15px;
+  --fonte-titulo: 14px;
+}
+  
+body.big {
+  --fonte-label: 18px;
+  --fonte-titulo: 18px;
+}
   
 
   
@@ -14,7 +55,7 @@
   }
   
   .compra_titulo{
-    font-size: 14px;
+    font-size: var(--fonte-titulo);
     margin-top: 15px;
     margin-bottom: 30px;
   }
@@ -22,7 +63,6 @@
   .compra_linha{
     display: flex;
     flex-direction: row;
-    font-size: 15px;
     margin-bottom: 20px;
   }
   
@@ -31,20 +71,19 @@
     flex-direction: row;
     font-size: 15px;
     margin-bottom: 20px;
-    margin-right: 260px;
+  
   }
     
   .compra_campo{
     display: flex;
     flex-direction: column;
-    font-size: 15px;
-    margin-inline: 10px;
+    margin-inline: 8px;
   }
     
   .compra_campo label {
     margin-bottom: 5px;
-    font-size: 15px;
-    color:#555555;
+    font-size: var(--fonte-label);
+    color: var(--label);
   }
     
   .compra_campo input {
@@ -54,21 +93,7 @@
     padding: 0 10px;
     height: 36px;
     width: 500px;
-  }
-  
-  .anexarimagem {
-    background-color: #125ec0; 
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    width: 250px;
-    margin-right: 20px;
-    margin-bottom: 0px;
-    margin-top: 0px;
+    font-size: var(--fonte-tamanho);
   }
   
   .compra_campo select {
@@ -78,28 +103,31 @@
     padding: 0 10px;
     height: 36px;
     width: 240px;
+    font-size: var(--fonte-tamanho);
+    margin: 0px;
   }
 
   .compra_campo2{
     display: flex;
     flex-direction: column;
-    font-size: 15px;
-    margin-inline: 10px;
+    margin-inline: 8px;
   }
     
   .compra_campo2 label {
     margin-bottom: 5px;
-    font-size: 15px;
-    color:#555555;
+    font-size: var(--fonte-label);
+    color: var(--label);
   }
   
   .compra_campo2 input {
     border: 2px solid #AAAAAA;
     border-radius: 4px;
-    background: #fff;
     padding: 0 10px;
     height: 36px;
     width: 240px;
+    font-size: var(--fonte-tamanho);
+    background: var(--fundo-input);
+    color: var(--fonte);
   }
   
   form button{

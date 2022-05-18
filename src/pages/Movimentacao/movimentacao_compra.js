@@ -171,9 +171,9 @@ export default function Movimentacao_compra() {
 
     
 
-    <div className="compra_linha3">
+    <div className="compra_linha">
 
-<div className="compra_campo3">
+<div className="compra_campo">
 
     <label htmlFor="quantidadeParcela">Quantidade de parcelas</label>
     <select 
