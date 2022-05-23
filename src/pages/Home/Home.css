@@ -161,15 +161,15 @@ body.dark {
 .btnSobre {
     display: flex;
     position:relative;
-    top:220px;
-    left: 670px;
+    top:245px;
+    left: 300px;
     font-size: var(--fonte-titulo);
 }
 
 .btnVoltar {
     display: flex;
     position:relative;
-    top:220px;
+    top:245px;
     left: 670px;
 }
 
@@ -189,7 +189,7 @@ body.dark {
     padding: 6px 18px;
     transition: all 0.3s ease-out;
     background-color: #125ec0;
-    color: #fff;
+    color: rgb(255, 255, 255);
     border-radius: 4px;
     border: 2px solid var(--primary);
     transition: all 0.3s ease-out;
