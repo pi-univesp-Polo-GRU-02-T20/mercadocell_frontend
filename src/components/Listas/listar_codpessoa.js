@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import api from '../Services/api'
 
-  class LISTAR_CODPESSOA extends Component {
+  class ListarCodpessoa extends Component {
 
     state = {
       codpessoas: [],
@@ -29,4 +29,4 @@ import api from '../Services/api'
     };
   };
 
-export default LISTAR_CODPESSOA;
+export default ListarCodpessoa;

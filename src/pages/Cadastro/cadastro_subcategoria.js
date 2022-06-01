@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
 import './cadastro_subcategoria.css';
 import  api  from '../../components/Services/api';
-import LISTAR_CATEGORIA from '../../components/Listas/listar_categoria';
+import ListarCategoria from '../../components/Listas/listar_categoria';
 import  DarkMode  from '../../components/DarkMode';
 
 export default function Cadastro_subcategoria() {
@@ -49,8 +49,8 @@ export default function Cadastro_subcategoria() {
                   required: 'Preenchimento Obrigatório',
                 })}
            >
-             <option hidden disabled selected value> Selecione uma categoria </option>
-             <LISTAR_CATEGORIA />
+             <option selected disabled hidden> Selecione uma categoria </option>
+             <ListarCategoria />
            </select>
 
            <div className="erro">

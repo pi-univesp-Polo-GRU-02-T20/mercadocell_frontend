@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import './consulta.css';
 import  api  from '../../components/Services/api';
 import  DarkMode  from '../../components/DarkMode';
+import pagamentovendaPDF from '../../components/Pdf/pdf_pagamentovenda';
 
 export default function Consulta_pagamentovenda() {
 
@@ -69,6 +70,10 @@ export default function Consulta_pagamentovenda() {
 
 </div>
 <div className="body">
+
+<div className="divBtn">
+     <button onClick={(e) => pagamentovendaPDF(entries.data)} className="btnPdf">Gerar PDF</button>
+</div>
      
         <MaterialTable
     title="Consulta de Pagamento - Venda"

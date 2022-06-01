@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import api from '../Services/api'
 
-  class LISTAR_UNIDADEDEMEDIDA extends Component {
+  class ListarUnidadedemedida extends Component {
 
     state = {
       unidadesdemedida: [],
@@ -29,4 +29,4 @@ import api from '../Services/api'
     };
   };
 
-export default LISTAR_UNIDADEDEMEDIDA;
+export default ListarUnidadedemedida;

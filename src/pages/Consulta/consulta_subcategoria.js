@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import './consulta.css';
 import  api  from '../../components/Services/api';
 import  DarkMode  from '../../components/DarkMode';
+import subcategoriaPDF from '../../components/Pdf/pdf_subcategoria';
 
 export default function Consulta_subcategoria() {
 
@@ -64,6 +65,11 @@ export default function Consulta_subcategoria() {
 
 </div>
 <div className="body">
+
+<div className="divBtn">
+     <button onClick={(e) => subcategoriaPDF(entries.data)} className="btnPdf">Gerar PDF</button>
+</div>
+
         <MaterialTable
     title="Consulta de Subcategoria"
     data={entries.data}

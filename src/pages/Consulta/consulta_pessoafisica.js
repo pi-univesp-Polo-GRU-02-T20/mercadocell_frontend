@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import './consulta.css';
 import  api  from '../../components/Services/api';
 import  DarkMode  from '../../components/DarkMode';
+import pessoafisicaPDF from '../../components/Pdf/pdf_pessoafisica';
 
 export default function Consulta_pessoafisica() {
 
@@ -66,8 +67,11 @@ export default function Consulta_pessoafisica() {
 
 </div>
 <div className="body">
-<div className="tabela"></div>
-     
+
+<div className="divBtn">
+     <button onClick={(e) => pessoafisicaPDF(entries.data)} className="btnPdf">Gerar PDF</button>
+</div>
+
         <MaterialTable
     title="Consulta de Pessoa Física"
     data={entries.data}

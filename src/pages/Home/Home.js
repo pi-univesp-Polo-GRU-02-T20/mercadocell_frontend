@@ -4,7 +4,15 @@ import { Link } from 'react-router-dom';
 import  DarkMode  from '../../components/DarkMode';
 import './Home.css';
 
+
+
 export default function Home() {
+
+
+
+
+
+ 
   
   return (
   <>
@@ -21,6 +29,8 @@ export default function Home() {
   <div className="body">
   
   <div className="fundo_pagina">
+
+ 
   
   <div className="bemVindo_titulo">
       <h1>Bem-vindo</h1>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import api from '../Services/api'
 
-  class LISTAR_PAGAMENTO extends Component {
+  class ListarPagamento extends Component {
 
     state = {
       pagamentos: [],
@@ -42,4 +42,4 @@ import api from '../Services/api'
     };
   };
 
-export default LISTAR_PAGAMENTO;
+export default ListarPagamento;

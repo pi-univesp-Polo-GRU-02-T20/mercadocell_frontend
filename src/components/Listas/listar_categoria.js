@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import api from '../Services/api'
 
-  class LISTAR_CATEGORIA extends Component {
+  class ListarCategoria extends Component {
 
     state = {
       categorias: [],
@@ -29,4 +29,4 @@ import api from '../Services/api'
     };
   };
 
-export default LISTAR_CATEGORIA;
+export default ListarCategoria;

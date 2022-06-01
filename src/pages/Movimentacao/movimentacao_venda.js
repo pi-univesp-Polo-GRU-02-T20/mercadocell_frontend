@@ -4,8 +4,8 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
 import './movimentacao_compra.css';
 import  api  from '../../components/Services/api';
-import LISTAR_PAGAMENTO from '../../components/Listas/listar_pagamento';
-import LISTAR_PESSOA from '../../components/Listas/listar_pessoa';
+import ListarPagamento from '../../components/Listas/listar_pagamento';
+import ListarPessoa from '../../components/Listas/listar_pessoa';
 import moment from 'moment';
 import  DarkMode  from '../../components/DarkMode';
 
@@ -78,7 +78,7 @@ export default function Movimentacao_compra() {
                   required: 'Preenchimento Obrigatório',
                 })}
            >
-             <option hidden disabled selected value> Selecione um status </option>
+             <option selected disabled hidden> Selecione um status </option>
              <option value="P" key="pedido">Pedido</option>
              <option value="O" key="orcamento">Orçamento</option>
           </select>
@@ -119,8 +119,8 @@ export default function Movimentacao_compra() {
            name="pessoa.codPessoa"
            {...register("pessoa.codPessoa")}
      >
-      <option hidden disabled selected value> Selecione um código </option>
-      <LISTAR_PESSOA />
+      <option selected disabled hidden> Selecione um código </option>
+      <ListarPessoa />
 
     </select>
 
@@ -144,8 +144,8 @@ export default function Movimentacao_compra() {
            {...register("tipoPagamento.codTipoPagamento")}
      >
 
-    <option hidden disabled selected value> Selecione uma opção </option>
-    <LISTAR_PAGAMENTO />
+    <option selected disabled hidden> Selecione uma opção </option>
+    <ListarPagamento />
 
     </select>
                        

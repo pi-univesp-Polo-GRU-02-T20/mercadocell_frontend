@@ -5,7 +5,7 @@ import { ErrorMessage } from '@hookform/error-message';
 import './cadastro_usuario.css';
 import api  from '../../components/Services/api';
 import DarkMode  from '../../components/DarkMode';
-import LISTAR_CODPESSOA from '../../components/Listas/listar_codpessoa';
+import ListarCodpessoa from '../../components/Listas/listar_codpessoa';
 
 export default function Cadastro_usuario() {
 
@@ -69,8 +69,8 @@ export default function Cadastro_usuario() {
                   required: 'Preenchimento Obrigatório',
                 })}
            >
-             <option hidden disabled selected value> Selecione um código </option>
-             <LISTAR_CODPESSOA />
+             <option selected disabled hidden> Selecione um código </option>
+             <ListarCodpessoa/>
            </select>
         
         </div>

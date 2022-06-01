@@ -2,8 +2,9 @@ import Navbar from '../../components/Menu/Navbar';
 import MaterialTable from "material-table";
 import React, { useEffect, useState } from "react";
 import './consulta.css';
-import  api  from '../../components/Services/api';
-import  DarkMode  from '../../components/DarkMode';
+import api  from '../../components/Services/api';
+import DarkMode  from '../../components/DarkMode';
+import categoriaPDF from '../../components/Pdf/pdf_categoria';
 
 export default function Consulta_categoria() {
     
@@ -25,8 +26,6 @@ export default function Consulta_categoria() {
         ],
     });
  
-
-
     useEffect(() => {
         api
         .get(url)
@@ -47,8 +46,6 @@ export default function Consulta_categoria() {
     });
 }, []);
 
-
-
     return (
       <>
 
@@ -62,6 +59,10 @@ export default function Consulta_categoria() {
 </div>
 
 <div className="body">
+
+<div className="divBtn">
+     <button onClick={(e) => categoriaPDF(entries.data)} className="btnPdf">Gerar PDF</button>
+</div>
 
     <MaterialTable    
     title="Consulta de Categoria"
@@ -126,6 +127,7 @@ export default function Consulta_categoria() {
       }
     }}
     />
+
     </div>
 
     <div className="footer">

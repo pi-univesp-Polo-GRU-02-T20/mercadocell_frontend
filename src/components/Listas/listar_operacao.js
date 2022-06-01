@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import api from '../Services/api'
 
-  class LISTAR_OPERACAO extends Component {
+  class ListarOperacao extends Component {
 
     state = {
       operacoes: [],
@@ -29,4 +29,4 @@ import api from '../Services/api'
     };
   };
 
-export default LISTAR_OPERACAO;
+export default ListarOperacao;

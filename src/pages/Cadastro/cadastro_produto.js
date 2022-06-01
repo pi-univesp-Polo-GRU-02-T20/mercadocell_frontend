@@ -4,9 +4,9 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
 import './cadastro_produto.css';
 import  api  from '../../components/Services/api';
-import LISTAR_CATEGORIA from '../../components/Listas/listar_categoria';
-import LISTAR_SUBCATEGORIA from '../../components/Listas/listar_subcategoria';
-import LISTAR_UNIDADEDEMEDIDA from '../../components/Listas/listar_unidadedemedida';
+import ListarCategoria from '../../components/Listas/listar_categoria';
+import ListarSubcategoria from '../../components/Listas/listar_subcategoria';
+import ListarUnidadedemedida from '../../components/Listas/listar_unidadedemedida';
 import  DarkMode  from '../../components/DarkMode';
 
 export default function Cadastro_produto() {
@@ -84,8 +84,8 @@ export default function Cadastro_produto() {
                   required: 'Preenchimento Obrigatório',
                 })}
            >
-             <option hidden disabled selected value> Selecione uma categoria </option>
-             <LISTAR_CATEGORIA />
+             <option selected disabled hidden> Selecione uma categoria </option>
+             <ListarCategoria />
           </select>                           
 
       </div>
@@ -101,8 +101,8 @@ export default function Cadastro_produto() {
         required: 'Preenchimento Obrigatório'
       })}
  >
-   <option hidden disabled selected value> Selecione uma subcategoria </option>
-   <LISTAR_SUBCATEGORIA />
+   <option selected disabled hidden> Selecione uma subcategoria </option>
+   <ListarSubcategoria />
 </select>
 
 </div>
@@ -119,8 +119,8 @@ export default function Cadastro_produto() {
                   required: 'Preenchimento Obrigatório',
                 })}
            >
-             <option hidden disabled selected value> Selecione uma unidade </option>
-             <LISTAR_UNIDADEDEMEDIDA />
+             <option selected disabled hidden> Selecione uma unidade </option>
+             <ListarUnidadedemedida />
           </select>
                              
       </div>
