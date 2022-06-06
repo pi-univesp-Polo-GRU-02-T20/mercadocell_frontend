@@ -38,7 +38,6 @@ import Movimentacao_venda from './Movimentacao/movimentacao_venda';
 import Movimentacao_pagamento from './Movimentacao/movimentacao_pagamento';
 
 import Relatorios from './Relatorio/relatorios';
-import Relatorio_estoque from './Relatorio/relatorio_estoque';
 
 const PagesRoot = () => (
     <Router>
@@ -77,7 +76,6 @@ const PagesRoot = () => (
 
           <RoutesPrivate path='/relatorios' component={Relatorios} />
 
-          <RoutesPrivate path='/relatorio-estoque' component={Relatorio_estoque} />
           <RoutesPrivate path='/sign-up' component={Home} />
         </Switch>
       </StoreProvider>
