@@ -22,7 +22,7 @@ export default function Consulta_categoria() {
     const [state] = React.useState({
         columns: [
             { title: "Código da categoria", field: "codCategoria", editable:false},
-            { title: "Nome da categoria", field: "nomeCategoria" },
+            { title: "Nome da categoria", field: "nomeCategoria", cellStyle: {minWidth: 300} },
         ],
     });
  
@@ -64,7 +64,7 @@ export default function Consulta_categoria() {
      <button onClick={(e) => categoriaPDF(entries.data)} className="btnPdf">Gerar PDF</button>
 </div>
 
-    <MaterialTable    
+    <MaterialTable   
     title="Consulta de Categoria"
     data={entries.data}
     columns={state.columns}

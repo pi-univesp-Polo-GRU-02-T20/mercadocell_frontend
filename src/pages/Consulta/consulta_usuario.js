@@ -29,8 +29,8 @@ export default function Consulta_pessoajuridica() {
             { title: "Nome da Pessoa", field: "nomePessoa" },
             { title: "Código do Usuário", field: "codUsuario", editable:false },
             { title: "Login", field: "login" },
-            { title: "Senha", field: "senha" },
-            { title: "Ativo", field: "ativo" }
+            { title: "Senha", field: "senha" }
+    //      { title: "Ativo", field: "ativo" }
         ]
     });
 
@@ -46,8 +46,8 @@ export default function Consulta_pessoajuridica() {
         nomePessoa: el.nomePessoa, 
         codUsuario: el.codUsuario,
         login: el.login,
-        senha: el.senha,
-        ativo: el.ativo
+        senha: el.senha
+//      ativo: el.ativo
         }
     );
 });

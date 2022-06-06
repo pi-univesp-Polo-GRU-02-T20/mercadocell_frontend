@@ -4,15 +4,7 @@ import { Link } from 'react-router-dom';
 import  DarkMode  from '../../components/DarkMode';
 import './Home.css';
 
-
-
-export default function Home() {
-
-
-
-
-
- 
+export default function Home() { 
   
   return (
   <>

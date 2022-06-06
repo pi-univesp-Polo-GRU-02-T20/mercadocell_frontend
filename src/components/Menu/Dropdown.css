@@ -9,6 +9,7 @@
 }
 
 .dropdown-menu li {
+  height: 55px;
   background: #1888ff;
   cursor: pointer;
   position:relative;

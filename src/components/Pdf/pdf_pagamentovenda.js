@@ -5,10 +5,17 @@ import pdfFonts from 'pdfmake/build/vfs_fonts';
 function pagamentovendaPDF(vetor){
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
+    const timeElapsed = Date.now();
+    const today = new Date(timeElapsed);
+    const d = today.toLocaleDateString();
+    const h = today.getHours();
+    const m = today.getMinutes();
+    const s = today.getSeconds();
+
     const reportTitle = [
         {
-            text: 'Pagamento - Vendas',                                                    //Colocar título correspondente ao documento
-            fontSize: 15,
+            text: 'MERCADOCELL',                                                    //Colocar título correspondente ao documento
+            fontSize: 18,
             bold: true,
             margin: [15, 20, 0, 45] 
         }
@@ -16,33 +23,39 @@ function pagamentovendaPDF(vetor){
 
     const dados = vetor.map((converter) => {
         return [
-            {text: converter.codPagamento, fontSize: 9, margin: [0, 2, 0, 2]},     //Colocar nome utilizado no banco de dados
-            {text: converter.codOperacao, fontSize: 9, margin: [0, 2, 0, 2]},
-            {text: converter.codNotaFiscal, fontSize: 9, margin: [0, 2, 0, 2]},
-            {text: converter.dataPagamento, fontSize: 9, margin: [0, 2, 0, 2]},
-            {text: converter.dataVencimento, fontSize: 9, margin: [0, 2, 0, 2]},
-            {text: converter.valorPagamento, fontSize: 9, margin: [0, 2, 0, 2]},
+            {text: converter.codPagamento, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},     //Colocar nome utilizado no banco de dados
+            {text: converter.codOperacao, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
+            {text: converter.codNotaFiscal, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
+            {text: converter.dataPagamento, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
+            {text: converter.dataVencimento, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
+            {text: converter.valorPagamento, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
         ] 
     });
 
     const details = [
+        {text: 'Gerado em: ' + d + ' às ' + h + ':' + m + ':' + s, fontSize: 9},
+        {text: 'LISTA DE PAGAMENTO - VENDA', style: 'subheader', margin: [0,30,10,20], bold: true, border: [false, true, false, true]},
         {
             table:{
                 headerRows: 1,
                 widths: ['*', '*', '*', '*', '*', '*',],                                                //colocar '*' correspondente ao número de campos
                 body: [
                     [
-                        {text: 'Cód. Pagamento', style: 'tableHeader', fontSize: 10},      //colocar título correspondentes a cada campo
-                        {text: 'Cód. Operação', style: 'tableHeader', fontSize: 10},
-                        {text: 'Nota Fiscal', style: 'tableHeader', fontSize: 10},
-                        {text: 'Data de Pagamento', style: 'tableHeader', fontSize: 10},
-                        {text: 'Data de Vencimento', style: 'tableHeader', fontSize: 10},
-                        {text: 'Valor do Pagamento', style: 'tableHeader', fontSize: 10},
+                        {text: 'Cód. Pagamento', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},      //colocar título correspondentes a cada campo
+                        {text: 'Cód. Operação', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
+                        {text: 'Nota Fiscal', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
+                        {text: 'Data de Pagamento', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
+                        {text: 'Data de Vencimento', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
+                        {text: 'Valor do Pagamento', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
                     ],
                     ...dados
                 ]
             },
-            layout: 'lightHorizontalLines' 
+            layout: {
+				fillColor: function (rowIndex) {
+					return (rowIndex % 2 === 0) ? '#e3e3e3' : null;
+				}
+			}
         }
     ];
 
@@ -66,7 +79,7 @@ function pagamentovendaPDF(vetor){
         footer: Rodape
     }
 
-    pdfMake.createPdf(docDefinitios).download();
+    pdfMake.createPdf(docDefinitios).download('consulta-pagamento-venda_' + d + '_' + h + m + '.pdf');
 }
 
 export default pagamentovendaPDF;

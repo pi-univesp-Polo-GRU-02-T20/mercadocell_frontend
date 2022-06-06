@@ -133,12 +133,14 @@
 
 
 .MuiToolbar-root {
+  
   background-color: var(--fundo-formulario);
   border: 0.5px solid white;
   color: var(--fonte);
 }
 
 .Component-horizontalScrollContainer-12 {
+  
   background-color: var(--fundo-formulario);
   color: var(--fonte);
   border: 0.5px solid white;

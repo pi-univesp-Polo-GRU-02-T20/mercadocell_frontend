@@ -27,18 +27,13 @@ const UserLogin = () => {
 
 
 function login() {
-  
+    // eslint-disable-next-line
     if (true === true) {
       return { token: '1234' };
     }
     return { error: 'Usuário ou senha inválido' };
         
 }
-
-
-
-
-
 
   function onChange(event) {
     const { value, name } = event.target;
@@ -49,10 +44,6 @@ function login() {
     });
 
   }
-
-
-
-
 
   function onSubmit(event) {
 
@@ -70,50 +61,66 @@ function login() {
   }
 
     return (
-        <div className="login">
+      <>
 
-            <div className="login-painel">
-              <h1>Login</h1>
+<div className="container-menu grid-areas">
 
-              <form onSubmit={onSubmit} className="form">
+<div className="header-menu">
+  
 
-                <div className="login-loginInputEmail">
-                    <HiUser />
-                    <input
-                        id="user"
-                        type="text"
-                        name="login"
-                        placeholder="Usuário"
-                        value={values.login}
-                        onChange={onChange}
-                    />
-                </div>
-                
-                <div className="login-loginInputPassword">
-                    <HiLockClosed /> 
-                    <input
-                        id="password"
-                        type="password"
-                        name="senha"
-                        placeholder="Senha"
-                        value={values.senha}
-                        onChange={onChange}
-                     />
-                </div>
+</div>
 
-                {error && (<div className="user-login__error">{error}</div>)}
-                
-                <UIButton
-                   type="submit"
-                   theme="contained-green"
-                   className="user-login__submit-button"
-                   rounded
-                >
-                    Acessar
-                </UIButton>
-              </form>
+<div className="body-menu">
+
+        <div className="login-painel">
+          <h1>Login</h1>
+
+          <form onSubmit={onSubmit} className="form">
+
+            <div className="login-loginInputEmail">
+              <HiUser />
+              <input
+                id="user"
+                type="text"
+                name="login"
+                placeholder="Usuário"
+                value={values.login}
+                onChange={onChange} />
             </div>
+
+            <div className="login-loginInputPassword">
+              <HiLockClosed />
+              <input
+                id="password"
+                type="password"
+                name="senha"
+                placeholder="Senha"
+                value={values.senha}
+                onChange={onChange} />
+            </div>
+
+            {error && (<div className="user-login__error">{error}</div>)}
+
+            <UIButton
+              type="submit"
+              theme="contained-green"
+              className="user-login__submit-button"
+              rounded
+            >
+              Acessar
+            </UIButton>
+          </form>
         </div>
+
+      
+      </div>
+
+      <div className="footer-menu">
+      </div>
+
+      </div>
+      
+      </>
     )
 }
 

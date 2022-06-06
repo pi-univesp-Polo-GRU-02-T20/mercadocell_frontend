@@ -4,11 +4,18 @@ import pdfFonts from 'pdfmake/build/vfs_fonts';
 
 function pessoajuridicaPDF(vetor){
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
+    
+    const timeElapsed = Date.now();
+    const today = new Date(timeElapsed);
+    const d = today.toLocaleDateString();
+    const h = today.getHours();
+    const m = today.getMinutes();
+    const s = today.getSeconds();
 
     const reportTitle = [
         {
-            text: 'Pessoas Jurídicas',                                                    //Colocar título correspondente ao documento
-            fontSize: 15,
+            text: 'MERCADOCELL',                                                    //Colocar título correspondente ao documento
+            fontSize: 18,
             bold: true,
             margin: [15, 20, 0, 45] 
         }
@@ -16,29 +23,35 @@ function pessoajuridicaPDF(vetor){
 
     const dados = vetor.map((converter) => {
         return [
-            {text: converter.codPessoa, fontSize: 9, margin: [0, 2, 0, 2]},     //Colocar nome utilizado no banco de dados
-            {text: converter.codCNPJ, fontSize: 9, margin: [0, 2, 0, 2]},
-            {text: converter.nomePessoa, fontSize: 9, margin: [0, 2, 0, 2]},
-            {text: converter.nomeRazaoSocial, fontSize: 9, margin: [0, 2, 0, 2]},
+            {text: converter.codPessoa, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},     //Colocar nome utilizado no banco de dados
+            {text: converter.codCNPJ, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
+            {text: converter.nomePessoa, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
+            {text: converter.nomeRazaoSocial, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
         ] 
     });
 
     const details = [
+        {text: 'Gerado em: ' + d + ' às ' + h + ':' + m + ':' + s, fontSize: 9},
+        {text: 'LISTA DE PESSOAS JURÍDICAS', style: 'subheader', margin: [0,30,10,20], bold: true, border: [false, true, false, true]},
         {
             table:{
                 headerRows: 1,
                 widths: ['*', '*', '*', '*'],                                                //colocar '*' correspondente ao número de campos
                 body: [
                     [
-                        {text: 'Código', style: 'tableHeader', fontSize: 10},      //colocar título correspondentes a cada campo
-                        {text: 'CNPJ', style: 'tableHeader', fontSize: 10},
-                        {text: 'Nome Fantasia', style: 'tableHeader', fontSize: 10},
-                        {text: 'Razão Social', style: 'tableHeader', fontSize: 10},
+                        {text: 'Código', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},      //colocar título correspondentes a cada campo
+                        {text: 'CNPJ', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
+                        {text: 'Nome Fantasia', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
+                        {text: 'Razão Social', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
                     ],
                     ...dados
                 ]
             },
-            layout: 'lightHorizontalLines' 
+            layout: {
+				fillColor: function (rowIndex) {
+					return (rowIndex % 2 === 0) ? '#e3e3e3' : null;
+				}
+			}
         }
     ];
 
@@ -62,7 +75,7 @@ function pessoajuridicaPDF(vetor){
         footer: Rodape
     }
 
-    pdfMake.createPdf(docDefinitios).download();
+    pdfMake.createPdf(docDefinitios).download('consulta-pessoajuridica_' + d + '_' + h + m + '.pdf');
 }
 
 export default pessoajuridicaPDF;

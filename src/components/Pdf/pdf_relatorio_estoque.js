@@ -2,7 +2,7 @@ import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 
 
-function unidadedemedidaPDF(vetor){
+function relatorioEstoquePDF(vetor){
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
     const timeElapsed = Date.now();
@@ -23,24 +23,28 @@ function unidadedemedidaPDF(vetor){
 
     const dados = vetor.map((converter) => {
         return [
-            {text: converter.codUnidadeMedida, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},     //Colocar nome utilizado no banco de dados
-            {text: converter.nomeUnidadeMedida, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
-            {text: converter.siglaUnidadeMedida, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
+            {text: converter.codProduto, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},     //Colocar nome utilizado no banco de dados
+            {text: converter.nomeProduto, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
+            {text: converter.quantidadeEstoqueAtual, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
+            {text: converter.quantidadeEstoqueMaximo, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
+            {text: converter.quantidadeEstoqueMinima, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
         ] 
     });
 
     const details = [
         {text: 'Gerado em: ' + d + ' às ' + h + ':' + m + ':' + s, fontSize: 9},
-        {text: 'LISTA DE UNIDADES DE MEDIDA', style: 'subheader', margin: [0,30,10,20], bold: true, border: [false, true, false, true]},
+        {text: 'RELATÓRIO DE ESTOQUE', style: 'subheader', margin: [0,30,10,20], bold: true, border: [false, true, false, true]},
         {
             table:{
                 headerRows: 1,
-                widths: ['*', '*', '*'],                                                //colocar '*' correspondente ao número de campos
+                widths: ['*', '*', '*', '*', '*',],                                                //colocar '*' correspondente ao número de campos
                 body: [
                     [
                         {text: 'Código', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},      //colocar título correspondentes a cada campo
-                        {text: 'Nome', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
-                        {text: 'Sigla', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
+                        {text: 'Produto', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
+                        {text: 'Qtd. Estoque Atual', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
+                        {text: 'Qtd. Estoque Min', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
+                        {text: 'Qtd. Estoque Max', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
                     ],
                     ...dados
                 ]
@@ -73,7 +77,7 @@ function unidadedemedidaPDF(vetor){
         footer: Rodape
     }
 
-    pdfMake.createPdf(docDefinitios).download('consulta-unidadedemedida_' + d + '_' + h + m + '.pdf');
+    pdfMake.createPdf(docDefinitios).download('relatorio-estoque_' + d + '_' + h + m + '.pdf');
 }
 
-export default unidadedemedidaPDF;
+export default relatorioEstoquePDF;

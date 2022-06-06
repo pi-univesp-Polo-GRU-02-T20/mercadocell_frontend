@@ -95,6 +95,11 @@ function Navbar() {
             </Link>
             {dropdown3 && <Dropdown3 />}
           </li>
+          <li className='nav-item'>
+            <Link to='/relatorios' className='nav-links' onClick={closeMobileMenu}>
+              Relatórios<i className='fas fa-caret-down' />
+            </Link>
+          </li>
      
         </ul>
         <Button />
