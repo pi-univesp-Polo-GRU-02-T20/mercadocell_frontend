@@ -5,8 +5,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import StoreProvider from '../components/Store/Provider';
 import RoutesPrivate from '../components/Routes/Private/Private';
 
-import Login from './Login/Login';
+//import Login from './Login/Login';
 
+const Login = React.lazy(() => import('./Login/Login'));
 const Home = React.lazy(() => import('./Home/Home'));
 const Sobre = React.lazy(() => import('./Home/sobre'));
 const Mapa = React.lazy(() => import('./Home/mapa'));
@@ -57,12 +58,12 @@ const PagesRoot = () => (
       <StoreProvider>
       <React.Suspense fallback={<div>Loading...</div>}>
         <Switch>
-          <Route path="/login" component={Login} />
-          <RoutesPrivate path="/" exact component={() => <Home/>} />
+          <Route path="/login" component={() => <Login/>} />
+          <Route path="/" exact component={() => <Home/>} />
           <RoutesPrivate path="/sobre" exact component={() => <Sobre/>} />
           <RoutesPrivate path="/mapa" exact component={() => <Mapa/>} />
 
-          <RoutesPrivate path='/cadastro-categoria' component={() => <Cadastro_categoria/>} />
+          <Route path='/cadastro-categoria' component={() => <Cadastro_categoria/>} />
           <RoutesPrivate path='/cadastro-subcategoria' component={() => <Cadastro_subcategoria/>} />
           <RoutesPrivate path='/cadastro-unidadedemedida' component={() => <Cadastro_unidadedemedida/>} />
           <RoutesPrivate path='/cadastro-produto' component={() => <Cadastro_produto/>} />
