@@ -11,30 +11,30 @@ const Home = React.lazy(() => import('./Home/Home'));
 const Sobre = React.lazy(() => import('./Home/sobre'));
 const Mapa = React.lazy(() => import('./Home/mapa'));
 
-const Cadastro_categoria = React.lazy(() => import('./Cadastro/cadastro_categoria'));
-const Cadastro_subcategoria = React.lazy(() => import('./Cadastro/cadastro_subcategoria'));
-const Cadastro_unidadedemedida = React.lazy(() => import('./Cadastro/cadastro_unidadedemedida'));
-const Cadastro_produto = React.lazy(() => import('./Cadastro/cadastro_produto'));
-const Cadastro_pessoafisica = React.lazy(() => import('./Cadastro/cadastro_pessoafisica'));
-const Cadastro_pessoajuridica  = React.lazy(() => import('./Cadastro/cadastro_pessoajuridica'));
-const Cadastro_tipopagamento = React.lazy(() => import('./Cadastro/cadastro_tipopagamento'));
-const Cadastro_usuario = React.lazy(() => import('./Cadastro/cadastro_usuario'));
+const CadastroCategoria = React.lazy(() => import('./Cadastro/cadastro_categoria'));
+const CadastroSubcategoria = React.lazy(() => import('./Cadastro/cadastro_subcategoria'));
+const CadastroUnidadedemedida = React.lazy(() => import('./Cadastro/cadastro_unidadedemedida'));
+const CadastroProduto = React.lazy(() => import('./Cadastro/cadastro_produto'));
+const CadastroPessoafisica = React.lazy(() => import('./Cadastro/cadastro_pessoafisica'));
+const CadastroPessoajuridica  = React.lazy(() => import('./Cadastro/cadastro_pessoajuridica'));
+const CadastroTipopagamento = React.lazy(() => import('./Cadastro/cadastro_tipopagamento'));
+const CadastroUsuario = React.lazy(() => import('./Cadastro/cadastro_usuario'));
 
-const Consulta_categoria = React.lazy(() => import('./Consulta/consulta_categoria'));
-const Consulta_subcategoria = React.lazy(() => import('./Consulta/consulta_subcategoria'));
-const Consulta_unidadedemedida = React.lazy(() => import('./Consulta/consulta_unidadedemedida'));
-const Consulta_produto = React.lazy(() => import('./Consulta/consulta_produto'));
-const Consulta_pessoafisica = React.lazy(() => import('./Consulta/consulta_pessoafisica'));
-const Consulta_pessoajuridica = React.lazy(() => import('./Consulta/consulta_pessoajuridica'));
-const Consulta_tipopagamento = React.lazy(() => import('./Consulta/consulta_tipopagamento.js'));
-const Consulta_usuario = React.lazy(() => import('./Consulta/consulta_usuario'));
-const Consulta_operacao = React.lazy(() => import('./Consulta/consulta_operacao'));
-const Consulta_pagamentocompra = React.lazy(() => import('./Consulta/consulta_pagamentocompra'));
-const Consulta_pagamentovenda = React.lazy(() => import('./Consulta/consulta_pagamentovenda'));
+const ConsultaCategoria = React.lazy(() => import('./Consulta/consulta_categoria'));
+const ConsultaSubcategoria = React.lazy(() => import('./Consulta/consulta_subcategoria'));
+const ConsultaUnidadedemedida = React.lazy(() => import('./Consulta/consulta_unidadedemedida'));
+const ConsultaProduto = React.lazy(() => import('./Consulta/consulta_produto'));
+const ConsultaPessoafisica = React.lazy(() => import('./Consulta/consulta_pessoafisica'));
+const ConsultaPessoajuridica = React.lazy(() => import('./Consulta/consulta_pessoajuridica'));
+const ConsultaTipopagamento = React.lazy(() => import('./Consulta/consulta_tipopagamento.js'));
+const ConsultaUsuario = React.lazy(() => import('./Consulta/consulta_usuario'));
+const ConsultaOperacao = React.lazy(() => import('./Consulta/consulta_operacao'));
+const ConsultaPagamentocompra = React.lazy(() => import('./Consulta/consulta_pagamentocompra'));
+const ConsultaPagamentovenda = React.lazy(() => import('./Consulta/consulta_pagamentovenda'));
 
-const Movimentacao_compra = React.lazy(() => import('./Movimentacao/movimentacao_compra'));
-const Movimentacao_venda = React.lazy(() => import('./Movimentacao/movimentacao_venda'));
-const Movimentacao_pagamento = React.lazy(() => import('./Movimentacao/movimentacao_pagamento'));
+const MovimentacaoCompra = React.lazy(() => import('./Movimentacao/movimentacao_compra'));
+const MovimentacaoVenda = React.lazy(() => import('./Movimentacao/movimentacao_venda'));
+const MovimentacaoPagamento = React.lazy(() => import('./Movimentacao/movimentacao_pagamento'));
 
 const Relatorios = React.lazy(() => import('./Relatorio/relatorios'));
 
@@ -62,31 +62,31 @@ const PagesRoot = () => (
           <RoutesPrivate path="/sobre" exact component={() => <Sobre/>} />
           <RoutesPrivate path="/mapa" exact component={() => <Mapa/>} />
 
-          <RoutesPrivate path='/cadastro-categoria' component={() => <Cadastro_categoria/>} />
-          <RoutesPrivate path='/cadastro-subcategoria' component={() => <Cadastro_subcategoria/>} />
-          <RoutesPrivate path='/cadastro-unidadedemedida' component={() => <Cadastro_unidadedemedida/>} />
-          <RoutesPrivate path='/cadastro-produto' component={() => <Cadastro_produto/>} />
-          <RoutesPrivate path='/cadastro-pessoafisica' component={() => <Cadastro_pessoafisica/>} />
-          <RoutesPrivate path='/cadastro-pessoajuridica' component={() => <Cadastro_pessoajuridica/>} />
-          <RoutesPrivate path='/cadastro-tipopagamento' component={() => <Cadastro_tipopagamento/>} />
-          <RoutesPrivate path='/cadastro-usuario' component={() => <Cadastro_usuario/>} />
+          <RoutesPrivate path='/cadastro-categoria' component={() => <CadastroCategoria/>} />
+          <RoutesPrivate path='/cadastro-subcategoria' component={() => <CadastroSubcategoria/>} />
+          <RoutesPrivate path='/cadastro-unidadedemedida' component={() => <CadastroUnidadedemedida/>} />
+          <RoutesPrivate path='/cadastro-produto' component={() => <CadastroProduto/>} />
+          <RoutesPrivate path='/cadastro-pessoafisica' component={() => <CadastroPessoafisica/>} />
+          <RoutesPrivate path='/cadastro-pessoajuridica' component={() => <CadastroPessoajuridica/>} />
+          <RoutesPrivate path='/cadastro-tipopagamento' component={() => <CadastroTipopagamento/>} />
+          <RoutesPrivate path='/cadastro-usuario' component={() => <CadastroUsuario/>} />
           
           
-          <RoutesPrivate path='/consulta-categoria' component={() => <Consulta_categoria/>} />
-          <RoutesPrivate path='/consulta-subcategoria' component={() => <Consulta_subcategoria/>} />
-          <RoutesPrivate path='/consulta-unidadedemedida' component={() => <Consulta_unidadedemedida/>} />
-          <RoutesPrivate path='/consulta-produto' component={() => <Consulta_produto/>} />
-          <RoutesPrivate path='/consulta-pessoafisica' component={() => <Consulta_pessoafisica/>} />
-          <RoutesPrivate path='/consulta-pessoajuridica' component={() => <Consulta_pessoajuridica/>} />
-          <RoutesPrivate path='/consulta-tipopagamento' component={() => <Consulta_tipopagamento/>} />
-          <RoutesPrivate path='/consulta-usuario' component={() => <Consulta_usuario/>} />
-          <RoutesPrivate path='/consulta-operacao' component={() => <Consulta_operacao/>} />
-          <RoutesPrivate path='/consulta-pagamentocompra' component={() => <Consulta_pagamentocompra/>} />
-          <RoutesPrivate path='/consulta-pagamentovenda' component={() => <Consulta_pagamentovenda/>} />
+          <RoutesPrivate path='/consulta-categoria' component={() => <ConsultaCategoria/>} />
+          <RoutesPrivate path='/consulta-subcategoria' component={() => <ConsultaSubcategoria/>} />
+          <RoutesPrivate path='/consulta-unidadedemedida' component={() => <ConsultaUnidadedemedida/>} />
+          <RoutesPrivate path='/consulta-produto' component={() => <ConsultaProduto/>} />
+          <RoutesPrivate path='/consulta-pessoafisica' component={() => <ConsultaPessoafisica/>} />
+          <RoutesPrivate path='/consulta-pessoajuridica' component={() => <ConsultaPessoajuridica/>} />
+          <RoutesPrivate path='/consulta-tipopagamento' component={() => <ConsultaTipopagamento/>} />
+          <RoutesPrivate path='/consulta-usuario' component={() => <ConsultaUsuario/>} />
+          <RoutesPrivate path='/consulta-operacao' component={() => <ConsultaOperacao/>} />
+          <RoutesPrivate path='/consulta-pagamentocompra' component={() => <ConsultaPagamentocompra/>} />
+          <RoutesPrivate path='/consulta-pagamentovenda' component={() => <ConsultaPagamentovenda/>} />
           
-          <RoutesPrivate path='/movimentacao-compra' component={() => <Movimentacao_compra/>} />
-          <RoutesPrivate path='/movimentacao-venda' component={() => <Movimentacao_venda/>} />
-          <RoutesPrivate path='/movimentacao-pagamento' component={() => <Movimentacao_pagamento/>} />
+          <RoutesPrivate path='/movimentacao-compra' component={() => <MovimentacaoCompra/>} />
+          <RoutesPrivate path='/movimentacao-venda' component={() => <MovimentacaoVenda/>} />
+          <RoutesPrivate path='/movimentacao-pagamento' component={() => <MovimentacaoPagamento/>} />
 
           <RoutesPrivate path='/relatorios' component={() => <Relatorios/>} />
 
