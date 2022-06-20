@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import StoreProvider from '../components/Store/Provider';
 import RoutesPrivate from '../components/Routes/Private/Private';
 
-import Login from './Login/Login';
+import Rlogin from './Login/Login';
 
 const Home = React.lazy(() => import('./Home/Home'));
 const Sobre = React.lazy(() => import('./Home/sobre'));
@@ -38,6 +38,7 @@ const MovimentacaoPagamento = React.lazy(() => import('./Movimentacao/movimentac
 
 const Relatorios = React.lazy(() => import('./Relatorio/relatorios'));
 
+
 /*
 import Consulta_categoria from './Consulta/consulta_categoria';
 import Consulta_subcategoria from './Consulta/consulta_subcategoria';
@@ -55,9 +56,11 @@ import Consulta_pagamentovenda from './Consulta/consulta_pagamentovenda';
 const PagesRoot = () => (
     <Router>
       <StoreProvider>
-      <React.Suspense fallback={<div>Loading...</div>}>
         <Switch>
-          <Route path="/login" component={Login} />
+
+          <Route path="/login" exact component={Rlogin} />
+          <React.Suspense fallback={<div>Loading...</div>}>
+          
           <RoutesPrivate path="/" exact component={() => <Home/>} />
           <RoutesPrivate path="/sobre" exact component={() => <Sobre/>} />
           <RoutesPrivate path="/mapa" exact component={() => <Mapa/>} />
@@ -91,9 +94,11 @@ const PagesRoot = () => (
           <RoutesPrivate path='/relatorios' component={() => <Relatorios/>} />
 
           <RoutesPrivate path='/sign-up' component={() => <Home/>} />
+
+          </React.Suspense>
           
         </Switch>
-        </React.Suspense>
+        
       </StoreProvider>
     </Router>
   )

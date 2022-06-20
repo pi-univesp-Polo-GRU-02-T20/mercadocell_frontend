@@ -1,11 +1,12 @@
 import React, { useState, useContext } from 'react'
 import { useHistory } from 'react-router-dom';
-import StoreContext from '../../Store/Context';
-import UIButton from '../../UI/Button/Button';
-
+import StoreContext from '../../components/Store/Context';
+import UIButton from '../../components/UI/Button/Button';
 import { HiUser, HiLockClosed } from "react-icons/hi";
 
+
 import './Login.css'
+
 
 
 
@@ -13,7 +14,7 @@ function initialState() {
   return { login: '', senha: '' };
 }
 
-const UserLogin = () => {
+export default function Rlogin() {
   const [values, setValues] = useState(initialState);
   const [error, setError] = useState(null);
   const { setToken } = useContext(StoreContext);
@@ -61,23 +62,15 @@ function login() {
   }
 
     return (
-      <>
+      <div className="log_fundo">
+      <form className = "log_form" onSubmit={onSubmit}>
 
-<div className="container-menu grid-areas">
+      <div className="log_titulo">
+        <h1>Login</h1>
+      </div>
 
-<div className="header-menu">
-  
-
-</div>
-
-<div className="body-menu">
-
-        <div className="login-painel">
-          <h1>Login</h1>
-
-          <form onSubmit={onSubmit} className="form">
-
-            <div className="login-loginInputEmail">
+      <div className="log_campo">
+      <div className="login-loginInputEmail">
               <HiUser />
               <input
                 id="user"
@@ -86,9 +79,12 @@ function login() {
                 placeholder="Usuário"
                 value={values.login}
                 onChange={onChange} />
-            </div>
+        
+      </div>
 
-            <div className="login-loginInputPassword">
+
+      <div className="login-loginInputPassword">
+           
               <HiLockClosed />
               <input
                 id="password"
@@ -97,10 +93,9 @@ function login() {
                 placeholder="Senha"
                 value={values.senha}
                 onChange={onChange} />
+
             </div>
-
-            {error && (<div className="user-login__error">{error}</div>)}
-
+  
             <UIButton
               type="submit"
               theme="contained-green"
@@ -109,19 +104,10 @@ function login() {
             >
               Acessar
             </UIButton>
-          </form>
-        </div>
-
-      
+            </div>
+           
+      </form>
       </div>
-
-      <div className="footer-menu">
-      </div>
-
-      </div>
-      
-      </>
-    )
+    );
 }
 
-export default UserLogin

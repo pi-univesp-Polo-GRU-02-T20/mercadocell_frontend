@@ -13,90 +13,8 @@ html, body {
 body {
 margin: 0 0 100px;
 background-size: cover;
+background-color: #125ec0;
 }
-
-body.light {
---fundo-pagina: #f7f7f7;
---fundo-formulario: #ffffff;
---fundo-input: #ffffff;
---tema: #125ec0;
---fonte: #000000;
---label: #555555;
-}
-
-body.dark {
---fundo-pagina:#000000;
---fundo-formulario: #000000;
---fundo-input: #000000;
---tema: #000000;
---fonte: #ffffff;
---label: #ffffff;
-background-color: #e3e3e3;
-}
-
-body.normal {
---fonte-tamanho: 14px;
-}
-
-body.big {
---fonte-tamanho: 18px;
-}
-
-.container-menu {
-  width: 100%;
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 100px auto 40px;
-  grid-template-columns: 50% 50%;
-  background-color: var(--tema);
-}
-
-.header-menu {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  background-color: var(--tema);
-  grid-area: header;
-}
-
-.body-menu {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: var(--tema);
-  grid-area: body;
-}
-
-.footer-menu {
-  display: flex;
-  flex-direction: row;
-  background-color: var(--tema);
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  font-size: var(--fonte-tamanho);
-  color: #fff;
-  grid-area: footer;    
-}
-
-.grid-areas {
-  grid-template-areas: 
-  "header-menu header-menu"
-  "body-menu body-menu"
-  "footer-menu footer-menu";
-}
-
-
-
-.fundo_pagina {
-  background-color: var(--cor);
-}
-
 
 form {
   background-color: #ffffff;
@@ -109,6 +27,38 @@ form {
   height: 300px; 
 }
 
+
+.log_fundo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.log_form {
+  display: flex;
+  position: relative;
+  background-color: white;
+  height: 300px;
+  width: 400px;
+  border-left: 20px solid #1888ff;
+  border-radius: 0px;
+  top: 200px;
+}
+
+.log_titulo {
+  color: #125ec0;
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+.log_campo{
+  display: flex;
+  flex-direction: column;
+}
+
+
 .login-painel {
   background-color: #ffffff;
   opacity: 95%;
@@ -120,6 +70,7 @@ form {
   padding: 20px;
   width: 400px;
   height: 300px; 
+  
 }
 
 .login-painel h1 {
@@ -138,6 +89,7 @@ form {
   width: 98%;
   height: 50px;
   border: 2px solid #a8a8a8;
+  margin-left: 5px;
 }
 
 .login-loginInputEmail svg {
@@ -153,7 +105,7 @@ form {
   color: #000000;
   border: none;
   font-size: 17px;
-  margin-left: 10px;
+  margin-left: 12px;
   margin-right: 10px;
 }
 
@@ -212,4 +164,24 @@ form {
   font-size: 30;
   cursor: pointer;
   margin-right: 10px;
+}
+
+
+.log_form button {
+  width: 100%;
+  background-color: #125ec0;
+  color: #EFF2F5;
+  font-weight: 800;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 5px;
+  border: none;
+  outline-width: 0;
+}
+
+.log_form button:hover {
+  background-color:#1888ff;
+  color: #EFF2F5;
+  cursor: pointer;
 }
