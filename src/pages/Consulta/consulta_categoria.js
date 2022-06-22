@@ -3,8 +3,8 @@ import MaterialTable from "material-table";
 import React, { useEffect, useState } from "react";
 import './consulta.css';
 import api  from '../../components/Services/api';
-import DarkMode  from '../../components/DarkMode';
 import categoriaPDF from '../../components/Pdf/pdf_categoria';
+const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
 export default function Consulta_categoria() {
     

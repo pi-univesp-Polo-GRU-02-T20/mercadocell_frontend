@@ -1,10 +1,11 @@
 import Navbar from '../../components/Menu/Navbar';
-import MaterialTable from "material-table";
+
 import React, { useEffect, useState } from "react";
 import './consulta.css';
 import  api  from '../../components/Services/api';
-import  DarkMode  from '../../components/DarkMode';
 import pagamentovendaPDF from '../../components/Pdf/pdf_pagamentovenda';
+const DarkMode = React.lazy(() => import('../../components/DarkMode'));
+const MaterialTable = React.lazy(() => import('material-table'));
 
 export default function Consulta_pagamentovenda() {
 

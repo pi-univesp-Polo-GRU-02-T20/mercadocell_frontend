@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
 import './cadastro_unidadedemedida.css';
 import  api  from '../../components/Services/api';
-import  DarkMode  from '../../components/DarkMode';
+const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
 export default function Cadastro_unidadedemedida() {
 

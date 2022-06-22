@@ -1,10 +1,12 @@
 import Navbar from '../../components/Menu/Navbar';
-import MaterialTable from "material-table";
+
 import React, { useEffect, useState } from "react";
 import './consulta.css';
 import  api  from '../../components/Services/api';
-import  DarkMode  from '../../components/DarkMode';
+
 import tipopagamentoPDF from '../../components/Pdf/pdf_tipopagamento';
+const DarkMode = React.lazy(() => import('../../components/DarkMode'));
+const MaterialTable = React.lazy(() => import('material-table'));
 
 export default function Consulta_categoria() {
 

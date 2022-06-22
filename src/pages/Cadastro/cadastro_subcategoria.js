@@ -5,7 +5,7 @@ import { ErrorMessage } from '@hookform/error-message';
 import './cadastro_subcategoria.css';
 import  api  from '../../components/Services/api';
 import ListarCategoria from '../../components/Listas/listar_categoria';
-import  DarkMode  from '../../components/DarkMode';
+const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
 export default function Cadastro_subcategoria() {
 

@@ -7,7 +7,7 @@ import  api  from '../../components/Services/api';
 import ListarCategoria from '../../components/Listas/listar_categoria';
 import ListarSubcategoria from '../../components/Listas/listar_subcategoria';
 import ListarUnidadedemedida from '../../components/Listas/listar_unidadedemedida';
-import  DarkMode  from '../../components/DarkMode';
+const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
 export default function Cadastro_produto() {
 
