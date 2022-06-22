@@ -168,13 +168,14 @@ form {
 
 
 .log_form button {
-  width: 100%;
+  width: 98%;
   background-color: #125ec0;
   color: #EFF2F5;
   font-weight: 800;
   height: 50px;
   border-radius: 5px;
   font-size: 18px;
+  margin-left: 5px;
   margin-top: 5px;
   border: none;
   outline-width: 0;

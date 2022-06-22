@@ -33,7 +33,13 @@ body.dark {
   --label: #ffffff;
 }
 
-
+body.normal {
+  --fonte-tamanho: 14px;
+}
+    
+body.big {
+  --fonte-tamanho: 18px;
+}
 
 .container {
     width: 100%;
@@ -92,7 +98,7 @@ body.dark {
 .bemVindo_titulo {
     display: flex;
     flex-direction: column;
-    font-size: var(--fonte-titulo);
+    font-size: var(--fonte-tamanho);
     color: var(--fonte);
 }
 
@@ -154,11 +160,29 @@ body.dark {
     position: absolute;
     flex-direction: column;
     width: 600px;
-    height: 50px;
+    height: 250px;
     top: 40%;
-    left: 35%;
-    font-size: 14px;
+    left: 32.5%;
+    font-size: var(--fonte-tamanho);
     color: var(--fonte);
+    padding: 10px;
+    border: solid 5px #125ec0;
+    background-color: var(--fundo-pagina);
+}
+
+.recursos {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 800px;
+    height: 430px;
+    top: 30%;
+    left: 25%;
+    font-size: var(--fonte-tamanho);
+    color: var(--fonte);
+    padding: 20px;
+    border: solid 5px #125ec0;
+    background-color: var(--fundo-pagina);
 }
 
 .btnSobre {

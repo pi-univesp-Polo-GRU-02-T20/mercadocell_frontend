@@ -95,6 +95,8 @@ function login() {
                 onChange={onChange} />
 
             </div>
+
+            {error && (<div className="user-login__error">{error}</div>)}
   
             <UIButton
               type="submit"
