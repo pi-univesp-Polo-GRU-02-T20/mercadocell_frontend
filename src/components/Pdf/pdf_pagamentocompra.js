@@ -79,7 +79,7 @@ function pagamentocompraPDF(vetor){
         footer: Rodape
     }
 
-    pdfMake.createPdf(docDefinitios).download();
+    pdfMake.createPdf(docDefinitios).download('consulta-pagamento-compra_' + d + '_' + h + m + '.pdf');
 }
 
 export default pagamentocompraPDF;

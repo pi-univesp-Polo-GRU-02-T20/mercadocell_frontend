@@ -10,6 +10,7 @@ import Rlogin from './Login/Login';
 const Home = React.lazy(() => import('./Home/Home'));
 const Sobre = React.lazy(() => import('./Home/sobre'));
 const Mapa = React.lazy(() => import('./Home/mapa'));
+const Recursos = React.lazy(() => import('./Home/recursos'))
 
 const CadastroCategoria = React.lazy(() => import('./Cadastro/cadastro_categoria'));
 const CadastroSubcategoria = React.lazy(() => import('./Cadastro/cadastro_subcategoria'));
@@ -36,7 +37,8 @@ const MovimentacaoCompra = React.lazy(() => import('./Movimentacao/movimentacao_
 const MovimentacaoVenda = React.lazy(() => import('./Movimentacao/movimentacao_venda'));
 const MovimentacaoPagamento = React.lazy(() => import('./Movimentacao/movimentacao_pagamento'));
 
-const Relatorios = React.lazy(() => import('./Relatorio/relatorios'));
+const RelatorioFatdetalhado = React.lazy(() => import('./Relatorio/relatorio_fatdetalhado'));
+const RelatorioFatsumarizado = React.lazy(() => import('./Relatorio/relatorio_fatsumarizado'));
 
 
 /*
@@ -64,6 +66,7 @@ const PagesRoot = () => (
           <RoutesPrivate path="/" exact component={() => <Home/>} />
           <RoutesPrivate path="/sobre" exact component={() => <Sobre/>} />
           <RoutesPrivate path="/mapa" exact component={() => <Mapa/>} />
+          <RoutesPrivate path="/recursos" exact component={() => <Recursos/>} />
 
           <RoutesPrivate path='/cadastro-categoria' component={() => <CadastroCategoria/>} />
           <RoutesPrivate path='/cadastro-subcategoria' component={() => <CadastroSubcategoria/>} />
@@ -91,7 +94,8 @@ const PagesRoot = () => (
           <RoutesPrivate path='/movimentacao-venda' component={() => <MovimentacaoVenda/>} />
           <RoutesPrivate path='/movimentacao-pagamento' component={() => <MovimentacaoPagamento/>} />
 
-          <RoutesPrivate path='/relatorios' component={() => <Relatorios/>} />
+          <RoutesPrivate path='/relatorio-fatdetalhado' component={() => <RelatorioFatdetalhado/>} />
+          <RoutesPrivate path='/relatorio-fatsumarizado' component={() => <RelatorioFatsumarizado/>} />
 
           <RoutesPrivate path='/sign-up' component={() => <Home/>} />
 
