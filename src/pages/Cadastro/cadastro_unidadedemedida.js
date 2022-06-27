@@ -13,7 +13,7 @@ export default function Cadastro_unidadedemedida() {
     console.log(data);
     api.post("/unidadeMedida");
     alert("Cadastro Realizado");
-    window.location.reload()
+    //window.location.reload()
   }
 
   return (

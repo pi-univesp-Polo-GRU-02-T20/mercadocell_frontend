@@ -1,9 +1,9 @@
 import Navbar from '../../components/Menu/Navbar';
 
 import React, { useEffect, useState } from "react";
-import  api  from '../../components/Services/api';
-import  DarkMode  from '../../components/DarkMode';
-import produtoPDF from '../../components/Pdf/pdf_produto';
+import api  from '../../components/Services/api';
+import DarkMode  from '../../components/DarkMode';
+import fatsumarizadoPDF from '../../components/Pdf/pdf_relatorio_fatsumarizado';
 import '../Consulta/consulta.css';
 
 const MaterialTable = React.lazy(() => import('material-table'));
@@ -78,7 +78,7 @@ export default function Relatorio_fatsumarizado() {
 <div className="body">
 
 <div className="divBtn">
-     <button onClick={(e) => produtoPDF(entries.data)} className="btnPdf">Gerar PDF</button>
+     <button onClick={(e) => fatsumarizadoPDF(entries.data)} className="btnPdf">Gerar PDF</button>
 </div>
      
         <MaterialTable

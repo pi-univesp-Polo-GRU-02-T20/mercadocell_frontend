@@ -27,7 +27,7 @@ export default function Sobre() {
      <br/>
      <p>Este site foi desenvolvido como trabalho das disciplinas Projeto Integrador I e Projeto Integrador II da UNIVESP</p> 
      <br/>
-     <p>Equipe: Felipe Souza, Igor de Aniceto, Jucelino Silva, Leandro Bellato, Márcio De Sa, Michel de Souza e Renan Vieira.</p>
+     <p>Equipe: Felipe Souza, Jucelino Silva, Leandro Bellato, Márcio De Sa, Michel de Souza e Renan Vieira.</p>
   </div>
   
   <div className="btnSobre">

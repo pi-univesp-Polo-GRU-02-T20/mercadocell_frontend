@@ -70,6 +70,7 @@
     display: flex;
     flex-direction: column;
 
+
     width: 100%;
     height: 100%;
     background-color: var(--fundo-pagina);
@@ -128,7 +129,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid var(--fundo-pagina);
   }
 
 
@@ -171,8 +172,6 @@ h6.MuiTypography-h6{
   font-size: var(--fonte-titulo2);
 }
 
-
-
 button.MuiButtonBase-root.MuiIconButton-root.Mui-disabled.Mui-disabled{
   color: var(--fonte);
   font-size: var(--fonte-label);
@@ -191,3 +190,17 @@ button.MuiButtonBase-root.MuiIconButton-root{
 .MuiToble-root{
   font-size: 200px;
 }
+
+div.MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded{
+  background-color: var(--fundo-formulario);
+  color: var(--fonte);
+  border: 0.5px solid white;
+}
+
+span.MuiTypography-root.MuiTypography-caption{
+  background-color: var(--fundo-formulario);
+  color: var(--fonte);
+}
+
+
+

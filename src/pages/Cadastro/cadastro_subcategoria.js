@@ -40,7 +40,7 @@ export default function Cadastro_subcategoria() {
         <div className="subCategoria_linha">
         <div className="subCategoria_campo">
 
-          <label htmlFor="categoria.nomeCategoria"> Categoria </label>
+          <label htmlFor="categoria.codCategoria"> Categoria </label>
           <select 
                  type="text" 
                  id="categoria.codCategoria" 

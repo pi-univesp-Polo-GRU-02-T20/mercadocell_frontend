@@ -3,7 +3,7 @@ import Navbar from '../../components/Menu/Navbar';
 import React, { useEffect, useState } from "react";
 import api  from '../../components/Services/api';
 import DarkMode  from '../../components/DarkMode';
-import produtoPDF from '../../components/Pdf/pdf_produto';
+import fatdetalhadoPDF from '../../components/Pdf/pdf_relatorio_fatdetalhado';
 import '../Consulta/consulta.css';
 const MaterialTable = React.lazy(() => import('material-table'));
 
@@ -70,7 +70,7 @@ export default function Relatorio_fatdetalhado() {
 <div className="body">
 
 <div className="divBtn">
-     <button onClick={(e) => produtoPDF(entries.data)} className="btnPdf">Gerar PDF</button>
+     <button onClick={(e) => fatdetalhadoPDF(entries.data)} className="btnPdf">Gerar PDF</button>
 </div>
      
         <MaterialTable
