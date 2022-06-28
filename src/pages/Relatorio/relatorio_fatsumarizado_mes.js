@@ -3,22 +3,28 @@ import Navbar from '../../components/Menu/Navbar';
 import React, { useEffect, useState } from "react";
 import api  from '../../components/Services/api';
 import DarkMode  from '../../components/DarkMode';
-import fatdetalhadoPDF from '../../components/Pdf/pdf_relatorio_fatdetalhado';
-import '../Consulta/consulta.css';
+import fatsumarizadoPDF from '../../components/Pdf/pdf_relatorio_fatsumarizado';
+import '../Consulta/consulta2.css';
+import { Link } from 'react-router-dom';
+
 const MaterialTable = React.lazy(() => import('material-table'));
 
-export default function Relatorio_fatdetalhado() {
+export default function Relatorio_fatsumarizado_mes() {
 
-    var url = "/faturamento/detalhadoAnual/"
+    var url = "/faturamento/sumarizadoMensal/"
 
     const [entries, setEntries] = useState({
         data: [
             {
                 codigoProduto: "",
+                descricaoPeriodo: "",
                 nomeProduto: "",
-                quantidadeItem: "",
-                valorPrecoMedio: "",
-                descricaoPeriodo: ""
+                quantidadeItemEstoqueEntrada: "",
+                quantidadeItemEstoqueSaida: "",
+                valorCustoVenda: "",
+                valorFaturado: "",
+                valorLiquido: ""
+                
             }
         ]
     });
@@ -26,10 +32,13 @@ export default function Relatorio_fatdetalhado() {
     const [state] = React.useState({
         columns: [
             { title: "Código do Produto", field: "codigoProduto", editable:false},
-            { title: "Nome", field: "nomeProduto" },
-            { title: "Quantidade de itens", field: "quantidadeItem" },
-            { title: "Preço médio", field: "valorPrecoMedio" },
-            { title: "Período", field: "descricaoPeriodo" }
+            { title: "Período", field: "descricaoPeriodo" },
+      //      { title: "Produto", field: "nomeProduto" },
+            { title: "Qtd. Entrada do Estoque", field: "quantidadeItemEstoqueEntrada" },
+            { title: "Qtd. Saída do Estoque", field: "quantidadeItemEstoqueSaida" },
+            { title: "Valor custo de venda", field: "valorCustoVenda" },
+            { title: "Valor faturado", field: "valorFaturado" },
+            { title: "Valor líquido", field: "valorLiquido" }
         ]
     });
 
@@ -42,10 +51,13 @@ export default function Relatorio_fatdetalhado() {
       data.push(
         {
         codigoProduto: el.codigoProduto,
+        descricaoPeriodo: el.descricaoPeriodo, 
         nomeProduto: el.nomeProduto, 
-        quantidadeItem: el.quantidadeItem,
-        valorPrecoMedio: el.valorPrecoMedio,
-        descricaoPeriodo: el.descricaoPeriodo
+        quantidadeItemEstoqueEntrada: el.quantidadeItemEstoqueEntrada,
+        quantidadeItemEstoqueSaida: el.quantidadeItemEstoqueSaida,
+        valorCustoVenda: el.valorCustoVenda,
+        valorFaturado: el.valorFaturado,
+        valorLiquido: el.valorLiquido
         }
     );
 });
@@ -70,11 +82,23 @@ export default function Relatorio_fatdetalhado() {
 <div className="body">
 
 <div className="divBtn">
-     <button onClick={(e) => fatdetalhadoPDF(entries.data)} className="btnPdf">Gerar PDF</button>
+     <button onClick={(e) => fatsumarizadoPDF(entries.data)} className="btnPdf">Gerar PDF</button>
 </div>
+
+<Link to='./relatorio-fatsumarizado-dia' >
+<div className="divBtn22">
+     <button className="btnPdf">Dia</button>
+</div>
+</Link>
+
+<Link to='./relatorio-fatsumarizado-ano' >
+<div className="divBtn33">
+     <button className="btnPdf">Ano</button>
+</div>
+</Link>
      
         <MaterialTable
-    title="Relatório de Faturamento Detalhado"
+    title="Relatório de Faturamento Sumarizado - Mensal"
     data={entries.data}
     columns={state.columns}
     editable={{
@@ -120,7 +144,7 @@ export default function Relatorio_fatdetalhado() {
         },
       },
       header: {
-        actions: 'Ações'
+        actions: ''
       },
       toolbar: {
         searchTooltip: 'Pesquisar',

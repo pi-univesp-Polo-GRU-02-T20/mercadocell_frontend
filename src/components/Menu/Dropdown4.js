@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 const MenuItems = [
   {
     title: 'Fat. Detalhado',
-    path: '/relatorio-filtrod',
+    path: '/relatorio-fatdetalhado-dia',
     cName: 'dropdown-link'
   },
   {
     title: 'Fat. Sumarizado',
-    path: '/relatorio-filtros',
+    path: '/relatorio-fatsumarizado-mes',
     cName: 'dropdown-link'
   }
 ];

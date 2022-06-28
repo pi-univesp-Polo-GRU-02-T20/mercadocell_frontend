@@ -4,19 +4,21 @@ import React, { useEffect, useState } from "react";
 import api  from '../../components/Services/api';
 import DarkMode  from '../../components/DarkMode';
 import fatsumarizadoPDF from '../../components/Pdf/pdf_relatorio_fatsumarizado';
-import '../Consulta/consulta.css';
+import '../Consulta/consulta2.css';
+import { Link } from 'react-router-dom';
 
 const MaterialTable = React.lazy(() => import('material-table'));
 
-export default function Relatorio_fatsumarizado() {
+export default function Relatorio_fatsumarizado_dia() {
 
-    var url = "/faturamento/sumarizadoAnual/"
+    var url = "/faturamento/sumarizadoDiario/"
 
     const [entries, setEntries] = useState({
         data: [
             {
                 codigoProduto: "",
                 descricaoPeriodo: "",
+                nomeProduto: "",
                 quantidadeItemEstoqueEntrada: "",
                 quantidadeItemEstoqueSaida: "",
                 valorCustoVenda: "",
@@ -29,8 +31,9 @@ export default function Relatorio_fatsumarizado() {
 
     const [state] = React.useState({
         columns: [
-            { title: "Código do Produto", field: "codProduto", editable:false},
+            { title: "Código do Produto", field: "codigoProduto", editable:false},
             { title: "Período", field: "descricaoPeriodo" },
+      //      { title: "Produto", field: "nomeProduto" },
             { title: "Qtd. Entrada do Estoque", field: "quantidadeItemEstoqueEntrada" },
             { title: "Qtd. Saída do Estoque", field: "quantidadeItemEstoqueSaida" },
             { title: "Valor custo de venda", field: "valorCustoVenda" },
@@ -48,7 +51,8 @@ export default function Relatorio_fatsumarizado() {
       data.push(
         {
         codigoProduto: el.codigoProduto,
-        descricaoPeriodo: el.descricaoPeriodo, 
+        descricaoPeriodo: el.descricaoPeriodo,
+        nomeProduto: el.nomeProduto, 
         quantidadeItemEstoqueEntrada: el.quantidadeItemEstoqueEntrada,
         quantidadeItemEstoqueSaida: el.quantidadeItemEstoqueSaida,
         valorCustoVenda: el.valorCustoVenda,
@@ -80,9 +84,21 @@ export default function Relatorio_fatsumarizado() {
 <div className="divBtn">
      <button onClick={(e) => fatsumarizadoPDF(entries.data)} className="btnPdf">Gerar PDF</button>
 </div>
+
+<Link to='./relatorio-fatsumarizado-mes' >
+<div className="divBtn22">
+     <button className="btnPdf">Mês</button>
+</div>
+</Link>
+
+<Link to='./relatorio-fatsumarizado-ano' >
+<div className="divBtn333">
+     <button className="btnPdf">Ano</button>
+</div>
+</Link>
      
         <MaterialTable
-    title="Relatório de Faturamento Sumarizado"
+    title="Relatório de Faturamento Sumarizado - Diário"
     data={entries.data}
     columns={state.columns}
     editable={{
@@ -128,7 +144,7 @@ export default function Relatorio_fatsumarizado() {
         },
       },
       header: {
-        actions: 'Ações'
+        actions: ''
       },
       toolbar: {
         searchTooltip: 'Pesquisar',

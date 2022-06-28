@@ -24,6 +24,7 @@ function fatsumarizadoPDF(vetor){
         return [
             {text: converter.codigoProduto, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},     //Colocar nome utilizado no banco de dados
             {text: converter.descricaoPeriodo, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
+            {text: converter.nomeProduto, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
             {text: converter.quantidadeItemEstoqueEntrada, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
             {text: converter.quantidadeItemEstoqueSaida, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
             {text: converter.valorCustoVenda, fontSize: 9, margin: [0, 2, 0, 2], border: [false, true, false, true]},
@@ -38,11 +39,12 @@ function fatsumarizadoPDF(vetor){
         {
             table:{
                 headerRows: 1,
-                widths: ['*', '*', '*', '*', '*', '*', '*'],                                                //colocar '*' correspondente ao número de campos
+                widths: ['*', '*', '*', '*', '*', '*', '*', '*'],                                                //colocar '*' correspondente ao número de campos
                 body: [
                     [
-                        {text: 'Código do Produto', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},      //colocar título correspondentes a cada campo
+                        {text: 'Código', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},      //colocar título correspondentes a cada campo
                         {text: 'Período', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
+                        {text: 'Produto', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
                         {text: 'Qtd. Entrada do Estoque', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
                         {text: 'Qtd. Saída do Estoque', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},
                         {text: 'Valor custo de venda', style: 'tableHeader', fontSize: 10, bold: true, border: [false, true, false, true]},

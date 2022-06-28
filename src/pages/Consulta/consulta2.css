@@ -132,6 +132,62 @@
     border-bottom: 2px solid var(--fundo-pagina);
   }
 
+  .divBtn2 {
+    position: absolute;
+    
+    top: 120px;
+    left: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid var(--fundo-pagina);
+  }
+
+  .divBtn3 {
+    position: absolute;
+    
+    top: 120px;
+    left: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid var(--fundo-pagina);
+  }
+
+  .divBtn22 {
+    position: absolute;
+    
+    top: 120px;
+    left: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid var(--fundo-pagina);
+  }
+
+  .divBtn33 {
+    position: absolute;
+    
+    top: 120px;
+    left: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid var(--fundo-pagina);
+  }
+
+  .divBtn333 {
+    position: absolute;
+    
+    top: 120px;
+    left: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid var(--fundo-pagina);
+  }
+
+
 
 .MuiToolbar-root {
   
@@ -202,4 +258,7 @@ span.MuiTypography-root.MuiTypography-caption{
   color: var(--fonte);
 }
 
+button.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit{
+  color:var(--fundo-formulario);
+}
 

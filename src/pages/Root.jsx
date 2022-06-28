@@ -37,19 +37,13 @@ const MovimentacaoCompra = React.lazy(() => import('./Movimentacao/movimentacao_
 const MovimentacaoVenda = React.lazy(() => import('./Movimentacao/movimentacao_venda'));
 const MovimentacaoPagamento = React.lazy(() => import('./Movimentacao/movimentacao_pagamento'));
 
-const RelatorioFiltrod = React.lazy(() => import('./Relatorio/relatorio_filtrod'));
-const RelatorioFiltroddiario = React.lazy(() => import('./Relatorio/relatorio_filtroddiario'));
-const RelatorioFiltrodmes = React.lazy(() => import('./Relatorio/relatorio_filtrodmes'));
-const RelatorioFiltrodanual = React.lazy(() => import('./Relatorio/relatorio_filtrodanual'));
+const RelatorioFatdetalhadoDia = React.lazy(() => import('./Relatorio/relatorio_fatdetalhado_dia'));
+const RelatorioFatdetalhadoMes = React.lazy(() => import('./Relatorio/relatorio_fatdetalhado_mes'));
+const RelatorioFatdetalhadoAno = React.lazy(() => import('./Relatorio/relatorio_fatdetalhado_ano'));
 
-const RelatorioFiltros = React.lazy(() => import('./Relatorio/relatorio_filtros'));
-const RelatorioFiltrosdiario = React.lazy(() => import('./Relatorio/relatorio_filtrosdiario'));
-const RelatorioFiltrosmes = React.lazy(() => import('./Relatorio/relatorio_filtrosmes'));
-const RelatorioFiltrosanual = React.lazy(() => import('./Relatorio/relatorio_filtrosanual'));
-
-const RelatorioFatdetalhado = React.lazy(() => import('./Relatorio/relatorio_fatdetalhado'));
-const RelatorioFatsumarizado = React.lazy(() => import('./Relatorio/relatorio_fatsumarizado'));
-
+const RelatorioFatsumarizadoMes = React.lazy(() => import('./Relatorio/relatorio_fatsumarizado_mes'));
+const RelatorioFatsumarizadoDia = React.lazy(() => import('./Relatorio/relatorio_fatsumarizado_dia'));
+const RelatorioFatsumarizadoAno = React.lazy(() => import('./Relatorio/relatorio_fatsumarizado_ano'));
 
 /*
 import Consulta_categoria from './Consulta/consulta_categoria';
@@ -104,18 +98,13 @@ const PagesRoot = () => (
           <RoutesPrivate path='/movimentacao-venda' component={() => <MovimentacaoVenda/>} />
           <RoutesPrivate path='/movimentacao-pagamento' component={() => <MovimentacaoPagamento/>} />
 
-          <RoutesPrivate path='/relatorio-filtrod' component={() => <RelatorioFiltrod/>} />
-          <RoutesPrivate path='/relatorio-filtroddiario' component={() => <RelatorioFiltroddiario/>} /> 
-          <RoutesPrivate path='/relatorio-filtrodmes' component={() => <RelatorioFiltrodmes/>} /> 
-          <RoutesPrivate path='/relatorio-filtrodanual' component={() => <RelatorioFiltrodanual/>} /> 
+          <RoutesPrivate path='/relatorio-fatdetalhado-dia' component={() => <RelatorioFatdetalhadoDia/>} />
+          <RoutesPrivate path='/relatorio-fatdetalhado-mes' component={() => <RelatorioFatdetalhadoMes/>} />
+          <RoutesPrivate path='/relatorio-fatdetalhado-ano' component={() => <RelatorioFatdetalhadoAno/>} />
 
-          <RoutesPrivate path='/relatorio-filtros' component={() => <RelatorioFiltros/>} />
-          <RoutesPrivate path='/relatorio-filtrosdiario' component={() => <RelatorioFiltrosdiario/>} /> 
-          <RoutesPrivate path='/relatorio-filtrosmes' component={() => <RelatorioFiltrosmes/>} /> 
-          <RoutesPrivate path='/relatorio-filtrosanual' component={() => <RelatorioFiltrosanual/>} /> 
-
-          <RoutesPrivate path='/relatorio-fatdetalhado' component={() => <RelatorioFatdetalhado/>} />
-          <RoutesPrivate path='/relatorio-fatsumarizado' component={() => <RelatorioFatsumarizado/>} />
+          <RoutesPrivate path='/relatorio-fatsumarizado-mes' component={() => <RelatorioFatsumarizadoMes/>} />
+          <RoutesPrivate path='/relatorio-fatsumarizado-dia' component={() => <RelatorioFatsumarizadoDia/>} />
+          <RoutesPrivate path='/relatorio-fatsumarizado-ano' component={() => <RelatorioFatsumarizadoAno/>} />
 
           <RoutesPrivate path='/sign-up' component={() => <Home/>} />
 

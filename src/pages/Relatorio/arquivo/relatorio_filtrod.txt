@@ -4,7 +4,7 @@ import  DarkMode  from '../../components/DarkMode';
 import { Link } from 'react-router-dom';
 import './relatorio.css';
 
-export default function Relatorio_filtros() {
+export default function Relatorio_filtrod() {
 
   
   return (
@@ -24,14 +24,14 @@ export default function Relatorio_filtros() {
   <div className="fundo-filtro">
     
     <div className="filtro_titulo">
-          <h1>Filtrar Relatórios</h1>
+          <h1>Filtrar Relatório Detalhado</h1>
     </div>
 
 <div className="linha-filtro">
 <div className="filtro-cadastro">
 
 <div className="btnRelatorio1">
-<Link to='relatorio-filtrosdiario' className='home-links' alt="olá">
+<Link to='relatorio-filtroddiario' className='home-links' alt="olá">
 Diário
 </Link>
 </div>
@@ -43,7 +43,7 @@ Diário
 <div className="filtro-consulta">
 
 <div className="btnRelatorio2">
-<Link to='relatorio-filtrosmes' className='home-links' alt="olá">
+<Link to='relatorio-filtrodmes' className='home-links' alt="olá">
 Mensal
 </Link>
 </div>
@@ -54,7 +54,7 @@ Mensal
 <div className="filtro-operacao">
 
 <div className="btnRelatorio3">
-<Link to='relatorio-filtrosanual' className='home-links' alt="olá">
+<Link to='relatorio-filtrodanual' className='home-links' alt="olá">
 Anual
 </Link>
 </div>
