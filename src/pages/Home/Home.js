@@ -20,7 +20,7 @@ export default function Home() {
     
   <div className="body">
   
-  <div className="fundo_pagina">
+  
 
  
   
@@ -28,13 +28,8 @@ export default function Home() {
       <h1>Bem-vindo</h1>
   </div>
 
-  <div className="btnSobre">
-    <Link to='./sobre' className='home-links'>
-        Sobre
-    </Link>
-  </div>
 
-  </div>
+ 
   </div>
   <div className="footer">
     <p>Projeto Integrador 2021 - 2022</p>

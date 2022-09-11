@@ -14,7 +14,7 @@ function Navbar() {
   const [dropdown3, setDropdown3] = useState(false);
   const [dropdown4, setDropdown4] = useState(false);
 
-  //const handleClick = () => setClick(!click);
+  const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
   const onMouseEnter1 = () => {
@@ -80,7 +80,9 @@ function Navbar() {
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             Mercadocell
         </Link>
-       
+        <div className='menu-icon' onClick={handleClick}>
+          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+        </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li 
             className='nav-item'
@@ -119,6 +121,30 @@ function Navbar() {
             </Link>
             {dropdown4 && <Dropdown4 />}
           </li>
+
+
+
+
+          <li>
+            <Link
+              to='/sign-up'
+              className='nav-links-mobile'
+              onClick={closeMobileMenu}
+            >
+              Sair
+            </Link>
+          </li>
+
+
+
+
+
+
+
+
+
+
+
      
         </ul>
         <Button />

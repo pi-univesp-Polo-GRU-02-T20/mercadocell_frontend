@@ -35,10 +35,12 @@ body.dark {
 
 body.normal {
   --fonte-tamanho: 14px;
+  --fonte-titulo: 16px;
 }
     
 body.big {
   --fonte-tamanho: 18px;
+  --fonte-titulo: 20px;
 }
 
 .container {
@@ -130,30 +132,16 @@ body.big {
     flex-direction: row;
 }
 
-.mapa-cadastro{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-inline: 30px;
-}
 
-.mapa-consulta{
+.mapa-coluna{
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 70px;
     margin-inline: 30px;
+    font-size: var(--fonte-tamanho);
+    height: 100%;
 }
-
-.mapa-operacao{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-inline: 30px;
-    margin-bottom: 85px;
-}
-
-
 
 .sobre {
     display: flex;

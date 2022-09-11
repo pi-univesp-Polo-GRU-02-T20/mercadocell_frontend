@@ -28,7 +28,7 @@ export default function Mapa() {
 
 <div className="linha-mapas">
 
-<div className="mapa-cadastro">
+<div className="mapa-coluna">
 
     <div className="mapa_subtitulo">
       <h1>CADASTRO</h1>
@@ -52,7 +52,7 @@ export default function Mapa() {
 
 </div>
 
-<div className="mapa-consulta">
+<div className="mapa-coluna">
 
     <div className="mapa_subtitulo">
       <h1>CONSULTA</h1>
@@ -82,7 +82,7 @@ export default function Mapa() {
 
 </div>
 
-<div className="mapa-operacao">
+<div className="mapa-coluna">
 
     <div className="mapa_subtitulo">
       <h1>OPERAÇÃO</h1>
@@ -93,6 +93,18 @@ export default function Mapa() {
     <Link to='/consulta-pessoajuridica'> Operação de venda </Link>
 
     <Link to='/consulta-tipopagamento'> Pagamento </Link>
+
+</div>
+
+<div className="mapa-coluna">
+
+    <div className="mapa_subtitulo">
+      <h1>RELATÓRIO</h1>
+    </div>
+
+    <Link to='/consulta-pessoafisica'> Relatório de Faturamento Detalhado </Link>
+
+    <Link to='/consulta-pessoajuridica'> Relatório de Faturamento Sumarizado </Link>
 
 </div>
 

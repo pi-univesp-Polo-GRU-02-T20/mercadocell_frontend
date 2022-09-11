@@ -22,7 +22,7 @@ body.big {
 .navbar-logo {
   color: #fff;
   justify-self: start;
-  margin-left: 20px;
+  margin-bottom: 10px;
   cursor: pointer;
   text-decoration: none;
   font-size: var(--fonte-navbar-logo);

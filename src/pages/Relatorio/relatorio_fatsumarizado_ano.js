@@ -31,14 +31,14 @@ export default function Relatorio_fatsumarizado_ano() {
 
     const [state] = React.useState({
         columns: [
-            { title: "Código do Produto", field: "codigoProduto", editable:false},
-            { title: "Período", field: "descricaoPeriodo" },
-           // { title: "Produto", field: "nomeProduto" },
-            { title: "Qtd. Entrada do Estoque", field: "quantidadeItemEstoqueEntrada" },
-            { title: "Qtd. Saída do Estoque", field: "quantidadeItemEstoqueSaida" },
-            { title: "Valor custo de venda", field: "valorCustoVenda" },
-            { title: "Valor faturado", field: "valorFaturado" },
-            { title: "Valor líquido", field: "valorLiquido" }
+          { title: "Código", field: "codigoProduto", cellStyle: {maxWidth: 200, fontSize:14}, editable:false},
+          { title: "Produto", field: "nomeProduto", cellStyle: {maxWidth: 200, fontSize:14} },
+          { title: "Período", field: "descricaoPeriodo", cellStyle: {maxWidth: 200, fontSize:14} },
+          { title: "Qtd. Entrada Estoque", field: "quantidadeItemEstoqueEntrada", cellStyle: {maxWidth: 200, fontSize:14}  },
+          { title: "Qtd. Saída Estoque", field: "quantidadeItemEstoqueSaida", cellStyle: {maxWidth: 200, fontSize:14} },
+          { title: "Valor custo venda", field: "valorCustoVenda", cellStyle: {maxWidth: 200, fontSize:14}  },
+          { title: "Valor faturado", field: "valorFaturado", cellStyle: {maxWidth: 200, fontSize:14} },
+          { title: "Valor líquido", field: "valorLiquido", cellStyle: {maxWidth: 200, fontSize:14} }
         ]
     });
 
@@ -51,8 +51,8 @@ export default function Relatorio_fatsumarizado_ano() {
       data.push(
         {
         codigoProduto: el.codigoProduto,
+        nomeProduto: el.nomeProduto,
         descricaoPeriodo: el.descricaoPeriodo,
-        nomeProduto: el.nomeProduto,  
         quantidadeItemEstoqueEntrada: el.quantidadeItemEstoqueEntrada,
         quantidadeItemEstoqueSaida: el.quantidadeItemEstoqueSaida,
         valorCustoVenda: el.valorCustoVenda,

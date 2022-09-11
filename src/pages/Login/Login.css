@@ -186,3 +186,23 @@ form {
   color: #EFF2F5;
   cursor: pointer;
 }
+
+
+
+@media screen and (max-width: 960px) {
+
+.login-painel {
+  background-color: #ff0000;
+  opacity: 95%;
+  border-left: 20px solid #1888ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 400px;
+  height: 300px; 
+  
+}
+
+}

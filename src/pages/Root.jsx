@@ -45,20 +45,6 @@ const RelatorioFatsumarizadoMes = React.lazy(() => import('./Relatorio/relatorio
 const RelatorioFatsumarizadoDia = React.lazy(() => import('./Relatorio/relatorio_fatsumarizado_dia'));
 const RelatorioFatsumarizadoAno = React.lazy(() => import('./Relatorio/relatorio_fatsumarizado_ano'));
 
-/*
-import Consulta_categoria from './Consulta/consulta_categoria';
-import Consulta_subcategoria from './Consulta/consulta_subcategoria';
-import Consulta_unidadedemedida from './Consulta/consulta_unidadedemedida';
-import Consulta_produto from './Consulta/consulta_produto';
-import Consulta_pessoafisica from './Consulta/consulta_pessoafisica';
-import Consulta_pessoajuridica from './Consulta/consulta_pessoajuridica';
-import Consulta_tipopagamento from './Consulta/consulta_tipopagamento.js';
-import Consulta_usuario from './Consulta/consulta_usuario';
-import Consulta_operacao from './Consulta/consulta_operacao';
-import Consulta_pagamentocompra from './Consulta/consulta_pagamentocompra';
-import Consulta_pagamentovenda from './Consulta/consulta_pagamentovenda';
-*/
-
 const PagesRoot = () => (
     <Router>
       <StoreProvider>
@@ -72,7 +58,7 @@ const PagesRoot = () => (
           <RoutesPrivate path="/mapa" exact component={() => <Mapa/>} />
           <RoutesPrivate path="/recursos" exact component={() => <Recursos/>} />
 
-          <RoutesPrivate path='/cadastro-categoria' component={() => <CadastroCategoria/>} />
+          <Route path='/cadastro-categoria' component={() => <CadastroCategoria/>} />
           <RoutesPrivate path='/cadastro-subcategoria' component={() => <CadastroSubcategoria/>} />
           <RoutesPrivate path='/cadastro-unidadedemedida' component={() => <CadastroUnidadedemedida/>} />
           <RoutesPrivate path='/cadastro-produto' component={() => <CadastroProduto/>} />
@@ -80,7 +66,6 @@ const PagesRoot = () => (
           <RoutesPrivate path='/cadastro-pessoajuridica' component={() => <CadastroPessoajuridica/>} />
           <RoutesPrivate path='/cadastro-tipopagamento' component={() => <CadastroTipopagamento/>} />
           <RoutesPrivate path='/cadastro-usuario' component={() => <CadastroUsuario/>} />
-          
           
           <RoutesPrivate path='/consulta-categoria' component={() => <ConsultaCategoria/>} />
           <RoutesPrivate path='/consulta-subcategoria' component={() => <ConsultaSubcategoria/>} />

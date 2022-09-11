@@ -1,79 +1,80 @@
-import React from 'react';
+import { useState } from 'react';
 import Navbar from '../../components/Menu/Navbar';
-import { useForm } from "react-hook-form";
-import { ErrorMessage } from '@hookform/error-message';
+import DarkMode  from '../../components/DarkMode';
+import api  from '../../components/Services/api';
 import './cadastro_categoria.css';
-import  api  from '../../components/Services/api';
-const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
-export default function Cadastro_categoria() {
+export default function Cadastro_categoria() { 
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = (data) => { 
-    console.log(data);
+  const [formValues, setFormValues] = useState({});
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const isCheckbox = type === 'checkbox';
+
+    const data = formValues[name] || {};
+    if (isCheckbox) {
+      data[value] = checked;
+    }
+    const newValue = isCheckbox ? data : value;
+    setFormValues({ ...formValues, [name]: newValue });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    console.log('*** handleSubmit', data);
+    setFormValues({});
     api.post("/categoria", data);
     alert("Cadastro Realizado");
-    window.location.reload()
-  }
+  };
 
   return (
   <>
-
+  
   <div className="container grid-areas">
 
   <div className="header">
-    
-     <DarkMode />
-     <Navbar />
-
-  </div>
   
-  <div className="body">
+    <DarkMode />
+    <Navbar />
+  
+  </div>
+    
+  <div className="bodya">
 
-    <form className = "categoria_form" onSubmit = { handleSubmit(onSubmit) } >
+        <div className="form-fundo">
+            <form onSubmit={handleSubmit}>
+                <div className="form-header">
+                    <div className="title">
+                        <h1>Cadastrar Categoria</h1>
+                    </div>
+                </div>
 
-    <div className="categoria_titulo">
-      <h1>Cadastrar Categoria</h1>
+                <div className="input-group-column">
+
+                    <div className="input-box">
+                        <label htmlFor="nomeCategoria">Nome da Categoria</label>
+                        <input type="text" name="nomeCategoria" id="regularbox" placeholder="Digite o nome da categoria" onChange={handleInputChange} value={formValues.nomeCategoria || ''} required/>
+                    </div>
+                  
+                </div>
+
+                
+                <button type="submit">Cadastrar</button>
+               
+            </form>
     </div>
 
-        <div className="categoria_linha">
-        <div className="categoria_campo">
 
-          <label htmlFor="nomeCategoria"> Nome da categoria </label>
-          <input 
-                 type="text" 
-                 id="nomeCategoria" 
-                 name="nomeCategoria"
-                 {...register("nomeCategoria", {
-                  required: 'Preenchimento Obrigatório',
-                  minLength: {
-                    value: 2,
-                    message: 'No minimo dois caracteres' 
-                  }
-                })}
-           />
-        
-        <div className="erro">
-        <ErrorMessage  errors={errors} name="nomeCategoria">
-        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-        </ErrorMessage>
-        </div>
 
-        </div>
-        </div>
-
-        <button type="submit">Cadastrar</button>
-
-         
-    </form>
-
+ 
   </div>
-
   <div className="footer">
-    Projeto Integrador 2021 - 2022
+    <p>Projeto Integrador 2021 - 2022</p>
   </div>
   </div>
-
   </>
   );
 }

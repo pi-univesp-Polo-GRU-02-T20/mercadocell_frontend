@@ -26,8 +26,8 @@ export default function Relatorio_fatdetalhado_mes() {
 
     const [state] = React.useState({
         columns: [
-            { title: "Código do Produto", field: "codigoProduto", editable:false},
-            { title: "Nome", field: "nomeProduto" },
+            { title: "Código", field: "codigoProduto", editable:false},
+            { title: "Produto", field: "nomeProduto" },
             { title: "Quantidade de itens", field: "quantidadeItem" },
             { title: "Preço médio", field: "valorPrecoMedio" },
             { title: "Período", field: "descricaoPeriodo" }

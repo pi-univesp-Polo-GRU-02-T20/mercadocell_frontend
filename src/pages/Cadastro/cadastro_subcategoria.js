@@ -1,21 +1,36 @@
 import React from 'react';
+import { useState } from 'react';
 import Navbar from '../../components/Menu/Navbar';
-import { useForm } from "react-hook-form";
-import { ErrorMessage } from '@hookform/error-message';
-import './cadastro_subcategoria.css';
-import  api  from '../../components/Services/api';
+import api  from '../../components/Services/api';
 import ListarCategoria from '../../components/Listas/listar_categoria';
+import './cadastro_categoria.css';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
 export default function Cadastro_subcategoria() {
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = (data) => { 
-    console.log(data);
-    api.post("/subCategoria", data);
+  const [formValues, setFormValues] = useState({});
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const isCheckbox = type === 'checkbox';
+
+    const data = formValues[name] || {};
+    if (isCheckbox) {
+      data[value] = checked;
+    }
+    const newValue = isCheckbox ? data : value;
+    setFormValues({ ...formValues, [name]: newValue });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    console.log('*** handleSubmit', data);
+    setFormValues({});
+    //api.post("/subCategoria", data);
     alert("Cadastro Realizado");
-    window.location.reload()
-  }
+  };
 
   return (
   <>
@@ -29,74 +44,52 @@ export default function Cadastro_subcategoria() {
 
   </div>
   
-  <div className="body">
+  <div className="bodya">
 
-    <form className = "subCategoria_form" onSubmit = { handleSubmit(onSubmit) } >
+    <div className="form-fundo">
 
-    <div className="subCategoria_titulo">
-      <h1>Cadastrar Subcategoria</h1>
-    </div>
+      <form onSubmit={handleSubmit}>
 
-        <div className="subCategoria_linha">
-        <div className="subCategoria_campo">
+      <div className="form-header">
+                    <div className="title">
+                        <h1>Cadastrar Subcategoria</h1>
+                    </div>
+      </div>
 
+          <div className="input-group-column">
+
+          <div className="input-box">
           <label htmlFor="categoria.codCategoria"> Categoria </label>
-          <select 
-                 type="text" 
-                 id="categoria.codCategoria" 
-                 name="categoria.codCategoria"
-                 {...register("categoria.codCategoria", {
-                  required: 'Preenchimento Obrigatório',
-                })}
-           >
-             <option selected disabled hidden> Selecione uma categoria </option>
-             <ListarCategoria />
-           </select>
+          <select   id="regularbox" name="categoria.codCategoria" onChange={handleInputChange}  required>
+          <ListarCategoria />
+          </select>
+          </div>
+           
 
-           <div className="erro">
-           <ErrorMessage errors={errors} name="categoria.codCategoria">
-           {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-           </ErrorMessage>
-           </div>
 
-        </div>
-        </div>
-
-        <div className="subCategoria_linha">
-        <div className="subCategoria_campo">
-
+          <div className="input-box">
           <label htmlFor="nomeSubCategoria"> Nome da Subcategoria </label>
-          <input 
-                 type="text" 
-                 id="nomeSubCategoria" 
-                 name="nomeSubCategoria"
-                 {...register("nomeSubCategoria", {
-                  required: 'Preenchimento Obrigatório',
-                  minLength: {
-                    value: 2,
-                    message: 'No minimo dois caracteres' 
-                  }
-                })}
-          />
+          <input type="text" name="nomeSubCategoria" id="regularbox" placeholder="Digite o nome da subcategoria" onChange={handleInputChange} value={formValues.nomeSubCategoria || ''} required/>
+          </div>
 
-           <div className="erro">
-           <ErrorMessage errors={errors} name="nomeSubCategoria">
-             {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-           </ErrorMessage>
-           </div>
 
-        </div>
-        </div>
+
+          </div>
+
 
         <button type="submit">Cadastrar</button>
          
-    </form>
+        </form>
+        </div>
 
-  </div>
-  <div className="footer">
-    <p>Projeto Integrador 2021 - 2022</p>
-  </div>
-  </div>
-  </>
-  );
+
+
+ 
+</div>
+<div className="footer">
+  <p>Projeto Integrador 2021 - 2022</p>
+</div>
+</div>
+</>
+);
 }
