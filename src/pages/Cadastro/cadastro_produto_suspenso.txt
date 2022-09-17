@@ -14,23 +14,15 @@ export default function Cadastro_produto() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    console.log(data.nomeProduto);
-    api.post("/produto", data)
-    .then(function (response) {
-      console.log(response.data.codProduto);
-    })
-    
-    
-    const formData = new FormData();
-    data.nomeImagem = formData.append('nomeImagem', data.nomeImagem);
-    data.tipoImagem = "image/png";
-
-    api.post("/imagem/cadastrarImagem", data.nomeImagem)
-    .then(function (response) {
-      console.log(response.data.codImagem);
-    })
+    data.codigoSubcategoria = Number(data.codigoSubcategoria);
+    data.codigoUnidadeMedida = Number(data.codigoUnidadeMedida);
+    data.quantidadeEstoqueAtual = Number(data.quantidadeEstoqueAtual);
+    data.quantidadeEstoqueMaximo = Number(data.quantidadeEstoqueMaximo);
+    data.quantidadeEstoqueMinimo = Number(data.quantidadeEstoqueMinimo);
+    api.post("/produto", data);
+    alert("Cadastro Realizado");
     //window.location.reload()
-  } 
+  }
 
   return (
   <>
@@ -64,25 +56,20 @@ export default function Cadastro_produto() {
                  {...register("nomeProduto", {
                   required: 'Preenchimento Obrigatório',
                 })}
+     
            />
+           
 
           <div className="erro">
+          <ErrorMessage errors={errors} name="nomeProduto">
+            {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
+          </ErrorMessage>
 
           </div>
 
       </div>
 
-      <div className="produto_campo">
-
-      <label htmlFor="unidadeMedida.Imagem">Inserir Imagem</label>
-
-          <input type="file"         
-                 id="nomeImagem" 
-                 name="nomeImagem"
-                 {...register("nomeImagem")}
-          />
-
-</div>
+     
 
     </div>
 
@@ -90,14 +77,12 @@ export default function Cadastro_produto() {
 
       <div className="produto_campo">
 
-      <label htmlFor="subCategoria.categoria.codCategoria">Categoria</label>
+      <label htmlFor="codCategoria">Categoria</label>
           <select 
                  type="text" 
-                 id="subCategoria.categoria.codCategoria" 
-                 name="subCategoria.categoria.codCategoria"
-                 {...register("subCategoria.categoria.codCategoria", {
-                  required: 'Preenchimento Obrigatório',
-                })}
+                 id="codCategoria" 
+                 name="codCategoria"
+                 
            >
              <option selected disabled hidden> Selecione uma categoria </option>
              <ListarCategoria />
@@ -161,7 +146,9 @@ export default function Cadastro_produto() {
            />
 
         <div className="erro">
-
+        <ErrorMessage errors={errors} name="descricaoProduto">
+        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
+        </ErrorMessage>
         </div>
 
       </div>  
@@ -181,30 +168,38 @@ export default function Cadastro_produto() {
           <label htmlFor="qtd_estoque_minimo">Qtd. de estoque mínimo</label>
           <input 
                  type="number" 
-                 id="quantidadeEstoqueMinima" 
-                 name="quantidadeEstoqueMinima"
-                 {...register("quantidadeEstoqueMinima")}
-      
+                 id="quantidadeEstoqueMinimo" 
+                 name="quantidadeEstoqueMinimo"
+                 {...register("quantidadeEstoqueMinimo", {
+                  required: 'Preenchimento Obrigatório'
+                })}
            />
 
           <div className="erro">                   
-
+          <ErrorMessage errors={errors} name="quantidadeEstoqueMinimo">
+          {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
+          </ErrorMessage>
           </div>                        
 
         </div>
 
         <div className="produto_campo2">
 
-          <label htmlFor="qtd_estoque_maximo">Qtd. de estoque máximo</label>
+          <label htmlFor="quantidadeEstoqueMaximo">Qtd. de estoque máximo</label>
           <input 
                  type="number" 
-                 id="quantidadeEstoqueMaxima" 
-                 name="quantidadeEstoqueMaxima"
-                 {...register("quantidadeEstoqueMaxima")}
+                 id="quantidadeEstoqueMaximo" 
+                 name="quantidadeEstoqueMaximo"
+                 {...register("quantidadeEstoqueMaximo", {
+                  required: 'Preenchimento Obrigatório'
+                })}
            />
 
-          <div className="erro">                   
 
+          <div className="erro">                   
+          <ErrorMessage errors={errors} name="quantidadeEstoqueMaximo">
+          {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
+          </ErrorMessage>
           </div>    
 
         </div>
@@ -212,16 +207,20 @@ export default function Cadastro_produto() {
 
       <div className="produto_campo2">
 
-          <label htmlFor="qtd_estoque_atual">Qtd. de estoque atual</label>
+          <label htmlFor="quantidadeEstoqueAtual">Qtd. de estoque atual</label>
           <input 
                  type="number" 
                  id="quantidadeEstoqueAtual" 
                  name="quantidadeEstoqueAtual"
-                 {...register("quantidadeEstoqueAtual")}
+                 {...register("quantidadeEstoqueAtual", {
+                  required: 'Preenchimento Obrigatório'
+                })}
            />
 
           <div className="erro">                   
-
+          <ErrorMessage errors={errors} name="quantidadeEstoqueAtual">
+          {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
+          </ErrorMessage>
           </div>    
                              
       </div>

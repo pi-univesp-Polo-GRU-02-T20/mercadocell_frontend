@@ -63,13 +63,10 @@ export default function Consulta_pessoajuridica() {
     <Navbar />
 
 </div>
-<div className="body">
-
-<div className="divBtn">
-     <button onClick={(e) => pessoajuridicaPDF(entries.data)} className="btnPdf">Gerar PDF</button>
-</div>
+<div className="body-consulta">
     
         <MaterialTable
+    style={{maxWidth:'100%', alignSelf:'center'}} 
     title="Consulta de Pessoa Jurídica"
     data={entries.data}
     columns={state.columns}
@@ -132,6 +129,8 @@ export default function Consulta_pessoajuridica() {
       }
     }}
     />
+
+    <button onClick={(e) => pessoajuridicaPDF(entries.data)} id="button-PDF">Gerar PDF</button>
     
     </div>
 

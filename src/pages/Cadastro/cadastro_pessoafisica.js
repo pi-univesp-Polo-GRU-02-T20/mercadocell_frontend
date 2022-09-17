@@ -1,159 +1,111 @@
-import React from 'react';
+import { useState } from 'react';
 import Navbar from '../../components/Menu/Navbar';
-import { useForm } from "react-hook-form";
-import { ErrorMessage } from '@hookform/error-message';
-import './cadastro_pessoafisica.css';
-import  api  from '../../components/Services/api';
-const DarkMode = React.lazy(() => import('../../components/DarkMode'));
+import DarkMode  from '../../components/DarkMode';
+import api  from '../../components/Services/api';
+import './cadastro_categoria.css';
 
-export default function Cadastro_pessoafisica() {
+export default function Cadastro_pessoafisica() { 
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = (data) => { 
-    console.log(data);
+  const [formValues, setFormValues] = useState({});
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const isCheckbox = type === 'checkbox';
+
+    const data = formValues[name] || {};
+    if (isCheckbox) {
+      data[value] = checked;
+    }
+    const newValue = isCheckbox ? data : value;
+    setFormValues({ ...formValues, [name]: newValue });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    console.log('*** handleSubmit', data);
+    setFormValues({});
     api.post("/pessoaFisica", data);
     alert("Cadastro Realizado");
-    window.location.reload()
-  }
+  };
 
   return (
-    <>
+  <>
+  
+  <div className="container grid-areas">
 
-    <div className="container grid-areas">
+  <div className="header">
   
-    <div className="header">
+    <DarkMode />
+    <Navbar />
   
-       <DarkMode />
-       <Navbar />
-  
-    </div>
+  </div>
     
-    <div className="body">
+  <div className="bodya">
 
-    <form className="pessoafisica_form" onSubmit = { handleSubmit(onSubmit) } >
+        <div className="form-fundo">
+            <form onSubmit={handleSubmit}>
+                <div className="form-header">
+                    <div className="title">
+                        <h1>Cadastrar Pessoa Física</h1>
+                    </div>
+                </div>
 
-      <div className="pessoafisica_titulo">
-        <h1>Cadastrar Pessoa Física</h1>
-      </div>
+                <div className="input-group-column">
+                <div className="input-group-row">
+                    <div className="input-box">
+                        <label htmlFor="nomePessoa">Nome</label>
+                        <input type="text" name="nomePessoa" id="doublebox" placeholder="Nome" onChange={handleInputChange} value={formValues.nomePessoa || ''} required/>
+                    </div>
+                </div>
 
-      <div className="pessoafisica_linha">
+                <div className="input-group-row">
+                    <div className="input-box">
+                        <label htmlFor="dataNascimento">Data de Nascimento</label>
+                        <input type="date" name="dataNascimento" id="regularbox" placeholder="Data de nascimento" onChange={handleInputChange} value={formValues.dataNascimento || ''} required/>
+                    </div>
+                    <div className="input-box">
+                        <label htmlFor="estadoNaturalidade">Naturalidade (UF)</label>
+                        <input type="text" name="estadoNaturalidade" id="regularbox" placeholder="Naturalidade (UF)" onChange={handleInputChange} value={formValues.estadoNaturalidade || ''} required/>
+                    </div>
+                </div>
 
-        <div className="pessoafisica_campo">
 
-          <label htmlFor="nomePessoa"> Nome </label>
-          <input 
-                 type="text" 
-                 id="nomePessoa" 
-                 name="nomePessoa"
-                 {...register("nomePessoa", {
-                  required: 'Preenchimento Obrigatório',
-                  minLength: {
-                    value: 2,
-                    message: 'No minimo dois caracteres' 
-                  }
-                })}
-           />
-        
-        <ErrorMessage errors={errors} name="nomePessoa">
-        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-        </ErrorMessage>
 
-        </div>
 
-        </div>
 
-      
+                <div class="gender-inputs">
 
-      <div className="pessoafisica_linha">
+                    <div class="gender-title">
+                        <p>Gênero</p>
+                    </div>
 
-        <div className="pessoafisica_campo2">
+                    <div class="gender-group">
+                        <div class="gender-input">
+                            <input id="female" type="radio" name="tipoSexo" value="M" onChange={handleInputChange} checked={formValues.tipoSexo === 'M'}/>
+                            <label for="female">Feminino</label>
+                        </div>
+                        <div class="gender-input">
+                            <input id="male" type="radio" name="tipoSexo" value="F" onChange={handleInputChange} checked={formValues.tipoSexo === 'F'}/>
+                            <label for="male">Masculino</label>
+                        </div>
+                    </div>
 
-          <label htmlFor="dataNascimento"> Data de Nascimento </label>
-          <input 
-                 type="date" 
-                 id="dataNascimento" 
-                 name="dataNascimento"
-                 step="1"
-                 {...register("dataNascimento", {
-                  required: 'Preenchimento Obrigatório',
-                  minLength: {
-                    value: 2,
-                    message: 'No minimo dois caracteres' 
-                  }
-                })}
-           />
-        
-        <ErrorMessage errors={errors} name="dataNascimento">
-        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-        </ErrorMessage>
-
-        </div>
-
-        <div className="pessoafisica_campo2">
-
-        <label htmlFor="estadoNaturalidade"> Naturalidade (UF) </label>
-          <input 
-                 type="text" 
-                 id="estadoNaturalidade" 
-                 name="estadoNaturalidade"
-                 maxlength="2"
-                 {...register("estadoNaturalidade", {
-                  required: 'Preenchimento Obrigatório',
-                })}
-           />
-        
-        <ErrorMessage errors={errors} name="estadoNaturalidade">
-        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-        </ErrorMessage>
-
-        </div>
-        </div>
-
-        <div className="pessoafisica_linha">
-
-        <div className="pessoafisica_campo">
-
-          <label htmlFor="tipoSexo">  Sexo: </label>
-          
-          <div className="radio">
-          
-          <input 
-                 type="radio" 
-                 id="tipoSexo" 
-                 name="tipoSexo"
-                 value="M"
-                 {...register("tipoSexo")}
-           />
-           <label htmlFor="tipoSexo"> Masculino </label>
-
-        </div>
-        
-        <div className="radio">
-        
-          <input 
-                 type="radio" 
-                 id="tipoSexo" 
-                 name="tipoSexo"
-                 value="F"
-                 {...register("tipoSexo")}
-           />
-           <label htmlFor="tipoSexo"> Feminino </label>
-        </div>
-
-        </div>
-
-        </div>
-
-          <button type="submit">Cadastrar</button>
-
-         
-    </form>
+                </div>
+                    
+                </div>
+                             
+                <button type="submit">Cadastrar</button>
+               
+            </form>
     </div>
-
-<div className="footer">
-  <p>Projeto Integrador 2021 - 2022</p>
-</div>
-</div>
-</>
+ 
+  </div>
+      <div className="footer">
+          <p>Projeto Integrador 2021 - 2022</p>
+      </div>
+  </div>
+  </>
   );
 }

@@ -70,13 +70,10 @@ export default function Consulta_pagamentovenda() {
     <Navbar />
 
 </div>
-<div className="body">
+<div className="body-consulta">
 
-<div className="divBtn">
-     <button onClick={(e) => pagamentovendaPDF(entries.data)} className="btnPdf">Gerar PDF</button>
-</div>
-     
         <MaterialTable
+    style={{maxWidth:'100%', alignSelf:'center'}} 
     title="Consulta de Pagamento - Venda"
     data={entries.data}
     columns={state.columns}
@@ -139,6 +136,9 @@ export default function Consulta_pagamentovenda() {
       }
     }}
     />
+
+    <button onClick={(e) => pagamentovendaPDF(entries.data)} id="button-PDF">Gerar PDF</button>
+
     </div>
 
     <div className="footer">

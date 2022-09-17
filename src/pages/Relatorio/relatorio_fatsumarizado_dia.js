@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import api  from '../../components/Services/api';
 import DarkMode  from '../../components/DarkMode';
 import fatsumarizadoPDF from '../../components/Pdf/pdf_relatorio_fatsumarizado';
-import '../Consulta/consulta2.css';
+import '../Consulta/consulta.css';
 import { Link } from 'react-router-dom';
 
 const MaterialTable = React.lazy(() => import('material-table'));

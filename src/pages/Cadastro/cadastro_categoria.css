@@ -130,6 +130,13 @@ form{
   padding: 0.5rem 0.5rem;
 }
 
+.input-group-row-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding: 0.5rem 0.5rem;
+}
+
 .input-box {
   display: flex;
   flex-direction: column;
@@ -158,6 +165,10 @@ form{
   width: 520px;
 }
 
+#triplebox{
+  width: 780px;
+}
+
 #textarea{
   margin: 0;
   padding: 0.5rem 1rem;
@@ -177,6 +188,37 @@ input[type="file"] {
   padding: 0 10px;
   height: 36px;
   width: 250px;
+}
+
+.gender-group {
+  display: flex;
+  justify-content: left;
+  margin-top: 0.62rem;
+  padding: 0 .5rem;
+}
+
+.gender-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555454;
+  margin-left: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.gender-input {
+  display: flex;
+  margin-bottom: 1rem;
+  margin-inline: 0.5rem;
+}
+
+.gender-input label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000000c0;
+}
+
+.gender-input input {
+  margin-right: 0.385rem;
 }
 
 form button {
@@ -224,6 +266,11 @@ form button a {
       flex-direction: column;
       flex-wrap: nowrap;
   }
+  .input-group-row-left {
+    
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
   #doublebox{
     width: 250px;
   }

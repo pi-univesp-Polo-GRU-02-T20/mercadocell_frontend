@@ -1,14 +1,12 @@
 import Navbar from '../../components/Menu/Navbar';
-
 import React, { useEffect, useState } from "react";
 import './consulta.css';
 import  api  from '../../components/Services/api';
-
 import tipopagamentoPDF from '../../components/Pdf/pdf_tipopagamento';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 const MaterialTable = React.lazy(() => import('material-table'));
 
-export default function Consulta_categoria() {
+export default function ConsultaTipopagamento() {
 
     var url = "/tipoPagamento"
 
@@ -59,13 +57,10 @@ export default function Consulta_categoria() {
     <Navbar />
 
 </div>
-<div className="body">
-
-<div className="divBtn">
-     <button onClick={(e) => tipopagamentoPDF(entries.data)} className="btnPdf">Gerar PDF</button>
-</div>
+<div className="body-consulta">
      
-        <MaterialTable
+    <MaterialTable
+    style={{maxWidth:'100%', alignSelf:'center'}} 
     title="Consulta de Tipo de Pagamento"
     data={entries.data}
     columns={state.columns}
@@ -128,6 +123,9 @@ export default function Consulta_categoria() {
       }
     }}
     />
+
+    <button onClick={(e) => tipopagamentoPDF(entries.data)} id="button-PDF">Gerar PDF</button>
+
     </div>
 
     <div className="footer">

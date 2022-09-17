@@ -67,13 +67,10 @@ export default function Consulta_pessoafisica() {
     <Navbar />
 
 </div>
-<div className="body">
-
-<div className="divBtn">
-     <button onClick={(e) => pessoafisicaPDF(entries.data)} className="btnPdf">Gerar PDF</button>
-</div>
+<div className="body-consulta">
 
         <MaterialTable
+    style={{maxWidth:'100%', alignSelf:'center'}} 
     title="Consulta de Pessoa Física"
     data={entries.data}
     columns={state.columns}
@@ -136,6 +133,8 @@ export default function Consulta_pessoafisica() {
       }
     }}
     />
+
+    <button onClick={(e) => pessoafisicaPDF(entries.data)} id="button-PDF">Gerar PDF</button>
     
     </div>
 

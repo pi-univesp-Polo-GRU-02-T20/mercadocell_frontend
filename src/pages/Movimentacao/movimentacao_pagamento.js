@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../../components/Menu/Navbar';
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
-import './movimentacao_pagamento.css';
+import '../Cadastro/cadastro_categoria.css';
 import  api  from '../../components/Services/api';
 import ListarOperacao from '../../components/Listas/listar_operacao';
 import moment from 'moment';

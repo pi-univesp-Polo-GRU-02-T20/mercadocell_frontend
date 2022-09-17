@@ -1,9 +1,7 @@
 import Navbar from '../../components/Menu/Navbar';
-
 import React, { useEffect, useState } from "react";
 import './consulta.css';
-import  api  from '../../components/Services/api';
-
+import api from '../../components/Services/api';
 import subcategoriaPDF from '../../components/Pdf/pdf_subcategoria';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 const MaterialTable = React.lazy(() => import('material-table'));
@@ -66,13 +64,10 @@ export default function Consulta_subcategoria() {
     <Navbar />
 
 </div>
-<div className="body">
+<div className="body-consulta">
 
-<div className="divBtn">
-     <button onClick={(e) => subcategoriaPDF(entries.data)} className="btnPdf">Gerar PDF</button>
-</div>
-
-        <MaterialTable
+    <MaterialTable
+    style={{maxWidth:'100%', alignSelf:'center'}} 
     title="Consulta de Subcategoria"
     data={entries.data}
     columns={state.columns}
@@ -135,6 +130,8 @@ export default function Consulta_subcategoria() {
       }
     }}
     />
+
+    <button onClick={(e) => subcategoriaPDF(entries.data)} id="button-PDF">Gerar PDF</button>
   
     </div>
 

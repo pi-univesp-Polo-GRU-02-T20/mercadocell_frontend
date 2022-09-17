@@ -71,9 +71,9 @@ export default function Cadastro_categoria() {
 
  
   </div>
-  <div className="footer">
-    <p>Projeto Integrador 2021 - 2022</p>
-  </div>
+      <div className="footer">
+          <p>Projeto Integrador 2021 - 2022</p>
+      </div>
   </div>
   </>
   );

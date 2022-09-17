@@ -1,9 +1,7 @@
 import Navbar from '../../components/Menu/Navbar';
-
 import React, { useEffect, useState } from "react";
 import './consulta.css';
-import  api  from '../../components/Services/api';
-
+import api  from '../../components/Services/api';
 import usuarioPDF from '../../components/Pdf/pdf_usuario';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 const MaterialTable = React.lazy(() => import('material-table'));
@@ -71,13 +69,10 @@ export default function Consulta_pessoajuridica() {
     <Navbar />
 
 </div>
-<div className="body">
-
-<div className="divBtn">
-     <button onClick={(e) => usuarioPDF(entries.data)} className="btnPdf">Gerar PDF</button>
-</div>
+<div className="body-consulta">
    
         <MaterialTable
+    style={{maxWidth:'100%', alignSelf:'center'}} 
     title="Consulta de Usuário"
     data={entries.data}
     columns={state.columns}
@@ -140,6 +135,8 @@ export default function Consulta_pessoajuridica() {
       }
     }}
     />
+
+    <button onClick={(e) => usuarioPDF(entries.data)} id="button-PDF">Gerar PDF</button>
     </div>
 
     <div className="footer">

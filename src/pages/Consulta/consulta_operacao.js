@@ -1,5 +1,4 @@
 import Navbar from '../../components/Menu/Navbar';
-
 import React, { useEffect, useState } from "react";
 import './consulta.css';
 import  api  from '../../components/Services/api';
@@ -86,13 +85,10 @@ export default function Consulta_operacao() {
     <Navbar />
 
 </div>
-<div className="body">
-
-<div className="divBtn">
-     <button onClick={(e) => operacaoPDF(entries.data)} className="btnPdf">Gerar PDF</button>
-</div>
+<div className="body-consulta">
    
         <MaterialTable
+    style={{maxWidth:'100%', alignSelf:'center'}} 
     title="Consulta de Operação"
     data={entries.data}
     columns={state.columns}
@@ -155,6 +151,9 @@ export default function Consulta_operacao() {
       }
     }}
     />
+
+    <button onClick={(e) => operacaoPDF(entries.data)} id="button-PDF">Gerar PDF</button>
+
     </div>
 
     <div className="footer">

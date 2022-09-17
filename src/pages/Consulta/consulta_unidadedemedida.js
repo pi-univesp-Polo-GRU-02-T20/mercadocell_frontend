@@ -1,9 +1,7 @@
 import Navbar from '../../components/Menu/Navbar';
-
 import React, { useEffect, useState } from "react";
 import './consulta.css';
 import  api  from '../../components/Services/api';
-
 import unidadedemedidaPDF from '../../components/Pdf/pdf_unidadedemedida';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 const MaterialTable = React.lazy(() => import('material-table'));
@@ -62,13 +60,10 @@ export default function Consulta_unidadedemedida() {
     <Navbar />
 
 </div>
-<div className="body">
+<div className="body-consulta">
 
-<div className="divBtn">
-     <button onClick={(e) => unidadedemedidaPDF(entries.data)} className="btnPdf">Gerar PDF</button>
-</div>
-    
         <MaterialTable
+    style={{maxWidth:'100%', alignSelf:'center'}} 
     title="Consulta de Unidade de Medida"
     data={entries.data}
     columns={state.columns}
@@ -132,6 +127,8 @@ export default function Consulta_unidadedemedida() {
     }}
     />
     
+    <button onClick={(e) => unidadedemedidaPDF(entries.data)} id="button-PDF">Gerar PDF</button>
+
     </div>
 
     <div className="footer">

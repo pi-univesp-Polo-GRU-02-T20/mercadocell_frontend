@@ -1,105 +1,81 @@
-import React from 'react';
+import { useState } from 'react';
 import Navbar from '../../components/Menu/Navbar';
-import { useForm } from "react-hook-form";
-import { ErrorMessage } from '@hookform/error-message';
-import './cadastro_unidadedemedida.css';
-import  api  from '../../components/Services/api';
-const DarkMode = React.lazy(() => import('../../components/DarkMode'));
+import DarkMode  from '../../components/DarkMode';
+import api  from '../../components/Services/api';
+import './cadastro_categoria.css';
 
-export default function Cadastro_unidadedemedida() {
+export default function Cadastro_unidadedemedida() { 
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    api.post("/unidadeMedida");
+  const [formValues, setFormValues] = useState({});
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const isCheckbox = type === 'checkbox';
+
+    const data = formValues[name] || {};
+    if (isCheckbox) {
+      data[value] = checked;
+    }
+    const newValue = isCheckbox ? data : value;
+    setFormValues({ ...formValues, [name]: newValue });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    console.log('*** handleSubmit', data);
+    setFormValues({});
+    api.post("/unidadeMedida", data);
     alert("Cadastro Realizado");
-    //window.location.reload()
-  }
+  };
 
   return (
-    <>
+  <>
   
-    <div className="container grid-areas">
+  <div className="container grid-areas">
+
+  <div className="header">
   
-    <div className="header">
+    <DarkMode />
+    <Navbar />
   
-       <DarkMode />
-       <Navbar />
-  
-    </div>
-    
-    <div className="body">
-
-    <form className="udmedida_form" onSubmit = { handleSubmit(onSubmit) } >
-
-      <div className="udmedida_titulo">
-        <h1>Cadastrar</h1>
-        <h1>Unidade de Medida</h1>
-      </div>
-
-      <div className="udmedida_linha">
-
-        <div className="udmedida_campo">
-
-          <label htmlFor="nomeUnidadeMedida"> Nome da Unidade de Medida</label>
-          <input 
-                 type="text" 
-                 id="nomeUnidadeMedida" 
-                 name="nomeUnidadeMedida"
-                 {...register("nomeUnidadeMedida", {
-                  required: 'Preenchimento Obrigatório',
-                  minLength: {
-                    value: 2,
-                    message: 'No minimo dois caracteres' 
-                  }
-                })}
-           />
-        
-        <div className="erro">
-        <ErrorMessage errors={errors} name="nomeUnidadeMedida">
-        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-        </ErrorMessage>
-        </div>
-
-        </div>
-
-      </div>
-
-      <div className="udmedida_linha">
-
-        <div className="udmedida_campo">
-
-          <label htmlFor="siglaUnidadeMedida"> Sigla da Unidade de Medida</label>
-          <input 
-                 type="text" 
-                 id="siglaUnidadeMedida" 
-                 name="siglaUnidadeMedida"
-                 {...register("siglaUnidadeMedida", {
-                  required: 'Preenchimento Obrigatório',
-                  minLength: {
-                    value: 2,
-                    message: 'No minimo dois caracteres' 
-                  }
-                })}
-           />
-
-        <div className="erro">
-        <ErrorMessage errors={errors} name="siglaUnidadeMedida">
-        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-        </ErrorMessage>
-        </div>
-
-        </div>
-
-      </div>
-
-          <button type="submit">Cadastrar</button>
-
-    </form>
-    </div>
-  <div className="footer">
-    <p>Projeto Integrador 2021 - 2022</p>
   </div>
+    
+  <div className="bodya">
+
+        <div className="form-fundo">
+            <form onSubmit={handleSubmit}>
+                <div className="form-header">
+                    <div className="title">
+                        <h1>Cadastrar Und Medida</h1>
+                    </div>
+                </div>
+
+                <div className="input-group-column">
+
+                    <div className="input-box">
+                        <label htmlFor="nomeUnidadeMedida">Nome da Unidade de Medida</label>
+                        <input type="text" name="nomeUnidadeMedida" id="regularbox" placeholder="Digite o nome da unidade de medida" onChange={handleInputChange} value={formValues.nomeUnidadeMedida || ''} required/>
+                    </div>
+
+                    <div className="input-box">
+                        <label htmlFor="siglaUnidadeMedida">Sigla da Unidade de Medida</label>
+                        <input type="text" name="siglaUnidadeMedida" id="regularbox" placeholder="Digite a sigla da unidade de medida" onChange={handleInputChange} value={formValues.siglaUnidadeMedida || ''} required/>
+                    </div>
+                  
+                </div>
+
+                
+                <button type="submit">Cadastrar</button>
+               
+            </form>
+    </div>
+ 
+  </div>
+      <div className="footer">
+          <p>Projeto Integrador 2021 - 2022</p>
+      </div>
   </div>
   </>
   );
