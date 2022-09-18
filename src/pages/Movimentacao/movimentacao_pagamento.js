@@ -2,11 +2,11 @@ import React from 'react';
 import Navbar from '../../components/Menu/Navbar';
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
-import '../Cadastro/cadastro_categoria.css';
+import '../Cadastro/cadastro.css';
 import  api  from '../../components/Services/api';
 import ListarOperacao from '../../components/Listas/listar_operacao';
 import moment from 'moment';
-import  DarkMode  from '../../components/DarkMode';
+const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
 export default function Movimentacao_pagamento() {
 

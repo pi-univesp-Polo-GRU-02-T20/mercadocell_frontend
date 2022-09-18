@@ -88,7 +88,7 @@ function Navbar() {
             className='nav-item'
             onMouseEnter={onMouseEnter1}
             onMouseLeave={onMouseLeave}>
-            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+            <Link to='/menu-cadastro' className='nav-links' onClick={closeMobileMenu}>
               Cadastro <i className='fas fa-caret-down' />
             </Link>
             {dropdown1 && <Dropdown1 />}
@@ -98,7 +98,7 @@ function Navbar() {
             onMouseEnter={onMouseEnter2}
             onMouseLeave={onMouseLeave}
           >
-            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+            <Link to='/menu-consulta' className='nav-links' onClick={closeMobileMenu}>
               Consulta <i className='fas fa-caret-down' />
             </Link>
             {dropdown2 && <Dropdown2 />}
@@ -107,7 +107,7 @@ function Navbar() {
               onMouseEnter={onMouseEnter3}
               onMouseLeave={onMouseLeave}
               >
-            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+            <Link to='/menu-operacao' className='nav-links' onClick={closeMobileMenu}>
               Operação <i className='fas fa-caret-down' />
             </Link>
             {dropdown3 && <Dropdown3 />}
@@ -116,7 +116,7 @@ function Navbar() {
               onMouseEnter={onMouseEnter4}
               onMouseLeave={onMouseLeave}
               >
-            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+            <Link to='/menu-relatorio' className='nav-links' onClick={closeMobileMenu}>
               Relatórios<i className='fas fa-caret-down' />
             </Link>
             {dropdown4 && <Dropdown4 />}

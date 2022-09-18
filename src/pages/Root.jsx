@@ -12,6 +12,11 @@ const Sobre = React.lazy(() => import('./Home/sobre'));
 const Mapa = React.lazy(() => import('./Home/mapa'));
 const Recursos = React.lazy(() => import('./Home/recursos'))
 
+const MenuCadastro = React.lazy(() => import('./Menus/menu_cadastro'));
+const MenuConsulta = React.lazy(() => import('./Menus/menu_consulta'));
+const MenuOperacao = React.lazy(() => import('./Menus/menu_operacao'));
+const MenuRelatorio = React.lazy(() => import('./Menus/menu_relatorio'));
+
 const CadastroCategoria = React.lazy(() => import('./Cadastro/cadastro_categoria'));
 const CadastroSubcategoria = React.lazy(() => import('./Cadastro/cadastro_subcategoria'));
 const CadastroUnidadedemedida = React.lazy(() => import('./Cadastro/cadastro_unidadedemedida'));
@@ -58,7 +63,12 @@ const PagesRoot = () => (
           <RoutesPrivate path="/mapa" exact component={() => <Mapa/>} />
           <RoutesPrivate path="/recursos" exact component={() => <Recursos/>} />
 
-          <Route path='/cadastro-categoria' component={() => <CadastroCategoria/>} />
+          <RoutesPrivate path='/menu-cadastro' component={() => <MenuCadastro/>} />
+          <RoutesPrivate path='/menu-consulta' component={() => <MenuConsulta/>} />
+          <RoutesPrivate path='/menu-operacao' component={() => <MenuOperacao/>} />
+          <RoutesPrivate path='/menu-relatorio' component={() => <MenuRelatorio/>} />
+
+          <RoutesPrivate path='/cadastro-categoria' component={() => <CadastroCategoria/>} />
           <RoutesPrivate path='/cadastro-subcategoria' component={() => <CadastroSubcategoria/>} />
           <RoutesPrivate path='/cadastro-unidadedemedida' component={() => <CadastroUnidadedemedida/>} />
           <RoutesPrivate path='/cadastro-produto' component={() => <CadastroProduto/>} />

@@ -1,5 +1,4 @@
 import Navbar from '../../components/Menu/Navbar';
-
 import React, { useEffect, useState } from "react";
 import './consulta.css';
 import  api  from '../../components/Services/api';

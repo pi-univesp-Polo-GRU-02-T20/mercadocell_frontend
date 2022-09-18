@@ -2,12 +2,13 @@ import Navbar from '../../components/Menu/Navbar';
 
 import React, { useEffect, useState } from "react";
 import api  from '../../components/Services/api';
-import DarkMode  from '../../components/DarkMode';
+
 import fatsumarizadoPDF from '../../components/Pdf/pdf_relatorio_fatsumarizado';
-import '../Consulta/consulta.css';
+import './relatorio.css';
 import { Link } from 'react-router-dom';
 
 const MaterialTable = React.lazy(() => import('material-table'));
+const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
 export default function Relatorio_fatsumarizado_ano() {
 
@@ -79,23 +80,15 @@ export default function Relatorio_fatsumarizado_ano() {
     <Navbar />
 
 </div>
-<div className="body">
+<div className="bodya">
 
-<div className="divBtn">
-     <button onClick={(e) => fatsumarizadoPDF(entries.data)} className="btnPdf">Gerar PDF</button>
-</div>
+    <div className="button-group-row-left">
 
-<Link to='./relatorio-fatsumarizado-dia' >
-<div className="divBtn22">
-     <button className="btnPdf">Dia</button>
-</div>
-</Link>
+    <a href='./relatorio-fatsumarizado-dia'><button id="button-menu">Dia</button></a>
 
-<Link to='./relatorio-fatsumarizado-mes' >
-<div className="divBtn33">
-     <button className="btnPdf">Mês</button>
-</div>
-</Link>
+    <a href='./relatorio-fatsumarizado-mes'><button id="button-menu">Mês</button></a>
+
+    </div>
      
         <MaterialTable
     title="Relatório de Faturamento Sumarizado - Anual"
@@ -160,6 +153,8 @@ export default function Relatorio_fatsumarizado_ano() {
       }
     }}
     />
+
+    <button onClick={(e) => fatsumarizadoPDF(entries.data)} id="button-PDF">Gerar PDF</button>
 
     </div>
 

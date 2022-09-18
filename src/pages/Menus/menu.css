@@ -11,10 +11,8 @@
   }
   
   body {
-  margin: 0 0 100px;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
+    margin: 0 0 100px;
+    background-size: cover;
   }
   
   body.light {
@@ -34,15 +32,13 @@
   --fonte: #ffffff;
   --label: #ffffff;
   }
-
+  
   body.normal {
-    --fonte-label: 15px;
-    --fonte-titulo2: 18px;
+    --fonte-label: 14px;
   }
     
   body.big {
     --fonte-label: 18px;
-    --fonte-titulo2: 24px;
   }
   
   .container {
@@ -54,25 +50,22 @@
     background-color: salmon;
   }
   
-  
   .header {
     display: flex;
     flex-direction: column;
-  
     width: 100%;
     height: 100%;
     background-color: var(--tema);
     grid-area: header;
   }
   
-  .body {
-
+  .bodya {
     display: flex;
-    flex-direction: column;
-
-
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 100%;
+    height: auto;
     background-color: var(--fundo-pagina);
     grid-area: body;
   }
@@ -97,8 +90,19 @@
     "body body"
     "footer footer";
   }
+  
+  .menu-fundo {
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
+    justify-content: center;
+    
+    padding: 1rem 2rem 1rem 2rem;
+  }
 
-  .btnPdf {
+  #button-PDF {
+    display: flex;
     padding: 8px 20px;
     border-radius: 4px;
     outline: none;
@@ -107,11 +111,12 @@
     color: #fff;
     cursor: pointer;
     background-color: #125ec0;
-    margin: 0px;
+    margin: 1rem;
     height: 40px;
+    justify-content: center;
   }
   
-  .btnPdf:hover {
+  #button-PDF:hover {
     padding: 6px 18px;
     transition: all 0.3s ease-out;
     background-color: #1888ff;
@@ -121,85 +126,68 @@
     transition: all 0.3s ease-out;
   }
 
-  .divBtn {
-    position: absolute;
-    margin-top: 520px;
-    height: 30px;
-    width: 100%;
+  #button-menu {
     display: flex;
+    padding: 8px 20px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    font-size: var(--fonte-btn);
+    color: #fff;
+    cursor: pointer;
+    background-color: #125ec0;
+    margin: 1rem;
+    height: 40px;
+    min-width: 180px;
+    max-width: max-content;
     justify-content: center;
-    align-items: center;
-    border-bottom: 2px solid var(--fundo-pagina);
   }
-
-
-.MuiToolbar-root {
   
-  background-color: var(--fundo-formulario);
-  border: 0.5px solid white;
-  color: var(--fonte);
-}
-
-.Component-horizontalScrollContainer-12 {
+  #button-menu:hover {
+    padding: 6px 18px;
+    transition: all 0.3s ease-out;
+    background-color: #1888ff;
+    color: #fff;
+    border-radius: 4px;
+    border: 2px solid var(--primary);
+    transition: all 0.3s ease-out;
+  }
   
-  background-color: var(--fundo-formulario);
-  color: var(--fonte);
-  border: 0.5px solid white;
-}
-
-th.MuiTableCell-root {
-  background-color: var(--fundo-formulario);
-  font-size: var(--fonte-label);
-  color: var(--fonte);
-  border: 0.5px solid white;
-}
-
-tr.MuiTableCell-root{
-  font-size: 200px;
-}
-
-input.MuiInputBase-input{
-  color: var(--fonte);
-  font-size: var(--fonte-label);
-}
-
-div.MTablePaginationInner-root-14{
-  color: var(--fonte);
-  font-size: var(--fonte-label);
-}
-
-h6.MuiTypography-h6{
-  font-size: var(--fonte-titulo2);
-}
-
-button.MuiButtonBase-root.MuiIconButton-root.Mui-disabled.Mui-disabled{
-  color: var(--fonte);
-  font-size: var(--fonte-label);
-}
-
-button.MuiButtonBase-root.MuiIconButton-root{
-  color: var(--fonte);
-  font-size: var(--fonte-label);
-}
-
-.material-icons.MuiIcon-root.MuiIcon-fontSizeSmall{
-  color: var(--fonte);
-  font-size: var(--fonte-label);
-}
-
-.MuiToble-root{
-  font-size: 200px;
-}
-
-div.MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded{
-  background-color: var(--fundo-formulario);
-  color: var(--fonte);
-  border: 0.5px solid white;
-}
-
-span.MuiTypography-root.MuiTypography-caption{
-  background-color: var(--fundo-formulario);
-  color: var(--fonte);
-}
-
-
+  a {
+    text-decoration: none;
+    font-size: 0.93rem;
+    color: #fff;
+  }
+  
+  @media screen and (max-width: 1330px) {
+  
+    .form-fundo {
+        width: 100%;
+        height: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 1064px) {
+  
+    .input-group-column {
+      
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .input-group-row {
+      
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .input-group-row-left {
+      
+      flex-direction: column;
+      flex-wrap: nowrap;
+  }
+    #doublebox{
+      width: 250px;
+    }
+    #textarea{
+      width: 240px;
+    }
+  }

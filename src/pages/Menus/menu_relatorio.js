@@ -1,10 +1,11 @@
 import React from 'react';
 import Navbar from '../../components/Menu/Navbar';
 import { Link } from 'react-router-dom';
-import './Home.css';
+
+import './menu.css';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
-export default function Home() { 
+export default function MenuRelatorio() { 
   
   return (
   <>
@@ -18,12 +19,13 @@ export default function Home() {
   
   </div>
     
-  <div className="body">
-  
-  <div className="bemVindo_titulo">
-      <h1>Bem-vindo</h1>
-  </div>
+  <div className="bodya">
 
+  <div className="menu-fundo">
+  <a href='/relatorio-fatdetalhado-dia'><button id="button-PDF">Fat. Detalhado</button></a>
+  <a href='/relatorio-fatsumarizado-mes'><button id="button-PDF">Fat. Sumarizado</button></a>
+  </div>
+ 
   </div>
   <div className="footer">
     <p>Projeto Integrador 2021 - 2022</p>

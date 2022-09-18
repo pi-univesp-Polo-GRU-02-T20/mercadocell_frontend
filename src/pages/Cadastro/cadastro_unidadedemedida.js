@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Navbar from '../../components/Menu/Navbar';
-import DarkMode  from '../../components/DarkMode';
 import api  from '../../components/Services/api';
-import './cadastro_categoria.css';
+import './cadastro.css';
+const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
 export default function Cadastro_unidadedemedida() { 
 

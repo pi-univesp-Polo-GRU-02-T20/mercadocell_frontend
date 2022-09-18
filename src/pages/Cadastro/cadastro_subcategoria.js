@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Navbar from '../../components/Menu/Navbar';
 import api  from '../../components/Services/api';
 import ListarCategoria from '../../components/Listas/listar_categoria';
-import './cadastro_categoria.css';
+import './cadastro.css';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
 export default function Cadastro_subcategoria() {

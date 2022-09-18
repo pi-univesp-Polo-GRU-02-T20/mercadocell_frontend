@@ -1,8 +1,8 @@
 import React from 'react';
 import Navbar from '../../components/Menu/Navbar';
 import { Link } from 'react-router-dom';
-import  DarkMode  from '../../components/DarkMode';
 import './Home.css';
+const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
 export default function Recursos() {
  

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../../components/Menu/Navbar';
-import './cadastro_categoria.css';
+import './cadastro.css';
 import api  from '../../components/Services/api';
 import ListarCategoria from '../../components/Listas/listar_categoria';
 import ListarSubcategoria from '../../components/Listas/listar_subcategoria';
