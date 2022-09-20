@@ -22,9 +22,9 @@ export default function MenuOperacao() {
   <div className="bodya">
 
   <div className="menu-fundo">
-  <a href='/movimentacao-compra'><button id="button-menu">Compra</button></a>
-  <a href='/movimentacao-venda'><button id="button-menu">Venda</button></a>
-  <a href='/movimentacao-pagamento'><button id="button-menu">Pagamento</button></a>
+  <a id='a' href='/movimentacao-compra'><button id="button-menu">Compra</button></a>
+  <a id='a' href='/movimentacao-venda'><button id="button-menu">Venda</button></a>
+  <a id='a' href='/movimentacao-pagamento'><button id="button-menu">Pagamento</button></a>
   </div>
  
   </div>

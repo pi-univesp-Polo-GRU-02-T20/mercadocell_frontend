@@ -22,6 +22,14 @@ export default function MenuCadastro() {
   <div className="bodya">
 
   <div className="menu-fundo">
+  <a id='a' href='/cadastro-categoria'><button id="button-menu">Categoria</button></a>
+  <a id='a' href='/cadastro-subcategoria'><button id="button-menu">Subcategoria</button></a>
+  <a id='a' href='/cadastro-unidadedemedida'><button id="button-menu">Unidade Medida</button></a>
+  <a id='a' href='/cadastro-produto'><button id="button-menu">Produto</button></a>
+  <a id='a' href='/cadastro-pessoafisica'><button id="button-menu">Pessoa Física</button></a>
+  <a id='a' href='/cadastro-pessoajuridica'><button id="button-menu">Pessoa Jurídica</button></a>
+  <a id='a' href='/cadastro-tipopagamento'><button id="button-menu">Tipo Pagamento</button></a>
+  <a id='a' href='/cadastro-usuario'><button id="button-menu">Usuário</button></a>
 
 
 
