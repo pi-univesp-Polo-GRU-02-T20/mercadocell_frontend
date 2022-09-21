@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from '../../components/Menu/Navbar';
 import { useForm } from "react-hook-form";
-import { ErrorMessage } from '@hookform/error-message';
 import '../Cadastro/cadastro.css';
 import  api  from '../../components/Services/api';
 import ListarPagamento from '../../components/Listas/listar_pagamento';
@@ -24,6 +23,7 @@ export default function Movimentacao_compra() {
     window.location.reload()
   }
 
+
   return (
     <>
 
@@ -36,201 +36,96 @@ export default function Movimentacao_compra() {
   
     </div>
     
-    <div className="body">
-      <form className="compra_form" onSubmit = { handleSubmit(onSubmit) } >
+    <div className="bodya">
+    <div className="form-fundo">
+      <form onSubmit = { handleSubmit(onSubmit) } >
 
-    <div className="compra_titulo">
-    <h1>Operação de Venda</h1>
-    </div>
-
-    <div className="compra_linha">
-
-      <div className="compra_campo">
-
-          <label htmlFor="codNotaFiscal">Código da Nota Fiscal</label>
-          <input 
-                 type="text" 
-                 id="codNotaFiscal" 
-                 name="codNotaFiscal"
-                 {...register("codNotaFiscal", {
-                  required: 'Preenchimento Obrigatório'
-                })}
-           />
-        
-          <ErrorMessage errors={errors} name="codNotaFiscal">
-            {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-          </ErrorMessage>
-
-      </div>
-
-    </div>
-
-    <div className="compra_linha">
-
-      <div className="compra_campo">
-
-          <label htmlFor="tipoStatusOperacao">Status da Operação</label>
-          <select 
-                 type="text" 
-                 id="tipoStatusOperacao" 
-                 name="tipoStatusOperacao"
-                 {...register("tipoStatusOperacao", {
-                  required: 'Preenchimento Obrigatório',
-                })}
-           >
-             <option selected disabled hidden> Selecione um status </option>
-             <option value="P" key="pedido">Pedido</option>
-             <option value="O" key="orcamento">Orçamento</option>
-          </select>
-                             
-        <ErrorMessage errors={errors} name="tipoStatusOperacao">
-        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-        </ErrorMessage>
-
-      </div>
-
-      <div className="compra_campo2">
-
-<label htmlFor="dataOperacao">Data da Operação</label>
-<input 
-       type="datetime-local" 
-       id="dataOperacao" 
-       name="dataOperacao"
-       step="1"
-       {...register("dataOperacao", {
-        required: 'Preenchimento Obrigatório'})}
- />
-
-<ErrorMessage errors={errors} name="nomeSubCategoria">
-{({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-</ErrorMessage>
-
-</div>
-
-
-
-    <div className="compra_campo"> 
-
-    <label htmlFor="pessoa.codPessoa">Código de Pessoa</label>
-
-    <select 
-           type="text" 
-           id="pessoa.codPessoa" 
-           name="pessoa.codPessoa"
-           {...register("pessoa.codPessoa")}
-     >
-      <option selected disabled hidden> Selecione um código </option>
-      <ListarPessoa />
-
-    </select>
-
-    </div>
+      <div className="form-header">
+          <div className="title">
+              <h1>Operação de venda</h1>
+          </div>
     </div>
 
 
+    <div className="input-group-column">
 
+    <div className="input-group-row">
 
+                <div className="input-box">
+                      <label htmlFor="nomeProduto">Código da Nota Fiscal</label>
+                      <input type="text" id="doublebox" name="codNotaFiscal"/>
+                </div>
 
-
-    <div className="compra_linha">  
-
-    <div className="compra_campo2"> 
-
-    <label htmlFor="tipoPagamento.codTipoPagamento">Tipo de pagamento</label>
-    <select 
-           type="text" 
-           id="tipoPagamento.codTipoPagamento" 
-           name="tipoPagamento.codTipoPagamento"
-           {...register("tipoPagamento.codTipoPagamento")}
-     >
-
-    <option selected disabled hidden> Selecione uma opção </option>
-    <ListarPagamento />
-
-    </select>
-                       
-  <ErrorMessage errors={errors} name="tipoPagamento.codTipoPagamento">
-  {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-  </ErrorMessage> 
-    
-    </div>
+                <div className="input-box">
+                      <label htmlFor="nomeProduto">Status da Operação</label>
+                      <select type="text" id="regularbox" name="tipoStatusOperacao">
+                          <option selected disabled hidden> Selecione um status </option>
+                          <option value="P" key="pedido">Pedido</option>
+                          <option value="O" key="orcamento">Orçamento</option>
+                      </select>
+                </div>
 
     </div>
 
+    <div className="input-group-row">
 
+                <div className="input-box">
+                      <label htmlFor="nomeProduto">Data da Operação</label>
+                      <input type="datetime-local" id="regularbox" name="dataOperacao" step="1"/>
+                </div>
 
+                <div className="input-box">
+                      <label htmlFor="nomeProduto">Código de Pessoa</label>
+                      <select type="text" id="regularbox" name="pessoa.codPessoa">
+                          <option selected disabled hidden> Selecione um código </option>
+                          <ListarPessoa />
+                      </select>
+                </div>
 
+                <div className="input-box">
+                      <label htmlFor="nomeProduto">Tipo de pagamento</label>
+                      <select type="text" id="regularbox" name="tipoPagamento.codTipoPagamento">
+                          <option selected disabled hidden> Selecione uma opção </option>
+                          <ListarPagamento />
+                      </select>
+                </div>
 
+    </div>
 
+    <div className="input-group-row-left">
 
-
-
-
-
-
-
+                <div className="input-box">
+                      <label htmlFor="nomeProduto">Quantidade de Parcelas</label>
+                      <select type="text" id="regularbox" name="quantidadeParcela">
+                      <option value="1" key="1">1</option>
+                          <option value="2" key="2">2</option>
+                          <option value="3" key="3">3</option>
+                          <option value="4" key="4">4</option>
+                          <option value="5" key="5">5</option>
+                          <option value="6" key="6">6</option>
+                          <option value="7" key="7">7</option>
+                          <option value="8" key="8">8</option>
+                          <option value="9" key="9">9</option>
+                          <option value="10" key="10">10</option>
+                          <option value="11" key="11">11</option>
+                          <option value="12" key="12">12</option>
+                      </select>
+                </div>
+      
+                <div className="input-box">
+                      <label htmlFor="nomeProduto">Valor Total (R$)</label>
+                      <input type="number" min="1" step="any" id="regularbox" name="valorTotal"/>
+                </div>
     
 
-    <div className="compra_linha">
-
-<div className="compra_campo">
-
-    <label htmlFor="quantidadeParcela">Quantidade de parcelas</label>
-    <select 
-           type="text" 
-           id="quantidadeParcela" 
-           name="quantidadeParcela"
-           {...register("quantidadeParcela", {
-            required: 'Preenchimento Obrigatório',
-          })}
-     >
-        <option value="1" key="1">1</option>
-        <option value="2" key="2">2</option>
-        <option value="3" key="3">3</option>
-        <option value="4" key="4">4</option>
-        <option value="5" key="5">5</option>
-        <option value="6" key="6">6</option>
-        <option value="7" key="7">7</option>
-        <option value="8" key="8">8</option>
-        <option value="9" key="9">9</option>
-        <option value="10" key="10">10</option>
-        <option value="11" key="11">11</option>
-        <option value="12" key="12">12</option>
-    </select>
-                       
-  <ErrorMessage errors={errors} name="quantidadeParcela">
-  {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-  </ErrorMessage>
-
-</div>
-
-<div className="compra_campo3">
-
-<label htmlFor="nomeSubCategoria">Valor Total (R$)</label>
-<input 
- type="number"
- min="1" 
- step="any" 
- id="valorTotal" 
- name="valorTotal"
- {...register("valorTotal", {
-  required: 'Preenchimento Obrigatório',
-})}
-/>
-
-<ErrorMessage errors={errors} name="valorTotal">
-{({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-</ErrorMessage>
-
 </div>
 
 </div>
-
-
 
         <button type="submit">Cadastrar</button>
          
     </form>
+    </div>
     </div>
 
 <div className="footer">
