@@ -22,17 +22,17 @@ export default function MenuConsulta() {
   <div className="bodya">
 
   <div className="menu-fundo">
-  <a id='a' href='/consulta-categoria'><button id="button-menu">Categoria</button></a>
-  <a id='a' href='/consulta-subcategoria'><button id="button-menu">Subcategoria</button></a>
-  <a id='a' href='/consulta-unidadedemedida'><button id="button-menu">Unidade Medida</button></a>
-  <a id='a' href='/consulta-produto'><button id="button-menu">Produto</button></a>
-  <a id='a' href='/consulta-pessoafisica'><button id="button-menu">Pessoa Física</button></a>
-  <a id='a' href='/consulta-pessoajuridica'><button id="button-menu">Pessoa Jurídica</button></a>
-  <a id='a' href='/consulta-tipopagamento'><button id="button-menu">Tipo Pagamento</button></a>
-  <a id='a' href='/consulta-usuario'><button id="button-menu">Usuário</button></a>
-  <a id='a' href='/consulta-operacao'><button id="button-menu">Operação Compra e Venda</button></a>
-  <a id='a' href='/consulta-pagamentocompra'><button id="button-menu">Pagamento Compra</button></a>
-  <a id='a' href='/consulta-pagamentovenda'><button id="button-menu">Pagamento Venda</button></a>
+  <Link id='a' to='/consulta-categoria'><button id="button-menu">Categoria</button></Link>
+  <Link id='a' to='/consulta-subcategoria'><button id="button-menu">Subcategoria</button></Link>
+  <Link id='a' to='/consulta-unidadedemedida'><button id="button-menu">Unidade Medida</button></Link>
+  <Link id='a' to='/consulta-produto'><button id="button-menu">Produto</button></Link>
+  <Link id='a' to='/consulta-pessoafisica'><button id="button-menu">Pessoa Física</button></Link>
+  <Link id='a' to='/consulta-pessoajuridica'><button id="button-menu">Pessoa Jurídica</button></Link>
+  <Link id='a' to='/consulta-tipopagamento'><button id="button-menu">Tipo Pagamento</button></Link>
+  <Link id='a' to='/consulta-usuario'><button id="button-menu">Usuário</button></Link>
+  <Link id='a' to='/consulta-operacao'><button id="button-menu">Operação Compra e Venda</button></Link>
+  <Link id='a' to='/consulta-pagamentocompra'><button id="button-menu">Pagamento Compra</button></Link>
+  <Link id='a' to='/consulta-pagamentovenda'><button id="button-menu">Pagamento Venda</button></Link>
 
 
   </div>

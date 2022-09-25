@@ -4,8 +4,9 @@ import React, { useEffect, useState } from "react";
 import api  from '../../components/Services/api';
 
 import fatdetalhadoPDF from '../../components/Pdf/pdf_relatorio_fatdetalhado';
-import './relatorio.css';
 import { Link } from 'react-router-dom';
+
+import './relatorio.css';
 const MaterialTable = React.lazy(() => import('material-table'));
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
@@ -73,9 +74,9 @@ export default function Relatorio_fatdetalhado_mes() {
 
     <div className="button-group-row-left">
 
-    <a href='./relatorio-fatdetalhado-dia'><button id="button-menu">Dia</button></a>
+    <Link id='a' to='./relatorio-fatdetalhado-dia'><button id="button-menu">Dia</button></Link>
 
-    <a href='./relatorio-fatdetalhado-ano'><button id="button-menu">Ano</button></a>
+    <Link id='a' to='./relatorio-fatdetalhado-ano'><button id="button-menu">Ano</button></Link>
 
     </div>
      

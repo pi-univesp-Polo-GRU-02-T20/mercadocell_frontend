@@ -22,8 +22,8 @@ export default function MenuRelatorio() {
   <div className="bodya">
 
   <div className="menu-fundo">
-  <a href='/relatorio-fatdetalhado-dia'><button id="button-PDF">Fat. Detalhado</button></a>
-  <a href='/relatorio-fatsumarizado-mes'><button id="button-PDF">Fat. Sumarizado</button></a>
+  <Link id='a' to='/relatorio-fatdetalhado-dia'><button id="button-PDF">Fat. Detalhado</button></Link>
+  <Link id='a' to='/relatorio-fatsumarizado-mes'><button id="button-PDF">Fat. Sumarizado</button></Link>
   </div>
  
   </div>

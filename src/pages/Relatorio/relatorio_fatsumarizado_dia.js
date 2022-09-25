@@ -84,9 +84,9 @@ export default function Relatorio_fatsumarizado_dia() {
 
 <div className="button-group-row-left">
 
-<a href='./relatorio-fatsumarizado-mes'><button id="button-menu">Mês</button></a>
+<Link id='a' to='./relatorio-fatsumarizado-mes'><button id="button-menu">Mês</button></Link>
 
-<a href='./relatorio-fatsumarizado-ano'><button id="button-menu">Ano</button></a>
+<Link id='a' to='./relatorio-fatsumarizado-ano'><button id="button-menu">Ano</button></Link>
 
 </div>
      

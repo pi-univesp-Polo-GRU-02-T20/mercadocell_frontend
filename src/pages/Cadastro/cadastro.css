@@ -21,7 +21,8 @@ body.light {
 --fundo-input: #ffffff;
 --tema: #125ec0;
 --fonte: #000000;
---label: #555555;
+--label: #6e6e6e;
+--placeholder: #8d8d8d;
 }
 
 body.dark {
@@ -31,6 +32,7 @@ body.dark {
 --tema: #000000;
 --fonte: #ffffff;
 --label: #ffffff;
+--placeholder: #ffffff;
 }
 
 body.normal {
@@ -106,7 +108,10 @@ form{
   
   padding: 1rem 2rem 1rem 2rem;
   border-top: 5px solid #125ec0;
-  background-color: rgb(255, 255, 255);
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  background-color: var(--fundo-formulario);
 }
 
 .menu-fundo {
@@ -124,6 +129,7 @@ form{
   width: max-content;
   justify-content: space-between;
   margin-bottom: 1rem;
+  color: var(--fonte);
 }
 
 .input-group-column {
@@ -156,9 +162,9 @@ form{
 
 .input-box label {
   font-size: 1rem;
-  font-weight: 500;
-  color: #555454;
+  font-weight: 450;
   margin-bottom: 0.5rem;
+  color: var(--label);
 }
 
 .input-box input, select {
@@ -169,6 +175,12 @@ form{
   font-size: 1rem;
   height: 2.5rem;
   width: 250px;
+  color: var(--placeholder);
+  background-color: var(--fundo-input);
+}
+
+input::placeholder {
+  color: var(--placeholder);
 }
 
 #doublebox{
@@ -188,6 +200,7 @@ form{
   height: 2.5rem;
   width: 780px;
   height: 100px;
+  background-color: var(--fundo-input);
 }
 
 input[type="file"] {
