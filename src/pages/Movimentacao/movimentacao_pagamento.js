@@ -1,12 +1,12 @@
 import React from 'react';
 import Navbar from '../../components/Menu/Navbar';
 import { useForm } from "react-hook-form";
-import { ErrorMessage } from '@hookform/error-message';
 import '../Cadastro/cadastro.css';
 import  api  from '../../components/Services/api';
 import ListarOperacao from '../../components/Listas/listar_operacao';
 import moment from 'moment';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
+
 
 export default function Movimentacao_pagamento() {
 
@@ -32,51 +32,43 @@ export default function Movimentacao_pagamento() {
 
 </div>
 
-<div className="body">
-  <form className="pagamento_form" onSubmit = { handleSubmit(onSubmit) } >
+<div className="bodya">
+<div className="form-fundo">
+  <form onSubmit = { handleSubmit(onSubmit) } >
 
-    <div className="pagamento_titulo">
-    <h1>Incluir Pagamento</h1>
+  <div className="form-header">
+      <div className="title">
+              <h1>Incluir Pagamento</h1>
+          </div>
     </div>
 
-    <div className="pagamento_linha">
+    <div className="input-group-column">
 
-      <div className="pagamento_campo">
+    <div className="input-group-row">
 
-          <label htmlFor="operacao.codOperacao">Operação</label>
-          <select 
-                 type="text" 
-                 id="operacao.codOperacao" 
-                 name="operacao.codOperacao"
-                 {...register("operacao.codOperacao", {
-                  required: 'Preenchimento Obrigatório'
-                })}
-          >
-
-
-           <ListarOperacao/>
-
+                  <div className="input-box">
+                      <label htmlFor="nomeProduto">Operação</label>
+                      <select type="text" id="doublebox" 
+                      name="operacao.codOperacao"
+                      {...register("operacao.codOperacao", {
+                        required: 'Preenchimento Obrigatório'
+                      })}           
           
-          </select>
-        
-          <ErrorMessage errors={errors} name="codOperacao">
-            {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-          </ErrorMessage>
+          >
+           <ListarOperacao/>
+          
+          </select>                 
 
       </div>
 
-    </div>
+</div>
 
-    <div className="pagamento_linha">
+      <div className="input-group-row">
 
-      <div className="pagamento_campo">
-
-          <label htmlFor="dataPagamento">Data de Pagamento</label>
-          <input 
-                 type="datetime-local" 
-                 id="dataPagamento" 
-                 name="dataPagamento"
-                 step="1"
+                  <div className="input-box">
+                       <label htmlFor="dataPagamento">Data de Pagamento</label>
+                       <input type="datetime-local" id="regularbox" 
+                       name="dataPagamento" step="1"
                  {...register("dataPagamento", {
                   required: 'Preenchimento Obrigatório',
                   minLength: {
@@ -84,61 +76,44 @@ export default function Movimentacao_pagamento() {
                     message: 'No minimo dois caracteres'
                   }
                 })}
-          />
-                             
-        <ErrorMessage errors={errors} name="dataPagamento">
-        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-        </ErrorMessage>
-
+          />                           
+       
       </div>
 
-      <div className="pagamento_campo">
+</div>
 
-<label htmlFor="dataVencimento">Data de Vencimento</label>
-<input
-       type="datetime-local" 
-       id="dataVencimento" 
-       name="dataVencimento"
-       step="1"
+      <div className="input-group-row">
+
+                <div className="input-box">
+                <label htmlFor="dataVencimento">Data de Vencimento</label>
+                <input type="datetime-local" id="regularbox"       
+                name="dataVencimento"       step="1"
        {...register("dataVencimento", {
         required: 'Preenchimento Obrigatório'})}
 />
 
-
-<ErrorMessage errors={errors} name="dataVencimento">
-{({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-</ErrorMessage>
-
+       </div>
 </div>
 
-    </div>
+      <div className="input-group-row">
 
-
-<div className="pagamento_linha3">
-
-      <div className="pagamento_campo">
-
-          <label htmlFor="valorPagamento">Valor do Pagamento (R$)</label>
-          <input 
-                 type="number" 
-                 id="valorPagamento" 
+                <div className="input-box"> 
+                <label htmlFor="valorPagamento">Valor do Pagamento (R$)</label>
+                <input type="number" id="regularbox"                 
                  name="valorPagamento"
                  {...register("valorPagamento", {
                   required: 'Preenchimento Obrigatório'
                 })}
-           />
-                             
-        <ErrorMessage errors={errors} name="valorPagamento">
-        {({ messages }) => messages && Object.entries(messages).map(([type, message]) => ( <p key={type}>{message}</p>))}
-        </ErrorMessage>
-
-      </div>
-
-    </div>
-
+           />                            
+        
+      </div>  
+</div> 
+</div>   
+      
         <button type="submit">Cadastrar</button>
          
     </form>
+    </div>
     </div>
 
 <div className="footer">
