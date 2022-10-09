@@ -128,7 +128,6 @@ export default function Consulta_categoria() {
 
      <button onClick={(e) => categoriaPDF(entries.data)} id="button-PDF">Gerar PDF</button>
 
-
     </div>
 
     <div className="footer">

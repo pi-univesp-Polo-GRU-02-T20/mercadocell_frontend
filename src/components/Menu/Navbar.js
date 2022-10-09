@@ -117,9 +117,14 @@ function Navbar() {
               onMouseLeave={onMouseLeave}
               >
             <Link to='/menu-relatorio' className='nav-links' onClick={closeMobileMenu}>
-              Relatórios<i className='fas fa-caret-down' />
+              Relatórios <i className='fas fa-caret-down' />
             </Link>
             {dropdown4 && <Dropdown4 />}
+          </li>
+          <li className='nav-item'>
+            <Link to='/painel-vendas' className='nav-links' onClick={closeMobileMenu}>
+              Painel de Vendas
+            </Link>
           </li>
 
 

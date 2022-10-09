@@ -24,7 +24,8 @@ export default function Consulta_produto() {
         columns: [
             { title: "Código do Produto", field: "codProduto", editable:false},
             { title: "Nome", field: "nomeProduto" },
-            { title: "Descrição", field: "descricaoProduto" }
+            { title: "Descrição", field: "descricaoProduto" },
+            { title: "Imagem", field: "listaImagens" },
         ]
     });
 
@@ -38,7 +39,19 @@ export default function Consulta_produto() {
         {
         codProduto: el.codProduto,
         nomeProduto: el.nomeProduto, 
-        descricaoProduto: el.descricaoProduto
+        descricaoProduto: el.descricaoProduto,
+        listaImagens:  
+        <a href={`${el.listaImagens}`} rel="noreferrer" target="_blank">
+        <img
+        src={`${el.listaImagens}`}
+        srcSet={`${el.listaImagens}`}
+        alt={el.listaImagens}
+        loading="lazy"
+        width={70}
+        height={70}
+        />
+        </a>
+
         }
     );
 });

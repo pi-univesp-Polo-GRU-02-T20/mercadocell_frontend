@@ -10,7 +10,7 @@ const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
 export default function Movimentacao_compra() {
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {handleSubmit} = useForm();
   const onSubmit = (data) => {
     data.codOperacao = 0; 
     data.tipoOperacao = "V";

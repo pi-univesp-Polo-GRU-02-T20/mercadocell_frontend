@@ -50,6 +50,8 @@ const RelatorioFatsumarizadoMes = React.lazy(() => import('./Relatorio/relatorio
 const RelatorioFatsumarizadoDia = React.lazy(() => import('./Relatorio/relatorio_fatsumarizado_dia'));
 const RelatorioFatsumarizadoAno = React.lazy(() => import('./Relatorio/relatorio_fatsumarizado_ano'));
 
+const PainelVendas = React.lazy(() => import('./Painel/painel_vendas'));
+
 const PagesRoot = () => (
     <Router>
       <StoreProvider>
@@ -100,6 +102,8 @@ const PagesRoot = () => (
           <RoutesPrivate path='/relatorio-fatsumarizado-mes' component={() => <RelatorioFatsumarizadoMes/>} />
           <RoutesPrivate path='/relatorio-fatsumarizado-dia' component={() => <RelatorioFatsumarizadoDia/>} />
           <RoutesPrivate path='/relatorio-fatsumarizado-ano' component={() => <RelatorioFatsumarizadoAno/>} />
+
+          <RoutesPrivate path='/painel-vendas' component={() => <PainelVendas/>} />
 
           <RoutesPrivate path='/sign-up' component={() => <Home/>} />
 

@@ -50,6 +50,7 @@ body.big {
   text-decoration: none;
   padding: 0.5rem 1rem;
   position: top;
+  margin-top: 0.5rem;
 }
 
 .nav-links:hover {

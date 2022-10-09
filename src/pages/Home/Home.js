@@ -19,9 +19,15 @@ export default function Home() {
   </div>
     
   <div className="body">
+
+  <div className="menu-fundo">
   
   <div className="bemVindo_titulo">
       <h1>Bem-vindo</h1>
+  </div>
+
+  <Link id='a' to='/sobre'><button id="button-menu">Sobre</button></Link>
+
   </div>
 
   </div>

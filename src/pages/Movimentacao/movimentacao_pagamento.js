@@ -10,7 +10,7 @@ const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
 export default function Movimentacao_pagamento() {
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit} = useForm();
   const onSubmit = (data) => { 
     console.log(data);
     data.dataPagamento = moment(data.dataPagamento).format("yyyy-MM-DD HH:mm:ss");

@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../../components/Menu/Navbar';
 import { useForm } from "react-hook-form";
 import '../Cadastro/cadastro.css';
-import  api  from '../../components/Services/api';
+import api  from '../../components/Services/api';
 import ListarPagamento from '../../components/Listas/listar_pagamento';
 import ListarPessoa from '../../components/Listas/listar_pessoa';
 import moment from 'moment';
@@ -11,7 +11,7 @@ const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
 export default function Movimentacao_compra() {
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {handleSubmit} = useForm();
   const onSubmit = (data) => {
     data.codOperacao = 0; 
     data.tipoOperacao = "C";

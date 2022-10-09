@@ -28,7 +28,7 @@ export default function Cadastro_subcategoria() {
     const data = Object.fromEntries(formData);
     console.log('*** handleSubmit', data);
     setFormValues({});
-    //api.post("/subCategoria", data);
+    api.post("/subCategoria", data);
     alert("Cadastro Realizado");
   };
 
