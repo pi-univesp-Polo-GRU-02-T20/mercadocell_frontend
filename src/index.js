@@ -1,8 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Root from './pages/Root';
-import * as serviceWorker from './serviceWorker';
+import * as ReactDOMClient from 'react-dom/client';
+import App from './App';
 
-ReactDOM.render(<Root />, document.getElementById('root'));
-
-serviceWorker.unregister();
+const root = ReactDOMClient.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

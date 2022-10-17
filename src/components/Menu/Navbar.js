@@ -6,6 +6,8 @@ import Dropdown1 from './Dropdown1';
 import Dropdown2 from './Dropdown2';
 import Dropdown3 from './Dropdown3';
 import Dropdown4 from './Dropdown4';
+import { auth } from '../../firebaseConnection'
+import { signOut } from 'firebase/auth' 
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -74,10 +76,14 @@ function Navbar() {
     }
   };
 
+  async function handleLogout(){
+    await signOut(auth);
+  }
+
   return (
     <>
       <nav className='navbar'>
-        <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+        <Link to='/home' className='navbar-logo' onClick={closeMobileMenu}>
             Mercadocell
         </Link>
         <div className='menu-icon' onClick={handleClick}>
@@ -139,20 +145,9 @@ function Navbar() {
               Sair
             </Link>
           </li>
-
-
-
-
-
-
-
-
-
-
-
      
         </ul>
-        <Button />
+        <button className='btn' onClick={handleLogout}>Sair</button>
       </nav>
     </>
   );

@@ -26,7 +26,7 @@ export default function Home() {
       <h1>Bem-vindo</h1>
   </div>
 
-  <Link id='a' to='/sobre'><button id="button-menu">Sobre</button></Link>
+  <Link id='a' to="/sobre"><button id="button-menu">Sobre</button></Link>
 
   </div>
 

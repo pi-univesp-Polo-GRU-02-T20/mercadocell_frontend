@@ -39,6 +39,17 @@ form {
   display: flex;
   position: relative;
   background-color: white;
+  height: 320px;
+  width: 400px;
+  border-left: 20px solid #1888ff;
+  border-radius: 0px;
+  top: 200px;
+}
+
+.redefinir_form {
+  display: flex;
+  position: relative;
+  background-color: white;
   height: 300px;
   width: 400px;
   border-left: 20px solid #1888ff;
@@ -185,6 +196,33 @@ form {
   background-color:#1888ff;
   color: #EFF2F5;
   cursor: pointer;
+}
+
+.redefinir_form button {
+  width: 98%;
+  background-color: #125ec0;
+  color: #EFF2F5;
+  font-weight: 800;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-left: 5px;
+  margin-top: 5px;
+  border: none;
+  outline-width: 0;
+}
+
+.redefinir_form button:hover {
+  background-color:#1888ff;
+  color: #EFF2F5;
+  cursor: pointer;
+}
+
+.RecoverPassword {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 

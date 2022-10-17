@@ -2,7 +2,6 @@ import Navbar from '../../components/Menu/Navbar';
 import React from "react";
 import '../Consulta/consulta.css';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
-const MaterialTable = React.lazy(() => import('material-table'));
 
 export default function Painel_vendas() {
     
