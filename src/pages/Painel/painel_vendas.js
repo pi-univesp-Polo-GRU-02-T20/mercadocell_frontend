@@ -22,10 +22,11 @@ export default function Painel_vendas() {
     
 <iframe title="PROTOTIPO_DASH_MERCADOCELL_LOCAL" 
         width="100%" 
-        height="100%" 
-        src="https://app.powerbi.com/reportEmbed?reportId=7612e57b-c506-4b04-bbe4-0e2d30fc9a56&autoAuth=true&ctid=dee74457-d751-4011-a5c4-44560cf8b415" 
+        height="100%"
+        src="https://datastudio.google.com/embed/reporting/f029f918-7c7c-47ee-bf1a-2736bf73d93c/page/63e3C"  
         frameborder="0" 
-        allowFullScreen="true">
+        allowfullscreen="true" >
+        
 </iframe>
 
     </div>

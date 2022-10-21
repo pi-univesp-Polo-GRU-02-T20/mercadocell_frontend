@@ -63,25 +63,25 @@ export default function Cadastro_usuario() {
 
                 <div className="input-group-row">
                     <div className="input-box">
-                        <label htmlFor="dataNascimento">Código de Pessoa</label>
-                        <select type="date" name="dataNascimento" id="regularbox" placeholder="Data de nascimento" onChange={handleInputChange} value={formValues.dataNascimento || ''} required>
+                        <label htmlFor="CodPessoa">Código de Pessoa</label>
+                        <select type="text" name="CodPessoa" id="regularbox" placeholder="Código de Pessoa" onChange={handleInputChange} value={formValues.CodPessoa || ''} required>
                         <ListarCodpessoa/>
                         </select>
                     </div>
                     <div className="input-box">
                         <label htmlFor="login">Login</label>
-                        <input type="text" name="login" id="regularbox" placeholder="Naturalidade (UF)" onChange={handleInputChange} value={formValues.login || ''} required/>
+                        <input type="text" name="login" id="regularbox" placeholder="insira o login" onChange={handleInputChange} value={formValues.login || ''} required/>
                     </div>
                 </div>
 
                 <div className="input-group-row">
                     <div className="input-box">
                         <label htmlFor="senha">Senha</label>
-                        <input type="password" name="senha" id="regularbox" placeholder="Data de nascimento" onChange={handleInputChange} value={formValues.dataNascimento || ''} required/>
+                        <input type="password" name="senha" id="regularbox" placeholder="digite a senha" onChange={handleInputChange} value={formValues.senha || ''} required/>
                     </div>
                     <div className="input-box">
-                        <label htmlFor="estadoNaturalidade">Confirmar senha</label>
-                        <input type="password" name="estadoNaturalidade" id="regularbox" placeholder="Naturalidade (UF)" onChange={handleInputChange} value={formValues.estadoNaturalidade || ''} required/>
+                        <label htmlFor="confirmarSenha">Confirmar senha</label>
+                        <input type="password" name="confirmarSenha" id="regularbox" placeholder="confirme a senha" onChange={handleInputChange} value={formValues.confirmarSenha || ''} required/>
                     </div>
                 </div>
 

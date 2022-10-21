@@ -26,6 +26,8 @@ export default function Cadastro_subcategoria() {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
+    data.codSubCategoria = 0;
+    data.categoria = {codCategoria:data.codCategoria};       
     console.log('*** handleSubmit', data);
     setFormValues({});
     api.post("/subCategoria", data);
@@ -60,7 +62,7 @@ export default function Cadastro_subcategoria() {
 
           <div className="input-box">
           <label htmlFor="categoria.codCategoria"> Categoria </label>
-          <select   id="regularbox" name="categoria.codCategoria" onChange={handleInputChange}  required>
+          <select   id="regularbox" name="codCategoria" onChange={handleInputChange}  required>
           <ListarCategoria />
           </select>
           </div>

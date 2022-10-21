@@ -4,7 +4,7 @@ import api  from '../../components/Services/api';
 import './cadastro.css';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
-export default function Cadastro_categoria() { 
+export default function Cadastro_tipopagamento() { 
 
   const [formValues, setFormValues] = useState({});
 
@@ -24,8 +24,9 @@ export default function Cadastro_categoria() {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
-    console.log('*** handleSubmit', data);
-    setFormValues({});
+    data.codTipoPagamento = 0
+    console.log('*** handleSubmit', data);    
+    setFormValues({});    
     api.post("/tipoPagamento", data);
     alert("Cadastro Realizado");
   };

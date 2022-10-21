@@ -63,12 +63,12 @@ export default function Cadastro_pessoajuridica() {
 
                 
                     <div className="input-box">
-                        <label htmlFor="dataNascimento">Razão Social</label>
-                        <input type="text" name="dataNascimento" id="doublebox" placeholder="Digite a Razão Social" onChange={handleInputChange} value={formValues.dataNascimento || ''} required/>
+                        <label htmlFor="nomeRazaoSocial">Razão Social</label>
+                        <input type="text" name="nomeRazaoSocial" id="doublebox" placeholder="Digite a Razão Social" onChange={handleInputChange} value={formValues.nomeRazaoSocial || ''} required/>
                     </div>
                     <div className="input-box">
-                        <label htmlFor="estadoNaturalidade">CNPJ</label>
-                        <input type="text" name="estadoNaturalidade" id="regularbox" placeholder="Naturalidade (UF)" onChange={handleInputChange} value={formValues.estadoNaturalidade || ''} required/>
+                        <label htmlFor="codCNPJ">CNPJ</label>
+                        <input type="text" name="codCNPJ" id="regularbox" placeholder="Digite o CNPJ" onChange={handleInputChange} value={formValues.codCNPJ || ''} required/>
                     </div>
                 
 
