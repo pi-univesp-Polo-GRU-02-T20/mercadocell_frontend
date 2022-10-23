@@ -1,28 +1,47 @@
 import React from 'react';
 import Navbar from '../../components/Menu/Navbar';
-import { useForm } from "react-hook-form";
+import { useState } from 'react';
 import '../Cadastro/cadastro.css';
-import  api  from '../../components/Services/api';
+import api  from '../../components/Services/api';
 import ListarPagamento from '../../components/Listas/listar_pagamento';
 import ListarPessoa from '../../components/Listas/listar_pessoa';
 import moment from 'moment';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
-export default function Movimentacao_compra() {
 
-  const {handleSubmit} = useForm();
-  const onSubmit = (data) => {
-    data.codOperacao = 0; 
-    data.tipoOperacao = "V";
-    data.pago = false;
-    data.dataOperacao = moment(data.dataOperacao).format("yyyy-MM-DD HH:mm:ss");
+export default function Movimentacao_venda() {
+
+      const [formValues, setFormValues] = useState({});
+
+      const handleInputChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        const isCheckbox = type === 'checkbox';
     
-    console.log(data);
-    api.post("/operacao", data);
-    alert("Cadastro Realizado");
-    window.location.reload()
-  }
+        const data = formValues[name] || {};
+        if (isCheckbox) {
+          data[value] = checked;
+        }
+        const newValue = isCheckbox ? data : value;
+        setFormValues({ ...formValues, [name]: newValue });
+      };
+    
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
 
+        data.codOperacao = 0;
+        data.tipoOperacao = "V";
+        data.dataOperacao = moment(data.dataOperacao).format("yyyy-MM-DD HH:mm:ss");
+        data.pago = true;
+        data.pessoa = {codPessoa:data.codPessoa, nomePessoa:data.nomePessoa};       
+        data.tipoPagamento = {codTipoPagamento: data.codTipoPagamento}
+
+        console.log('*** handleSubmit', data);
+        setFormValues({});
+        api.post("/operacao", data);
+        alert("Cadastro Realizado");
+      };
 
   return (
     <>
@@ -38,7 +57,7 @@ export default function Movimentacao_compra() {
     
     <div className="bodya">
     <div className="form-fundo">
-      <form onSubmit = { handleSubmit(onSubmit) } >
+      <form onSubmit = {handleSubmit} >
 
       <div className="form-header">
           <div className="title">
@@ -46,19 +65,18 @@ export default function Movimentacao_compra() {
           </div>
     </div>
 
-
     <div className="input-group-column">
 
     <div className="input-group-row">
 
                 <div className="input-box">
                       <label htmlFor="nomeProduto">Código da Nota Fiscal</label>
-                      <input type="text" id="doublebox" name="codNotaFiscal"/>
+                      <input type="text" id="doublebox" name="codNotaFiscal" onChange={handleInputChange} value={formValues.codNotaFiscal || ''}/>
                 </div>
 
                 <div className="input-box">
                       <label htmlFor="nomeProduto">Status da Operação</label>
-                      <select type="text" id="regularbox" name="tipoStatusOperacao">
+                      <select type="text" id="regularbox" name="tipoStatusOperacao" onChange={handleInputChange} value={formValues.tipoStatusOperacao || ''}>
                           <option selected disabled hidden> Selecione um status </option>
                           <option value="P" key="pedido">Pedido</option>
                           <option value="O" key="orcamento">Orçamento</option>
@@ -71,12 +89,12 @@ export default function Movimentacao_compra() {
 
                 <div className="input-box">
                       <label htmlFor="nomeProduto">Data da Operação</label>
-                      <input type="datetime-local" id="regularbox" name="dataOperacao" step="1"/>
+                      <input type="datetime-local" id="regularbox" name="dataOperacao" step="1" onChange={handleInputChange} value={formValues.dataOperacao || ''}/>
                 </div>
 
                 <div className="input-box">
                       <label htmlFor="nomeProduto">Código de Pessoa</label>
-                      <select type="text" id="regularbox" name="pessoa.codPessoa">
+                      <select type="text" id="regularbox" name="codPessoa" onChange={handleInputChange} value={formValues.codPessoa || ''}>
                           <option selected disabled hidden> Selecione um código </option>
                           <ListarPessoa />
                       </select>
@@ -84,7 +102,7 @@ export default function Movimentacao_compra() {
 
                 <div className="input-box">
                       <label htmlFor="nomeProduto">Tipo de pagamento</label>
-                      <select type="text" id="regularbox" name="tipoPagamento.codTipoPagamento">
+                      <select type="text" id="regularbox" name="codTipoPagamento" onChange={handleInputChange} value={formValues.codTipoPagamento || ''}>
                           <option selected disabled hidden> Selecione uma opção </option>
                           <ListarPagamento />
                       </select>
@@ -96,7 +114,7 @@ export default function Movimentacao_compra() {
 
                 <div className="input-box">
                       <label htmlFor="nomeProduto">Quantidade de Parcelas</label>
-                      <select type="text" id="regularbox" name="quantidadeParcela">
+                      <select type="text" id="regularbox" name="quantidadeParcela" onChange={handleInputChange} value={formValues.quantidadeParcela || ''}>
                       <option value="1" key="1">1</option>
                           <option value="2" key="2">2</option>
                           <option value="3" key="3">3</option>
@@ -114,13 +132,12 @@ export default function Movimentacao_compra() {
       
                 <div className="input-box">
                       <label htmlFor="nomeProduto">Valor Total (R$)</label>
-                      <input type="number" min="1" step="any" id="regularbox" name="valorTotal"/>
+                      <input type="number" min="1" step="any" id="regularbox" name="valorTotal" onChange={handleInputChange} value={formValues.valorTotal || ''}/>
                 </div>
-    
 
-</div>
+    </div>
 
-</div>
+    </div>
 
         <button type="submit">Cadastrar</button>
          

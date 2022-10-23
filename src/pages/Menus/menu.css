@@ -34,11 +34,11 @@
   }
   
   body.normal {
-    --fonte-label: 14px;
+    --fonte-label: 16px;
   }
     
   body.big {
-    --fonte-label: 18px;
+    --fonte-label: 20px;
   }
   
   .container {
@@ -100,30 +100,11 @@
     
     padding: 1rem 2rem 1rem 2rem;
   }
-
-  #button-PDF {
-    display: flex;
-    padding: 8px 20px;
-    border-radius: 4px;
-    outline: none;
-    border: none;
-    font-size: var(--fonte-btn);
-    color: #fff;
-    cursor: pointer;
-    background-color: #125ec0;
-    margin: 1rem;
-    height: 40px;
-    justify-content: center;
-  }
   
-  #button-PDF:hover {
-    padding: 6px 18px;
-    transition: all 0.3s ease-out;
-    background-color: #1888ff;
+  #a {
+    text-decoration: none;
+    font-size: 0.93rem;
     color: #fff;
-    border-radius: 4px;
-    border: 2px solid var(--primary);
-    transition: all 0.3s ease-out;
   }
 
   #button-menu {
@@ -132,7 +113,7 @@
     border-radius: 4px;
     outline: none;
     border: none;
-    font-size: var(--fonte-btn);
+    font-size: var(--fonte-label);
     color: #fff;
     cursor: pointer;
     background-color: #125ec0;
@@ -151,12 +132,6 @@
     border-radius: 4px;
     border: 2px solid var(--primary);
     transition: all 0.3s ease-out;
-  }
-  
-  #a {
-    text-decoration: none;
-    font-size: 0.93rem;
-    color: #fff;
   }
   
   @media screen and (max-width: 1330px) {

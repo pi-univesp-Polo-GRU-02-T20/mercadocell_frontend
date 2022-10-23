@@ -1,34 +1,35 @@
 import React, { useState } from 'react';
+import { auth } from '../../firebaseConnection';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import Navbar from '../../components/Menu/Navbar';
-import api  from '../../components/Services/api';
-import ListarCodpessoa from '../../components/Listas/listar_codpessoa';
 import './cadastro.css';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
 export default function Cadastro_usuario() { 
 
-  const [formValues, setFormValues] = useState({});
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [password2, setPassword2] = useState('');
 
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    const isCheckbox = type === 'checkbox';
-
-    const data = formValues[name] || {};
-    if (isCheckbox) {
-      data[value] = checked;
-    }
-    const newValue = isCheckbox ? data : value;
-    setFormValues({ ...formValues, [name]: newValue });
-  };
-
-  const handleSubmit = (e) => {
+  async function handleSubmit(e){
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData);
-    console.log('*** handleSubmit', data);
-    setFormValues({});
-    api.post("/usuario", data);
-    alert("Cadastro Realizado");
+
+    if(email !== '' && password !== ''){
+      await createUserWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        setEmail('');
+        setPassword('');
+        setPassword2('');
+        alert("Cadastro Realizado");
+      })
+      .catch(() => {
+        console.log("ERRO AO FAZER O CADASTRO")
+      })
+
+
+    }else{
+      alert("Preencha todos os campos!")
+    }
   };
 
   return (
@@ -56,32 +57,19 @@ export default function Cadastro_usuario() {
                 <div className="input-group-column">
                 <div className="input-group-row">
                     <div className="input-box">
-                        <label htmlFor="nomePessoa">Nome de usuário</label>
-                        <input type="text" name="nomePessoa" id="doublebox" placeholder="Nome" onChange={handleInputChange} value={formValues.nomePessoa || ''} required/>
-                    </div>
-                </div>
-
-                <div className="input-group-row">
-                    <div className="input-box">
-                        <label htmlFor="CodPessoa">Código de Pessoa</label>
-                        <select type="text" name="CodPessoa" id="regularbox" placeholder="Código de Pessoa" onChange={handleInputChange} value={formValues.CodPessoa || ''} required>
-                        <ListarCodpessoa/>
-                        </select>
-                    </div>
-                    <div className="input-box">
-                        <label htmlFor="login">Login</label>
-                        <input type="text" name="login" id="regularbox" placeholder="insira o login" onChange={handleInputChange} value={formValues.login || ''} required/>
+                        <label htmlFor="nomePessoa">Login</label>
+                        <input type="text" name="nomePessoa" id="doublebox" placeholder="Digite seu email..." onChange={(e) => setEmail(e.target.value) } value={email} required/>
                     </div>
                 </div>
 
                 <div className="input-group-row">
                     <div className="input-box">
                         <label htmlFor="senha">Senha</label>
-                        <input type="password" name="senha" id="regularbox" placeholder="digite a senha" onChange={handleInputChange} value={formValues.senha || ''} required/>
+                        <input type="password" name="senha" id="regularbox" placeholder="Digite a senha" onChange={(e) => setPassword(e.target.value) } value={password} required/>
                     </div>
                     <div className="input-box">
                         <label htmlFor="confirmarSenha">Confirmar senha</label>
-                        <input type="password" name="confirmarSenha" id="regularbox" placeholder="confirme a senha" onChange={handleInputChange} value={formValues.confirmarSenha || ''} required/>
+                        <input type="password" name="confirmarSenha" id="regularbox" placeholder="Confirme a senha" onChange={(e) => setPassword2(e.target.value) } value={password2}  required/>
                     </div>
                 </div>
 

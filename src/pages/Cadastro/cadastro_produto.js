@@ -9,7 +9,15 @@ const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
 export default function Cadastro_produto() {
 
+  const [formValues, setFormValues] = useState({})
+
   const [image, setImage] = useState('');
+
+  const handleInputChange = (e) => {
+      const {target} = e;
+      const {name, value} = target;
+      setFormValues({...formValues, [name]: value});
+  }
 
   const onSubmit = async e => {
     e.preventDefault();
@@ -17,15 +25,17 @@ export default function Cadastro_produto() {
     const formData = new FormData();
 
     formData.append('arqImagem', image);
-    formData.append('nomeProduto', "Mouse Alien 3JBS");
-    formData.append('descricaoProduto', "Mouse");
-    formData.append('codigoSubcategoria', 1);
-    formData.append('codigoUnidadeMedida', 2);
-    formData.append('quantidadeEstoqueMinimo', 1);
-    formData.append('quantidadeEstoqueMaximo', 5);
-    formData.append('quantidadeEstoqueAtual', 3);
+    formData.append('codigoSubcategoria', formValues.codigoSubcategoria);
+    formData.append('codigoUnidadeMedida', formValues.codigoUnidadeMedida);
+    formData.append('descricaoProduto', formValues.descricaoProduto);
+    formData.append('nomeProduto', formValues.nomeProduto);
+    formData.append('quantidadeEstoqueAtual', formValues.quantidadeEstoqueAtual);
+    formData.append('quantidadeEstoqueMaximo', formValues.quantidadeEstoqueMaximo);
+    formData.append('quantidadeEstoqueMinimo', formValues.quantidadeEstoqueMinimo);
+    
+    console.log(formData);
 
-    await api.post("/produto/comImagem", formData)
+    await api.post("/produto/cadastrarProdutoComImagem", formData)
     .then((response) => {
       console.log(response);
     }).catch((err) => {
@@ -36,6 +46,8 @@ export default function Cadastro_produto() {
       }
     });
   }
+
+  console.log(formValues);
 
   return (
   <>
@@ -66,7 +78,7 @@ export default function Cadastro_produto() {
 
                 <div className="input-box">
                       <label htmlFor="nomeProduto">Nome do Produto</label>
-                      <input type="text" id="doublebox" name="nomeProduto"/>
+                      <input type="text" id="doublebox" name="nomeProduto" onChange={handleInputChange}/>
                 </div>
 
                 <div className="input-box">
@@ -81,8 +93,8 @@ export default function Cadastro_produto() {
     <div className="input-group-row">
 
             <div className="input-box">
-                  <label htmlFor="subCategoria.categoria.codCategoria">Categoria</label>
-                  <select type="text" id="subCategoria.categoria.codCategoria" name="subCategoria.categoria.codCategoria">
+                  <label htmlFor="codigoCategoria">Categoria</label>
+                  <select type="number" id="codigoCategoria" name="codigoCategoria">
                     <option selected disabled hidden> Selecione uma categoria </option>
                     <ListarCategoria />
                   </select>          
@@ -90,7 +102,7 @@ export default function Cadastro_produto() {
 
             <div className="input-box">                  
                   <label htmlFor="codigoSubcategoria">Subcategoria</label>
-                  <select type="number" id="codigoSubcategoria" name="codigoSubcategoria">
+                  <select type="number" id="codigoSubcategoria" name="codigoSubcategoria" onChange={handleInputChange}>
                       <option selected disabled hidden> Selecione uma subcategoria </option>
                       <ListarSubcategoria />
                   </select>
@@ -98,7 +110,7 @@ export default function Cadastro_produto() {
 
             <div className="input-box">
                   <label htmlFor="codigoUnidadeMedida">Unidade de Medida</label>
-                  <select type="number" id="codigoUnidadeMedida" name="codigoUnidadeMedida">
+                  <select type="number" id="codigoUnidadeMedida" name="codigoUnidadeMedida" onChange={handleInputChange}>
                       <option selected disabled hidden> Selecione uma unidade </option>
                       <ListarUnidadedemedida />
                   </select>
@@ -111,7 +123,7 @@ export default function Cadastro_produto() {
     <div className="input-group-row">
     <div className="input-box">
           <label htmlFor="descricaoProduto">Descrição</label>
-          <textarea type="text" id="textarea" name="descricaoProduto"/>
+          <textarea type="text" id="textarea" name="descricaoProduto" onChange={handleInputChange}/>
     </div>
     </div>
     
@@ -123,17 +135,17 @@ export default function Cadastro_produto() {
       
     <div className="input-box">  
           <label htmlFor="qtd_estoque_minimo">Qtd. de estoque mínimo</label>
-          <input type="number" id="quantidadeEstoqueMinimo" name="quantidadeEstoqueMinimo"/>
+          <input type="number" id="quantidadeEstoqueMinimo" name="quantidadeEstoqueMinimo" onChange={handleInputChange}/>
     </div>
 
     <div className="input-box">
           <label htmlFor="qtd_estoque_maximo">Qtd. de estoque máximo</label>
-          <input type="number" id="quantidadeEstoqueMaximo" name="quantidadeEstoqueMaximo"/>
+          <input type="number" id="quantidadeEstoqueMaximo" name="quantidadeEstoqueMaximo" onChange={handleInputChange}/>
     </div>
 
     <div className="input-box">
           <label htmlFor="qtd_estoque_atual">Qtd. de estoque atual</label>
-          <input type="number" id="quantidadeEstoqueAtual" name="quantidadeEstoqueAtual"/>
+          <input type="number" id="quantidadeEstoqueAtual" name="quantidadeEstoqueAtual" onChange={handleInputChange}/>
     </div>
 
 

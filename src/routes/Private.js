@@ -23,7 +23,7 @@ export default function Private({ children }){
 
           setLoading(false);
           setSigned(true);
-
+          console.log(unsub);
          } else{
            //nao possui user logado
            setLoading(false);

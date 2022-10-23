@@ -39,11 +39,6 @@ const MenuItems = [
     cName: 'dropdown-link'
   },
   {
-    title: 'Usuário',
-    path: '/consulta-usuario',
-    cName: 'dropdown-link'
-  },
-  {
     title: 'Op. Compra Venda',
     path: '/consulta-operacao',
     cName: 'dropdown-link'

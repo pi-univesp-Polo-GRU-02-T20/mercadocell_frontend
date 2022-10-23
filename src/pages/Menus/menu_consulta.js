@@ -29,7 +29,6 @@ export default function MenuConsulta() {
   <Link id='a' to='/consulta-pessoafisica'><button id="button-menu">Pessoa Física</button></Link>
   <Link id='a' to='/consulta-pessoajuridica'><button id="button-menu">Pessoa Jurídica</button></Link>
   <Link id='a' to='/consulta-tipopagamento'><button id="button-menu">Tipo Pagamento</button></Link>
-  <Link id='a' to='/consulta-usuario'><button id="button-menu">Usuário</button></Link>
   <Link id='a' to='/consulta-operacao'><button id="button-menu">Operação Compra e Venda</button></Link>
   <Link id='a' to='/consulta-pagamentocompra'><button id="button-menu">Pagamento Compra</button></Link>
   <Link id='a' to='/consulta-pagamentovenda'><button id="button-menu">Pagamento Venda</button></Link>

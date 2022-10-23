@@ -1,8 +1,8 @@
 import React from 'react';
 import Navbar from '../../components/Menu/Navbar';
-import { useForm } from "react-hook-form";
+import { useState } from "react";
 import '../Cadastro/cadastro.css';
-import  api  from '../../components/Services/api';
+import api  from '../../components/Services/api';
 import ListarOperacao from '../../components/Listas/listar_operacao';
 import moment from 'moment';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
@@ -10,15 +10,54 @@ const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
 export default function Movimentacao_pagamento() {
 
-  const { register, handleSubmit} = useForm();
-  const onSubmit = (data) => { 
-    console.log(data);
+  const [formValues, setFormValues] = useState({});
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const isCheckbox = type === 'checkbox';
+
+    const data = formValues[name] || {};
+    if (isCheckbox) {
+      data[value] = checked;
+    }
+    const newValue = isCheckbox ? data : value;
+    setFormValues({ ...formValues, [name]: newValue });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+
+    data.codPagamento = 0;
     data.dataPagamento = moment(data.dataPagamento).format("yyyy-MM-DD HH:mm:ss");
     data.dataVencimento = moment(data.dataVencimento).format("yyyy-MM-DD HH:mm:ss");
+    data.operacao = {codOperacao:data.codOperacao};
+
+    console.log('*** handleSubmit', data);
+    setFormValues({});
     api.post("/pagamentoOperacao", data);
     alert("Cadastro Realizado");
-    window.location.reload()
-  }
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
 <>
@@ -34,7 +73,7 @@ export default function Movimentacao_pagamento() {
 
 <div className="bodya">
 <div className="form-fundo">
-  <form onSubmit = { handleSubmit(onSubmit) } >
+  <form onSubmit = {handleSubmit} >
 
   <div className="form-header">
       <div className="title">
@@ -48,13 +87,7 @@ export default function Movimentacao_pagamento() {
 
                   <div className="input-box">
                       <label htmlFor="nomeProduto">Operação</label>
-                      <select type="text" id="doublebox" 
-                      name="operacao.codOperacao"
-                      {...register("operacao.codOperacao", {
-                        required: 'Preenchimento Obrigatório'
-                      })}           
-          
-          >
+                      <select type="text" id="doublebox" name="codOperacao" onChange={handleInputChange} value={formValues.codOperacao || ''}>
            <ListarOperacao/>
           
           </select>                 
@@ -67,30 +100,13 @@ export default function Movimentacao_pagamento() {
 
                   <div className="input-box">
                        <label htmlFor="dataPagamento">Data de Pagamento</label>
-                       <input type="datetime-local" id="regularbox" 
-                       name="dataPagamento" step="1"
-                 {...register("dataPagamento", {
-                  required: 'Preenchimento Obrigatório',
-                  minLength: {
-                    value: 2,
-                    message: 'No minimo dois caracteres'
-                  }
-                })}
-          />                           
+                       <input type="datetime-local" id="regularbox" name="dataPagamento" step="1" onChange={handleInputChange} value={formValues.dataPagamento || ''}/>                           
        
       </div>
 
-</div>
-
-      <div className="input-group-row">
-
                 <div className="input-box">
                 <label htmlFor="dataVencimento">Data de Vencimento</label>
-                <input type="datetime-local" id="regularbox"       
-                name="dataVencimento"       step="1"
-       {...register("dataVencimento", {
-        required: 'Preenchimento Obrigatório'})}
-/>
+                <input type="datetime-local" id="regularbox" name="dataVencimento" step="1" onChange={handleInputChange} value={formValues.dataVencimento || ''}/>
 
        </div>
 </div>
@@ -99,12 +115,7 @@ export default function Movimentacao_pagamento() {
 
                 <div className="input-box"> 
                 <label htmlFor="valorPagamento">Valor do Pagamento (R$)</label>
-                <input type="number" id="regularbox"                 
-                 name="valorPagamento"
-                 {...register("valorPagamento", {
-                  required: 'Preenchimento Obrigatório'
-                })}
-           />                            
+                <input type="number" id="regularbox" name="valorPagamento" onChange={handleInputChange} value={formValues.valorPagamento || ''}/>                            
         
       </div>  
 </div> 
