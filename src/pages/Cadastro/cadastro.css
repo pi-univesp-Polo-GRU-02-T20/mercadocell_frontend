@@ -175,12 +175,16 @@ form{
   font-size: 1rem;
   height: 2.5rem;
   width: 250px;
-  color: var(--placeholder);
+  color: var(--fonte);
   background-color: var(--fundo-input);
 }
 
 input::placeholder {
   color: var(--placeholder);
+}
+
+#regularbox-filled{
+  background-color: #e6e6e6;
 }
 
 #doublebox{

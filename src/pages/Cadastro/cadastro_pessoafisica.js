@@ -24,12 +24,42 @@ export default function Cadastro_pessoafisica() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData);
+    const data = Object.fromEntries(formData);    
     console.log('*** handleSubmit', data);
     setFormValues({});
     api.post("/pessoaFisica", data);
     alert("Cadastro Realizado");
   };
+
+  const checkCEP = (e) => {
+
+    if (!e.target.value) return; 
+
+    const options = {
+        method: "GET",
+        mode: "cors",
+        headers: {
+            'content-type': 'application/json;charset=utf-8',
+        }
+    }
+
+    const cep = e.target.value.replace(/\D/g, '');
+    console.log(cep);
+    fetch(`https://viacep.com.br/ws/${cep}/json/`, options)
+        .then(res => res.json()).then(data => {
+        console.log(data);
+        setFormValues({ ...formValues, logradouro: data.logradouro, 
+                                       bairro: data.bairro, 
+                                       localidade: data.localidade, 
+                                       uf: data.uf });
+
+    })
+    .catch((err) => console.log(err));
+
+//    setValue(prevState => {
+  //      return { ...prevState, value1: "novo valor" }
+ //   });
+  }
 
   return (
   <>
@@ -54,6 +84,7 @@ export default function Cadastro_pessoafisica() {
                 </div>
 
                 <div className="input-group-column">
+
                 <div className="input-group-row">
                     <div className="input-box">
                         <label htmlFor="nomePessoa">Nome</label>
@@ -61,22 +92,15 @@ export default function Cadastro_pessoafisica() {
                     </div>
                 </div>
 
-                <div className="input-group-row">
+                <div className="input-group-row-left">
                     <div className="input-box">
                         <label htmlFor="dataNascimento">Data de Nascimento</label>
                         <input type="date" name="dataNascimento" id="regularbox" placeholder="Data de nascimento" onChange={handleInputChange} value={formValues.dataNascimento || ''} required/>
                     </div>
-                    <div className="input-box">
-                        <label htmlFor="estadoNaturalidade">Naturalidade (UF)</label>
-                        <input type="text" name="estadoNaturalidade" id="regularbox" placeholder="Naturalidade (UF)" onChange={handleInputChange} value={formValues.estadoNaturalidade || ''} required/>
-                    </div>
                 </div>
+        
 
-
-
-
-
-                <div class="gender-inputs">
+                                <div class="gender-inputs">
 
                     <div class="gender-title">
                         <p>Gênero</p>
@@ -94,6 +118,63 @@ export default function Cadastro_pessoafisica() {
                     </div>
 
                 </div>
+
+                <div className="input-group-row-left">
+
+                <div className="input-box">
+                        <label htmlFor="cep">CEP</label>
+                        <input type="text" name="estadoNaturalidade" id="regularbox" placeholder="CEP" onBlur={checkCEP} onChange={handleInputChange} value={formValues.estadoNaturalidade || ''} required/>
+                </div>
+
+                </div>
+
+                <div className="input-group-row">
+
+                <div className="input-box">
+                        <label htmlFor="logradouro">Rua</label>
+                        <input type="text" name="logradouro" id="regularbox-filled" placeholder="" onChange={handleInputChange} value={formValues.logradouro || ''} disabled required/>
+                </div>
+
+                <div className="input-box">
+                        <label htmlFor="numero">Número</label>
+                        <input type="text" name="numero" id="regularbox" placeholder="Número" onChange={handleInputChange} value={formValues.numero || ''} required/>
+                </div>
+
+                </div>
+
+                <div className="input-group-row">
+
+                <div className="input-box">
+                        <label htmlFor="complemento">Complemento</label>
+                        <input type="text" name="complemento"  id="doublebox" placeholder="Complemento..." onChange={handleInputChange} value={formValues.complemento || ''} disabled="" required/>
+                </div>
+
+                </div>
+
+                <div className="input-group-row-left">
+
+                <div className="input-box">
+                        <label htmlFor="bairro">Bairro</label>
+                        <input type="text" name="bairro"  id="regularbox-filled" placeholder="" onChange={handleInputChange} value={formValues.bairro || ''} disabled required/>
+                </div>
+
+                </div>
+
+                <div className="input-group-row">
+
+                <div className="input-box">
+                        <label htmlFor="localidade">Cidade</label>
+                        <input type="text" name="localidade" id="regularbox-filled" placeholder="" onChange={handleInputChange} value={formValues.localidade || ''} disabled required/>
+                </div>
+
+                <div className="input-box">
+                        <label htmlFor="uf">Estado</label>
+                        <input type="text" name="uf" id="regularbox-filled" placeholder="" onChange={handleInputChange} value={formValues.uf || ''} disabled required/>
+                </div>
+
+                </div>
+
+
                     
                 </div>
                              
