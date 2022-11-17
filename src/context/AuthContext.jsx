@@ -22,6 +22,12 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const signIn = async ({ login, senha }) => {
+
+    api.defaults.headers.common[
+      "Authorization"
+    ] = `Bearer ${localStorage.getItem("@Auth:login")}`;
+
+
     try {
       const response = await api.post("/auth/login", { login, senha });
       if (response.data.error) {

@@ -1,7 +1,7 @@
 import Navbar from '../../components/Menu/Navbar';
 import React, { useEffect, useState } from "react";
 import './consulta.css';
-import api from '../../components/Services/api';
+import api2 from '../../components/Services/api';
 import categoriaPDF from '../../components/Pdf/pdf_categoria';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 const MaterialTable = React.lazy(() => import('material-table'));
@@ -27,10 +27,14 @@ export default function Consulta_categoria() {
     });
  
     useEffect(() => {
-        api
+        
+        //api.defaults.headers.common["Authorization"] = `Bearer ${localStorage.getItem("@Auth:token")}`;
+
+        api2
         .get(url)
         .then(response => {
         let data = [];
+    
     response.data.forEach(el => {
         data.push(
         {
@@ -72,7 +76,7 @@ export default function Consulta_categoria() {
             resolve();
             const data = [...entries.data];
             data[data.indexOf(oldData)] = newData;
-            api
+            api2
                 .put(url, newData, {
                     params: {
                         codCategoria: entries.data[0].codCategoria
@@ -88,7 +92,7 @@ export default function Consulta_categoria() {
             resolve();
             const data = [...entries.data];
             data.splice(data.indexOf(oldData), 1);
-            api
+            api2
             .delete(url + "/" + oldData.codCategoria)
                 .then(res => console.log(res.data));
             setEntries({ ...entries, data });

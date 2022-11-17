@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
-export default function Home() { 
+export const Home = () => { 
   
   return (
   <>
@@ -37,4 +37,4 @@ export default function Home() {
   </div>
   </>
   );
-}
+};

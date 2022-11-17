@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown1 from './Dropdown1';
 import Dropdown2 from './Dropdown2';
 import Dropdown3 from './Dropdown3';
 import Dropdown4 from './Dropdown4';
-import { auth } from '../../firebaseConnection'
-import { signOut } from 'firebase/auth' 
+import { AuthContext } from "../../context/AuthContext";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -17,6 +16,8 @@ function Navbar() {
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+
+  const { signOut } = useContext(AuthContext);
 
   const onMouseEnter1 = () => {
     if (window.innerWidth < 960) {
@@ -74,10 +75,6 @@ function Navbar() {
       setDropdown4(false);
     }
   };
-
-  async function handleLogout(){
-    await signOut(auth);
-  }
 
   return (
     <>
@@ -146,7 +143,7 @@ function Navbar() {
           </li>
      
         </ul>
-        <button className='btn' onClick={handleLogout}>Sair</button>
+        <button className='btn' onClick={signOut}>Sair</button>
       </nav>
     </>
   );

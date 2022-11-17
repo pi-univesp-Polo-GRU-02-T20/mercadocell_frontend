@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../../components/Menu/Navbar';
-
+import { Link } from 'react-router-dom';
 import api  from '../../components/Services/api';
 import './cadastro.css';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
@@ -174,9 +174,13 @@ export default function Cadastro_pessoafisica() {
 
                 </div>
 
-
-                    
+                <div className="input-box-checkbox">
+                        <input type="checkbox" id="aceito" name="termos" value="S" required/> 
+                        <label htmlFor="termos"> Li e concordo com as <Link to="/privacidade" target="_blank">Políticas de privacidade</Link></label>
                 </div>
+
+                </div>    
+                
                              
                 <button type="submit">Cadastrar</button>
                

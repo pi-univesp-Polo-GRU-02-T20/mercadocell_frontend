@@ -179,6 +179,32 @@ form{
   background-color: var(--fundo-input);
 }
 
+.input-box-checkbox{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  margin-inline: 0.5rem;
+}
+
+.input-box-checkbox label {
+  font-size: 1rem;
+  font-weight: 450;
+  margin-top: 1.2rem;
+  color: var(--label);
+}
+
+.input-box-checkbox input{
+  margin: 0.7rem;
+  margin-right: 0.4rem;
+  border: 2px solid #AAAAAA;
+  border-radius: 4px;
+  font-size: 1rem;
+  height: 2.5rem;
+  width: 20px;
+  color: var(--fonte);
+  background-color: var(--fundo-input);
+}
+
 input::placeholder {
   color: var(--placeholder);
 }

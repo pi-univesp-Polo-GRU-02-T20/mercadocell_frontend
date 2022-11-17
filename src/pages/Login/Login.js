@@ -1,42 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react';
+import { Link, Navigate } from "react-router-dom";
 import { HiUser, HiLockClosed } from "react-icons/hi";
-import { useNavigate, Link } from 'react-router-dom'
-
-import { auth } from '../../firebaseConnection'
-import { signInWithEmailAndPassword } from 'firebase/auth'
-
+import { AuthContext } from "../../context/AuthContext";
 
 import './Login.css'
 
 
-export default function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+export const Login = () => {
 
-  const navigate = useNavigate();
+  const [login, setLogin] = useState("");
+  const [senha, setSenha] = useState("");
+  const { signIn, signed } = useContext(AuthContext);
 
   async function handleLogin(e){
     e.preventDefault();
+    const data = {
+      login,
+      senha,
+    };
+    console.log('handleLogin', data);
+    await signIn(data);
 
-    if(email !== '' && password !== ''){
-      
-      await signInWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        // navegar para /admin
-        navigate('/home', { replace: true } )
-      })
-      .catch(() => {
-        alert("Email ou senha incorreto!")
-        console.log("ERRO AO FAZER O LOGIN")
-      })
-
-    }else{
-      alert("Preencha todos os campos!")
-    }
-
-
-  }
-
+  }    
+  if (!signed) {
     return (
       <div className="log_fundo">
       <form className = "log_form" onSubmit={handleLogin}>
@@ -49,12 +35,14 @@ export default function Login() {
       <div className="login-loginInputEmail">
               <HiUser />
               <input
+                className={login !== "" ? "has-val input" : "input"}
                 id="user"
                 type="text"
                 name="login"
-                placeholder="Digite seu email..."
-                value={email}
-                onChange={(e) => setEmail(e.target.value) } 
+                autoComplete="off"
+                placeholder="Digite o login"
+                value={login}
+                onChange={(e) => setLogin(e.target.value) } 
               />
         
       </div>
@@ -64,13 +52,13 @@ export default function Login() {
            
               <HiLockClosed />
               <input
-                autoComplete={false}
+                className={senha !== "" ? "has-val input" : "input"}
                 id="password"
                 type="password"
                 name="senha"
                 placeholder="Senha"
-                value={password}
-                onChange={(e) => setPassword(e.target.value) } />
+                value={senha}
+                onChange={(e) => setSenha(e.target.value) } />
 
             </div>
 
@@ -82,5 +70,9 @@ export default function Login() {
       </form>
       </div>
     );
+} else {
+  return <Navigate to="/home" />;
 }
+
+};
 
