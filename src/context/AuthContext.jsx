@@ -32,6 +32,7 @@ export const AuthProvider = ({ children }) => {
       const response = await api.post("/auth/login", { login, senha });
       if (response.data.error) {
         alert(response.data.error);
+        
       } else {
         setLogin(response.data);
         api.defaults.headers.common[
@@ -43,6 +44,7 @@ export const AuthProvider = ({ children }) => {
       }
     } catch (error) {
       console.log(error);
+      alert("Acesso não autorizado");
     }
   };
 
