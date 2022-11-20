@@ -23,7 +23,7 @@ export default function Painel_vendas() {
 <iframe title="PROTOTIPO_DASH_MERCADOCELL_LOCAL" 
         width="100%" 
         height="100%"
-        src="https://datastudio.google.com/embed/reporting/f029f918-7c7c-47ee-bf1a-2736bf73d93c/page/63e3C"  
+        src="https://datastudio.google.com/embed/reporting/2afe5ca9-fd3a-47a6-8f06-fd4dde998370/page/63e3C"  
         frameborder="0" 
         allowfullscreen="true" >
         

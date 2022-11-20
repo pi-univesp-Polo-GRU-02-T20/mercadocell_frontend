@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Navbar from '../../components/Menu/Navbar';
-
 import api  from '../../components/Services/api';
 import './cadastro.css';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));

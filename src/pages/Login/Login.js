@@ -64,7 +64,7 @@ export const Login = () => {
 
   
             <button type="submit"> Acessar </button>
-            <Link to='/redefinir'> <div className="RecoverPassword"> Esqueceu a senha? </div> </Link>
+            
             </div>
            
       </form>

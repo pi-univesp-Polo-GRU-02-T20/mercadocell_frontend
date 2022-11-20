@@ -4,7 +4,7 @@ import Navbar from '../../components/Menu/Navbar';
 import './cadastro.css';
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
-export default function Cadastro_usuario() { 
+export default function Cadastro_alterarsenha() { 
 
   const [formValues, setFormValues] = useState({});
 
@@ -25,20 +25,19 @@ export default function Cadastro_usuario() {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
 
-    if(formValues.senha == formValues.senha2){
-      api.post("/auth/cadastrar", data)
+    if(formValues.senhaNova !== ""){
+      api.post("/auth/alterarSenha", data)
       .then(() => {
         console.log('*** handleSubmit', data);
         setFormValues({});
         alert("Cadastro Realizado");
       })
       .catch(() => {
-        console.log("ERRO AO FAZER O CADASTRO")
+        console.log("ERRO AO ALTERAR SENHA")
       })
 
-
     }else{
-      alert("Senhas diferentes!")
+      alert("Coloque uma nova senha!")
     }
   };
 
@@ -60,7 +59,7 @@ export default function Cadastro_usuario() {
             <form onSubmit={handleSubmit}>
                 <div className="form-header">
                     <div className="title">
-                        <h1>Cadastrar Usuário</h1>
+                        <h1>Alterar Senha</h1>
                     </div>
                 </div>
 
@@ -78,8 +77,8 @@ export default function Cadastro_usuario() {
                         <input type="password" name="senha" id="regularbox" placeholder="Digite a senha" onChange={handleInputChange} value={formValues.senha || ''} required/>
                     </div>
                     <div className="input-box">
-                        <label htmlFor="senha2">Confirmar senha</label>
-                        <input type="password" name="senha2" id="regularbox" placeholder="Confirme a senha" onChange={handleInputChange} value={formValues.senha2|| ''}  required/>
+                        <label htmlFor="senhaNova">Confirmar senha</label>
+                        <input type="password" name="senhaNova" id="regularbox" placeholder="Confirme a senha" onChange={handleInputChange} value={formValues.senhaNova || ''}  required/>
                     </div>
                 </div>
 
