@@ -42,6 +42,11 @@ const MenuItems1 = [
     title: 'Usuário',
     path: '/cadastro-usuario',
     cName: 'dropdown-link'
+  },
+  {
+    title: 'Alterar Senha',
+    path: '/cadastro-alterarsenha',
+    cName: 'dropdown-link'
   }
 ];
 

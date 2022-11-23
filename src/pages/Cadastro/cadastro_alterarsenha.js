@@ -73,11 +73,11 @@ export default function Cadastro_alterarsenha() {
 
                 <div className="input-group-row">
                     <div className="input-box">
-                        <label htmlFor="senha">Senha</label>
+                        <label htmlFor="senha">Senha atual</label>
                         <input type="password" name="senha" id="regularbox" placeholder="Digite a senha" onChange={handleInputChange} value={formValues.senha || ''} required/>
                     </div>
                     <div className="input-box">
-                        <label htmlFor="senhaNova">Confirmar senha</label>
+                        <label htmlFor="senhaNova">Nova senha</label>
                         <input type="password" name="senhaNova" id="regularbox" placeholder="Confirme a senha" onChange={handleInputChange} value={formValues.senhaNova || ''}  required/>
                     </div>
                 </div>

@@ -59,7 +59,7 @@ body.big {
   grid-area: header;
 }
 
-.bodya {
+.body-consulta {
   display: flex;
   flex-direction: column;
   justify-content: center;

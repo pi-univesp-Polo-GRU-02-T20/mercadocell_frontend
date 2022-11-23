@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Link, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { HiUser, HiLockClosed } from "react-icons/hi";
 import { AuthContext } from "../../context/AuthContext";
 

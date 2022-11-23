@@ -25,7 +25,7 @@ export default function Cadastro_usuario() {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
 
-    if(formValues.senha == formValues.senha2){
+    if(formValues.senha === formValues.senha2){
       api.post("/auth/cadastrar", data)
       .then(() => {
         console.log('*** handleSubmit', data);

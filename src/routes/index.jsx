@@ -28,6 +28,7 @@ const CadastroPessoafisica = React.lazy(() => import('../pages/Cadastro/cadastro
 const CadastroPessoajuridica  = React.lazy(() => import('../pages/Cadastro/cadastro_pessoajuridica'));
 const CadastroTipopagamento = React.lazy(() => import('../pages/Cadastro/cadastro_tipopagamento'));
 const CadastroUsuario = React.lazy(() => import('../pages/Cadastro/cadastro_usuario'));
+const CadastroAlterarsenha = React.lazy(() => import('../pages/Cadastro/cadastro_alterarsenha'));
 
 const ConsultaCategoria = React.lazy(() => import('../pages/Consulta/consulta_categoria'));
 const ConsultaSubcategoria = React.lazy(() => import('../pages/Consulta/consulta_subcategoria'));
@@ -84,7 +85,8 @@ return(
         <Route path='/cadastro-pessoajuridica' element={<React.Suspense fallback={<div>Loading...</div>}><Private/><CadastroPessoajuridica/></React.Suspense>} />
         <Route path='/cadastro-tipopagamento' element={<React.Suspense fallback={<div>Loading...</div>}><Private/><CadastroTipopagamento/></React.Suspense>} />
         <Route path='/cadastro-usuario' element={<React.Suspense fallback={<div>Loading...</div>}><Private/><CadastroUsuario/></React.Suspense>} />
-          
+        <Route path='/cadastro-alterarsenha' element={<React.Suspense fallback={<div>Loading...</div>}><Private/><CadastroAlterarsenha/></React.Suspense>} />
+
         <Route path='/consulta-categoria' element={<React.Suspense fallback={<div>Loading...</div>}><Private/><ConsultaCategoria/></React.Suspense>} />
         <Route path='/consulta-subcategoria' element={<React.Suspense fallback={<div>Loading...</div>}><Private/><ConsultaSubcategoria/></React.Suspense>} />
         <Route path='/consulta-unidadedemedida' element={<React.Suspense fallback={<div>Loading...</div>}><Private/><ConsultaUnidadedemedida/></React.Suspense>} />

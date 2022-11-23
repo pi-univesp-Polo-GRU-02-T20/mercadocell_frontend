@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import api  from '../../components/Services/api';
 import fatdetalhadoPDF from '../../components/Pdf/pdf_relatorio_fatdetalhado';
 import { Link } from 'react-router-dom';
-import './relatorio.css';
+import '../Consulta/consulta.css';
 const MaterialTable = React.lazy(() => import('material-table'));
 const DarkMode = React.lazy(() => import('../../components/DarkMode'));
 
@@ -67,15 +67,15 @@ export default function Relatorio_fatdetalhado_dia() {
     <Navbar />
 
 </div>
-<div className="bodya">
+<div className="body-consulta">
 
-    <div className="button-group-row-left">
+
 
     <Link id='a' to='./relatorio-fatdetalhado-mes'><button id="button-menu">Mês</button></Link>
 
     <Link id='a' to='./relatorio-fatdetalhado-ano'><button id="button-menu">Ano</button></Link>
 
-    </div>
+
 
         <MaterialTable
     title="Relatório de Faturamento Detalhado - Diário"
